@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
 import Nav from './nav';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Rounded from '../../common/RoundedButton';
 import Magnetic from '../../common/Magnetic';
 
