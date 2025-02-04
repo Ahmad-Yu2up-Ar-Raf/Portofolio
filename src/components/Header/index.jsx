@@ -8,7 +8,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Rounded from '../../common/RoundedButton';
 import Magnetic from '../../common/Magnetic';
-
+import Link from 'next/link';
 export default function index() {
     const header = useRef(null);
     const [isActive, setIsActive] = useState(false);
@@ -66,7 +66,7 @@ function toggleButtonScale(isActive) {
                 </Magnetic>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a>About</a>
+                        <a href='/about'>About</a>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>

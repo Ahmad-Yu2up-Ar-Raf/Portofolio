@@ -1,5 +1,5 @@
 
-import  Card  from "@/components/Card";
+
 
 
 export default function Hero() {
@@ -16,7 +16,7 @@ export default function Hero() {
        <h1 className="font-bold leading-[3.4rem]  text-[2.4rem]"><span>WEB & MOBILE</span><span className="block">DESIGN EXPERT</span></h1>
        <p className=" leading-8 line-clamp-4">Hello there, I am Jaykay  – a product designer specializing in web and mobile apps for FinTech, eCommerce, and SaaS. I craft user-focused designs that drive conversions and resonate with audiences. Currently based in Lagos, Dubai, London  Manchester, UK.</p>
       </div>
-   {/* <Card    /> */}
+
     </div>
    </section>
   </>
