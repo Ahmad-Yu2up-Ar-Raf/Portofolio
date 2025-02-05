@@ -47,7 +47,7 @@ function toggleButtonScale(isActive) {
         <>
         <div ref={header} className={`${styles.header}`}>
         <Magnetic>
-
+ <Link href={'/'}>
             <div className={styles.logo}>
                 <p className={styles.copyright}>©</p>
                 <div className={styles.name}>
@@ -56,23 +56,24 @@ function toggleButtonScale(isActive) {
                     <p className={styles.snellenberg}>Yusuf Ar-Rafi</p>
                 </div>
             </div>
+ </Link>
         </Magnetic>
             <div className={`${styles.nav}  hidden md:flex` }>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a>Work</a>
+                        <Link href={'/'}>Work</Link>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a href='/about'>About</a>
+                        <Link href={'/about'}>About</Link>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a>Contact</a>
+                        <Link href={'/contact'}>Contact</Link>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>

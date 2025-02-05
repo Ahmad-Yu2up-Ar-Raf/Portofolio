@@ -168,7 +168,7 @@ export const Circle = forwardRef(({ className, children }, ref) => {
     <div
       ref={ref}
       className={cn(
-        'z-10 flex    size-14 md:size-16 lg:size-20 items-center justify-center rounded-full border-2 bg-[#19191a] p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]',
+        'z-10 flex    size-16 lg:size-24 items-center justify-center rounded-full border-2 bg-[#19191a] p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]',
         className
       )}
     >

@@ -17,7 +17,7 @@ export default function index() {
   // const { debug } = useControls({ debug: false })
   return (
 
-   <div className=' z-10  w-full h-full    absolute top-0   '>
+   <div className=' z-10 w-full h-full   absolute top-0    '>
 
     <Canvas     camera={{ position: [0, 0, 13], fov: 25 }} >
 

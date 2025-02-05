@@ -7,7 +7,8 @@ import { text, curve, translate } from './anim';
 const routes = {
     "/": "Home",
     "/about": "About",
-    "/contact": "Contact"
+    "/contact": "Contact",
+    "/project/[id]": "Project"
 }
 
 const anim = (variants) => {
@@ -73,7 +74,7 @@ const SVG = ({height, width}) => {
     `
 
     return (
-        <motion.svg {...anim(translate)}>
+        <motion.svg className={'preloard'} {...anim(translate)}>
             <motion.path {...anim(curve(initialPath, targetPath))} />
         </motion.svg>
     )

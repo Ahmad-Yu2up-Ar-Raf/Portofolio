@@ -7,7 +7,7 @@ export const NeonGradientCard = ({
   className,
   children,
   borderSize = 2,
-  borderRadius = 50,
+  borderRadius = 100,
   neonColors = {
     firstColor: "#ff00aa",
     secondColor: "#00FFF1",
