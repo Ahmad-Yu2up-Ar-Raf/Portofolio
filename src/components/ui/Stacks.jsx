@@ -17,6 +17,9 @@ export default function index() {
   const div7Ref = useRef(null);
 
   return (
+
+
+    
     <section className='min-h-[100vh] lg:min-h-[150vh] s mt-14 px-5 space space-y-20 content-center '>
  <div className='text-center space-y-5' >
   <h1 className='font-semibold md:text-7xl  text-5xl '>My  <LineShadowText className="italic" shadowColor='White'>Stacks</LineShadowText></h1>
