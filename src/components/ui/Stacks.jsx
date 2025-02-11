@@ -2,10 +2,11 @@
 import React, { useRef } from 'react';
 import { AnimatedBeam, Circle } from '@/components/core/animated-beam';
 import ScrollElement from '@/components/core/scroll-element';
-import { LineShadowText } from "@/components/hey/line-shadow-text";
-import { NeonGradientCard } from "@/components/hey/neon-gradient-card";
-
-
+import { LineShadowText } from "@/components/magicui/line-shadow-text";
+import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
+import AnimatedCPU from '../other/AnimatedCPU';
+import Image from 'next/image';
+import './Stack.css'
 export default function index() {
   const containerRef = useRef(null);
   const div1Ref = useRef(null);
@@ -20,232 +21,327 @@ export default function index() {
 
 
     
-    <section className='min-h-[100vh] lg:min-h-[150vh] s mt-14 px-5 space space-y-20 content-center '>
- <div className='text-center space-y-5' >
-  <h1 className='font-semibold md:text-7xl  text-5xl '>My  <LineShadowText className="italic" shadowColor='White'>Stacks</LineShadowText></h1>
-  <p className='text-sm md:text-base'>Commitment to staying updated with the latest design trends and techniques.</p>
- </div>
- <ScrollElement viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}>
-    <div
-      className="relative flex w-full max-w-3xl mx-auto items-center justify-center  bg-background  md:shadow-xl"
-      ref={containerRef}>
+//     <section className='min-h-[100vh] lg:min-h-[150vh] s mt-14 px-5 space space-y-20 content-center '>
+//  <div className='text-center space-y-5' >
+//   <h1 className='font-semibold md:text-7xl  text-5xl '>My  <LineShadowText className="italic" shadowColor='White'>Stacks</LineShadowText></h1>
+//   <p className='text-sm md:text-base'>Commitment to staying updated with the latest design trends and techniques.</p>
+//  </div>
+//  <ScrollElement viewport={{ amount: 0.5, margin: '0px 0px 0px 0px' }}>
+//     <div
+//       className="relative flex w-full max-w-3xl mx-auto items-center justify-center  bg-background  md:shadow-xl"
+//       ref={containerRef}>
        
 
-      <div className="flex h-full w-full flex-col items-stretch justify-between gap-12">
-        <div className="flex flex-row items-center justify-between">
-        <NeonGradientCard className="w-fit"   neonColors={{ firstColor: "#9c6bdb", secondColor: "#FFFFFF" }}
-    >
-          <Circle ref={div1Ref} className="md:p-5">
-            <Icons.googleDrive />
-          </Circle>
-       </NeonGradientCard>
-          <NeonGradientCard className="w-fit"   neonColors={{ firstColor: "#48CFCB", secondColor: "#1D3557 " }}
+//       <div className="flex h-full w-full flex-col items-stretch justify-between gap-12">
+//         <div className="flex flex-row items-center justify-between">
+//         <NeonGradientCard className="w-fit"   neonColors={{ firstColor: "#9c6bdb", secondColor: "#FFFFFF" }}
+//     >
+//           <Circle ref={div1Ref} className="md:p-5">
+//             <Icons.googleDrive />
+//           </Circle>
+//        </NeonGradientCard>
+//           <NeonGradientCard className="w-fit"   neonColors={{ firstColor: "#48CFCB", secondColor: "#1D3557 " }}
     
-    >
-          <Circle ref={div5Ref} className="md:p-5">
-            <Icons.googleDocs />
-          </Circle>
-   </NeonGradientCard>
-        </div>
-        <div className="flex flex-row items-center justify-between">
-        <NeonGradientCard className="w-fit"   neonColors={{ firstColor: "#ffffff", secondColor: "#222529" }}
+//     >
+//           <Circle ref={div5Ref} className="md:p-5">
+//             <Icons.googleDocs />
+//           </Circle>
+//    </NeonGradientCard>
+//         </div>
+//         <div className="flex flex-row items-center justify-between">
+//         <NeonGradientCard className="w-fit"   neonColors={{ firstColor: "#ffffff", secondColor: "#222529" }}
     
-    >
-          <Circle ref={div2Ref} className="md:p-5 ">
-            <Icons.openai />
-          </Circle>
-          </NeonGradientCard>
+//     >
+//           <Circle ref={div2Ref} className="md:p-5 ">
+//             <Icons.openai />
+//           </Circle>
+//           </NeonGradientCard>
           
-          <NeonGradientCard className="w-fit">
-          <Circle ref={div4Ref} className=" size-16  lg:size-24 md:p-4">
-            <Icons.vscode />
-          </Circle>
-          </NeonGradientCard>
-          <NeonGradientCard className="w-fit"   neonColors={{ firstColor: "#71ebe9", secondColor: "#181f1e" }}
+//           <NeonGradientCard className="w-fit">
+//           <Circle ref={div4Ref} className=" size-16  lg:size-24 md:p-4">
+//             <Icons.vscode />
+//           </Circle>
+//           </NeonGradientCard>
+//           <NeonGradientCard className="w-fit"   neonColors={{ firstColor: "#71ebe9", secondColor: "#181f1e" }}
     
-    >
-          <Circle ref={div6Ref} className="md:p-5">
-            <Icons.zapier />
-          </Circle>
-          </NeonGradientCard>
-        </div>
-        <div className="flex flex-row items-center justify-between">
-        <NeonGradientCard className="w-fit"   neonColors={{ firstColor: "#f5f6f7", secondColor: "#0c1624" }}
+//     >
+//           <Circle ref={div6Ref} className="md:p-5">
+//             <Icons.zapier />
+//           </Circle>
+//           </NeonGradientCard>
+//         </div>
+//         <div className="flex flex-row items-center justify-between">
+//         <NeonGradientCard className="w-fit"   neonColors={{ firstColor: "#f5f6f7", secondColor: "#0c1624" }}
     
-    >
-          <Circle ref={div3Ref} className="md:p-5">
-            <Icons.whatsapp />
-          </Circle>
-          </NeonGradientCard>
-          <NeonGradientCard className="w-fit"   neonColors={{ firstColor: "#ff5733", secondColor: "#33ff57" }}
+//     >
+//           <Circle ref={div3Ref} className="md:p-5">
+//             <Icons.whatsapp />
+//           </Circle>
+//           </NeonGradientCard>
+//           <NeonGradientCard className="w-fit"   neonColors={{ firstColor: "#ff5733", secondColor: "#33ff57" }}
     
-    >
-          <Circle ref={div7Ref} className="md:p-5">
-            <Icons.messenger />
-          </Circle>
-          </NeonGradientCard>
-        </div>
-      </div>
+//     >
+//           <Circle ref={div7Ref} className="md:p-5">
+//             <Icons.messenger />
+//           </Circle>
+//           </NeonGradientCard>
+//         </div>
+//       </div>
          
 
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div1Ref}
-        toRef={div4Ref}
-        curvature={-75}
-        endYOffset={-10}
-        dotted
-        gradientStartColor="#00ac47"
-        gradientStopColor="#ffba00"
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div2Ref}
-        toRef={div4Ref}
-        dotted
-        gradientStartColor="#d948ae"
-        gradientStopColor="#5b60ff"
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div3Ref}
-        toRef={div4Ref}
-        curvature={75}
-        endYOffset={10}
-        dotted
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div5Ref}
-        toRef={div4Ref}
-        curvature={-75}
-        endYOffset={-10}
-        reverse
-        gradientStartColor="#48b0d9"
-        gradientStopColor="#67aeff"
-        dotted
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div6Ref}
-        toRef={div4Ref}
-        reverse
-        dotted
-        gradientStartColor="#00ac47"
-        gradientStopColor="#4fcc5d"
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div7Ref}
-        toRef={div4Ref}
-        curvature={75}
-        endYOffset={10}
-        reverse
-        dotted
-        gradientStartColor="#48b0d9"
-        gradientStopColor="#67aeff"
-      />
-    </div>
-       </ScrollElement>
+//       <AnimatedBeam
+//         containerRef={containerRef}
+//         fromRef={div1Ref}
+//         toRef={div4Ref}
+//         curvature={-75}
+//         endYOffset={-10}
+//         dotted
+//         gradientStartColor="#00ac47"
+//         gradientStopColor="#ffba00"
+//       />
+//       <AnimatedBeam
+//         containerRef={containerRef}
+//         fromRef={div2Ref}
+//         toRef={div4Ref}
+//         dotted
+//         gradientStartColor="#d948ae"
+//         gradientStopColor="#5b60ff"
+//       />
+//       <AnimatedBeam
+//         containerRef={containerRef}
+//         fromRef={div3Ref}
+//         toRef={div4Ref}
+//         curvature={75}
+//         endYOffset={10}
+//         dotted
+//       />
+//       <AnimatedBeam
+//         containerRef={containerRef}
+//         fromRef={div5Ref}
+//         toRef={div4Ref}
+//         curvature={-75}
+//         endYOffset={-10}
+//         reverse
+//         gradientStartColor="#48b0d9"
+//         gradientStopColor="#67aeff"
+//         dotted
+//       />
+//       <AnimatedBeam
+//         containerRef={containerRef}
+//         fromRef={div6Ref}
+//         toRef={div4Ref}
+//         reverse
+//         dotted
+//         gradientStartColor="#00ac47"
+//         gradientStopColor="#4fcc5d"
+//       />
+//       <AnimatedBeam
+//         containerRef={containerRef}
+//         fromRef={div7Ref}
+//         toRef={div4Ref}
+//         curvature={75}
+//         endYOffset={10}
+//         reverse
+//         dotted
+//         gradientStartColor="#48b0d9"
+//         gradientStopColor="#67aeff"
+//       />
+//     </div>
+//        </ScrollElement>
 
-    </section>
+//     </section>
+<section className='min-h-screen bg-zinc-950 content-center '>
+  <h1></h1>
+{/* Gunakan background gelap untuk efek terbaik */}
+
+<div className="flex relative  justify-center h-[264px] overflow-hidden w-full  content-center  max-w-7xl m-auto">
+
+  <AnimatedCPU />
+  {/* <Image alt="mobile" aria-hidden="true" loading="lazy" width="400" height="312" decoding="async" data-nimg="1" class="foundation_mobileLines__3hBQx" style="color:transparent" src="https://nextjs.org/icons/mobile-lines.svg"/> */}
+
+  <div  className="poweredby translate-y-[8px] flex items-center justify-center content-center  tracking-[-0.04em]  py-[15px] px-[21px] relative border-inherit md:py-[21px] md:px-[25px]  text-[20px] md:text-[24px] rounded-[8px] font-bold text-center w-fit m-auto  bg-[linear-gradient(180deg,#232323,#222222),linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.05)_26.56%,rgba(0,0,0,0.05)_51.56%,rgba(0,0,0,0.05))] ">
+    
+  
+  <div className='flex absolute -top-[10px]  gap-[18px]    '   >
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white absolute flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  flex w-[6px] h-[10px]  '>
+
+        </span>
+
+      </div>
+
+
+
+      <div className='flex absolute justify-center flex-col gap-[14px]  -left-[10px]     '   >
+        <span  style={{
+
+    background: "linear-gradient(1turn, #6f6f6f, #878787 33.33%, #8b8b8b 66.67%, #4d4d4d);",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .05), inset 1px 0 1px 1px rgba(0, 0, 0, .1), inset 1px 0 1px #dddddd"
+        }} className='bg-white   flex w-[10px] h-[6px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(1turn, #6f6f6f, #878787 33.33%, #8b8b8b 66.67%, #4d4d4d);",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .05), inset 1px 0 1px 1px rgba(0, 0, 0, .1), inset 1px 0 1px #dddddd"
+        }} className='bg-white   flex w-[10px] h-[6px]  '>
+
+        </span>
+      
+
+      </div>
+
+  <span     style={{
+        textShadow: "0 0 10px rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.1)",
+           background: "linear-gradient(92.66deg, #919191, #eaeaea 19.79%, #828181 33.33%, #c6c6c6 70.31%, #606060)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+      }} >Powered By</span>
+
+      <div className='flex absolute -bottom-[10px]  gap-[18px]    '   >
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white absolute flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  flex w-[6px] h-[10px]  '>
+
+        </span>
+
+      </div>
+      <div className='flex absolute flex-col -right-[10px] gap-[14px]    '   >
+        <span  style={{
+
+    background: "linear-gradient(1turn, #6f6f6f, #878787 33.33%, #8b8b8b 66.67%, #4d4d4d);",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .05), inset -1px 0 1px 1px rgba(0, 0, 0, .1), inset -1px 0 1px #dddddd;"
+        }} className='bg-white   flex w-[10px] h-[6px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(1turn, #6f6f6f, #878787 33.33%, #8b8b8b 66.67%, #4d4d4d);",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .05), inset -1px 0 1px 1px rgba(0, 0, 0, .1), inset -1px 0 1px #dddddd;"
+        }} className='bg-white   flex w-[10px] h-[6px]  '>
+
+        </span>
+        {/* <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  absolute flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white absolute flex w-[6px] h-[10px]  '>
+
+        </span>
+        <span  style={{
+
+    background: "linear-gradient(180deg, #787878, #6b6b6b 33.33%, #8b8b8b 66.67%, #303030)",
+    boxShadow: "0 2px 2px 1px rgba(0, 0, 0, .02), inset 0 -1px 1px 1px rgba(0, 0, 0, .1), inset 0 -1px 1px #dddddd"
+        }} className='bg-white  flex w-[6px] h-[10px]  '>
+
+        </span> */}
+
+      </div>
+
+  </div>        
+ 
+  
+</div>
+
+
+</section>
   );
 }
 
 
-const Icons = {
-  
-  notion: () => (
-    <svg
-      width="80"
-      height="70"
-      viewBox="0 0 100 100"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M6.017 4.313l55.333 -4.087c6.797 -0.583 8.543 -0.19 12.817 2.917l17.663 12.443c2.913 2.14 3.883 2.723 3.883 5.053v68.243c0 4.277 -1.553 6.807 -6.99 7.193L24.467 99.967c-4.08 0.193 -6.023 -0.39 -8.16 -3.113L3.3 79.94c-2.333 -3.113 -3.3 -5.443 -3.3 -8.167V11.113c0 -3.497 1.553 -6.413 6.017 -6.8z"
-        fill="#ffffff"
-      />
-      <path
-        d="M61.35 0.227l-55.333 4.087C1.553 4.7 0 7.617 0 11.113v60.66c0 2.723 0.967 5.053 3.3 8.167l13.007 16.913c2.137 2.723 4.08 3.307 8.16 3.113l64.257 -3.89c5.433 -0.387 6.99 -2.917 6.99 -7.193V20.64c0 -2.21 -0.873 -2.847 -3.443 -4.733L74.167 3.143c-4.273 -3.107 -6.02 -3.5 -12.817 -2.917zM25.92 19.523c-5.247 0.353 -6.437 0.433 -9.417 -1.99L8.927 11.507c-0.77 -0.78 -0.383 -1.753 1.557 -1.947l53.193 -3.887c4.467 -0.39 6.793 1.167 8.54 2.527l9.123 6.61c0.39 0.197 1.36 1.36 0.193 1.36l-54.933 3.307 -0.68 0.047zM19.803 88.3V30.367c0 -2.53 0.777 -3.697 3.103 -3.893L86 22.78c2.14 -0.193 3.107 1.167 3.107 3.693v57.547c0 2.53 -0.39 4.67 -3.883 4.863l-60.377 3.5c-3.493 0.193 -5.043 -0.97 -5.043 -4.083zm59.6 -54.827c0.387 1.75 0 3.5 -1.75 3.7l-2.91 0.577v42.773c-2.527 1.36 -4.853 2.137 -6.797 2.137 -3.107 0 -3.883 -0.973 -6.21 -3.887l-19.03 -29.94v28.967l6.02 1.363s0 3.5 -4.857 3.5l-13.39 0.777c-0.39 -0.78 0 -2.723 1.357 -3.11l3.497 -0.97v-38.3L30.48 40.667c-0.39 -1.75 0.58 -4.277 3.3 -4.473l14.367 -0.967 19.8 30.327v-26.83l-5.047 -0.58c-0.39 -2.143 1.163 -3.7 3.103 -3.89l13.4 -0.78z"
-        fill="#000000"
-        fillRule="evenodd"
-        clipRule="evenodd"
-      />
-    </svg>
-  ),
-  openai: () => (
-    <svg
-    xmlns="http://www.w3.org/2000/svg"
-    x="0px"
-    y="0px"
-    width="100"
-    height="100"
-    viewBox="0 0 50 50"
-    style={{ fill: "#FFFFFF" }}
-  >
-  
-    <path d="M45.403,25.562c-0.506-1.89-1.518-3.553-2.906-4.862c1.134-2.665,0.963-5.724-0.487-8.237	c-1.391-2.408-3.636-4.131-6.322-4.851c-1.891-0.506-3.839-0.462-5.669,0.088C28.276,5.382,25.562,4,22.647,4	c-4.906,0-9.021,3.416-10.116,7.991c-0.01,0.001-0.019-0.003-0.029-0.002c-2.902,0.36-5.404,2.019-6.865,4.549	c-1.391,2.408-1.76,5.214-1.04,7.9c0.507,1.891,1.519,3.556,2.909,4.865c-1.134,2.666-0.97,5.714,0.484,8.234	c1.391,2.408,3.636,4.131,6.322,4.851c0.896,0.24,1.807,0.359,2.711,0.359c1.003,0,1.995-0.161,2.957-0.45	C21.722,44.619,24.425,46,27.353,46c4.911,0,9.028-3.422,10.12-8.003c2.88-0.35,5.431-2.006,6.891-4.535	C45.754,31.054,46.123,28.248,45.403,25.562z M35.17,9.543c2.171,0.581,3.984,1.974,5.107,3.919c1.049,1.817,1.243,4,0.569,5.967	c-0.099-0.062-0.193-0.131-0.294-0.19l-9.169-5.294c-0.312-0.179-0.698-0.177-1.01,0.006l-10.198,6.041l-0.052-4.607l8.663-5.001	C30.733,9.26,33,8.963,35.17,9.543z M29.737,22.195l0.062,5.504l-4.736,2.805l-4.799-2.699l-0.062-5.504l4.736-2.805L29.737,22.195z M14.235,14.412C14.235,9.773,18.009,6,22.647,6c2.109,0,4.092,0.916,5.458,2.488C28,8.544,27.891,8.591,27.787,8.651l-9.17,5.294	c-0.312,0.181-0.504,0.517-0.5,0.877l0.133,11.851l-4.015-2.258V14.412z M6.528,23.921c-0.581-2.17-0.282-4.438,0.841-6.383	c1.06-1.836,2.823-3.074,4.884-3.474c-0.004,0.116-0.018,0.23-0.018,0.348V25c0,0.361,0.195,0.694,0.51,0.872l10.329,5.81	L19.11,34.03l-8.662-5.002C8.502,27.905,7.11,26.092,6.528,23.921z M14.83,40.457c-2.171-0.581-3.984-1.974-5.107-3.919	c-1.053-1.824-1.249-4.001-0.573-5.97c0.101,0.063,0.196,0.133,0.299,0.193l9.169,5.294c0.154,0.089,0.327,0.134,0.5,0.134	c0.177,0,0.353-0.047,0.51-0.14l10.198-6.041l0.052,4.607l-8.663,5.001C19.269,40.741,17.001,41.04,14.83,40.457z M35.765,35.588	c0,4.639-3.773,8.412-8.412,8.412c-2.119,0-4.094-0.919-5.459-2.494c0.105-0.056,0.216-0.098,0.32-0.158l9.17-5.294	c0.312-0.181,0.504-0.517,0.5-0.877L31.75,23.327l4.015,2.258V35.588z M42.631,32.462c-1.056,1.83-2.84,3.086-4.884,3.483	c0.004-0.12,0.018-0.237,0.018-0.357V25c0-0.361-0.195-0.694-0.51-0.872l-10.329-5.81l3.964-2.348l8.662,5.002	c1.946,1.123,3.338,2.937,3.92,5.107C44.053,28.249,43.754,30.517,42.631,32.462z"></path>
-    </svg>
-  ),
-  googleDrive: () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 96 96" id="Php--Streamline-Svg-Logos" height="100" width="100"><desc></desc><path fill="url(#a)" d="M48 72.7115c25.9574 0 47-11.0638 47-24.7117S73.9574 23.2881 48 23.2881 1 34.3519 1 47.9998s21.0426 24.7117 47 24.7117Z"></path><path fill="#6181b6" d="M48 70.8756c24.9434 0 45.1641-10.2418 45.1641-22.8758C93.1641 35.3659 72.9434 25.124 48 25.124c-24.9434 0-45.16406 10.2419-45.16406 22.8758 0 12.634 20.22066 22.8758 45.16406 22.8758Z"></path><path fill="#ffffff" d="m57.1425 55.4169 2.2399-11.5297c.514-2.607.0734-4.5531-1.2485-5.7648-1.2851-1.175-3.4882-1.7625-6.7195-1.7625h-3.8922l1.1016-5.7282c.0367-.2203 0-.4406-.1469-.6242-.1469-.1836-.3305-.257-.5508-.257h-5.3609c-.3672 0-.6609.257-.7344.5875l-2.3867 12.2273c-.2203-1.3953-.7344-2.5703-1.6156-3.525-1.5789-1.7992-4.0391-2.7172-7.3805-2.7172H20.13c-.3671 0-.6609.2571-.7343.5875l-4.8102 24.8219c-.0367.2203 0 .4406.1469.6242.1469.1836.3305.2571.5508.2571h5.3976c.3672 0 .661-.2571.7344-.5875l1.175-5.9852h4.0023c2.093 0 3.8922-.2203 5.2508-.6609 1.4321-.4774 2.7172-1.2485 3.8555-2.3133.918-.8445 1.6891-1.7992 2.2766-2.8273l-.9547 4.957c-.0368.2203 0 .4406.1468.6242.1469.1836.3305.257.5508.257h5.361c.3671 0 .6609-.257.7343-.5875l2.6438-13.5859h3.6719c1.5789 0 2.0195.2937 2.1664.4406.1101.1102.3304.5508.0734 1.9094l-2.1297 10.9789c-.0367.2203 0 .4406.1469.6242.1469.1836.3305.2571.5508.2571h5.5078c.3305-.1102.6242-.3672.6976-.6977ZM32.3207 45.87c-.3305 1.7258-.9547 2.9742-1.8727 3.6719-.918.6977-2.4234 1.0648-4.4062 1.0648H23.655l1.7258-8.8859h3.0844c2.2766 0 3.1945.4773 3.5617.8813.4774.5875.5875 1.7257.2938 3.2679Z"></path><path fill="#ffffff" d="M80.0557 39.0404c-1.5789-1.7992-4.039-2.7172-7.3804-2.7172H62.2838c-.3671 0-.6609.2571-.7343.5875l-4.8102 24.7852c-.0367.2203 0 .4406.1469.6242.1469.1836.3305.257.5508.257h5.3976c.3672 0 .661-.257.7344-.5875l1.175-5.9851h4.0023c2.093 0 3.8922-.2203 5.2508-.6609 1.4321-.4774 2.7172-1.2485 3.8555-2.3133.9547-.8813 1.7625-1.8727 2.35-2.9375.5875-1.0649 1.0281-2.2399 1.2852-3.525.6242-3.1946.1468-5.6914-1.4321-7.5274Zm-5.6179 6.8297c-.3305 1.7258-.9547 2.9742-1.8727 3.6719-.918.6976-2.4234 1.0648-4.4063 1.0648h-2.3867l1.7258-8.8859h3.0844c2.2765 0 3.1945.4773 3.5617.8812.5141.5875.6242 1.7258.2938 3.268Z"></path><path fill="#000004" d="M28.4656 40.9865c2.0563 0 3.4149.3672 4.1125 1.1383.6977.7711.8446 2.0563.4774 3.8922-.3672 1.9094-1.1016 3.3047-2.1664 4.1125-1.0649.8078-2.6805 1.2117-4.8469 1.2117h-3.268l2.0196-10.3547h3.6718ZM15.3203 61.8428h5.3977l1.2851-6.5727h4.6266c2.0562 0 3.7086-.2203 5.0305-.6609 1.3218-.4406 2.4968-1.1383 3.5984-2.1664.918-.8446 1.6523-1.7625 2.2031-2.7539.5508-.9914.9547-2.093 1.175-3.3047.5875-2.9375.1469-5.2141-1.2851-6.8664-1.4321-1.6524-3.7086-2.4602-6.8297-2.4602H20.1305l-4.8102 24.7852Z"></path><path fill="#000004" d="M42.6022 30.4849h5.3609l-1.2852 6.5726h4.7735c3.0109 0 5.0672.5141 6.2054 1.5789 1.1383 1.0649 1.4688 2.7539 1.0282 5.1039L56.4451 55.27h-5.4344l2.1297-10.9789c.2571-1.2484.1469-2.093-.257-2.5336-.4039-.4406-1.3219-.6976-2.6805-.6976h-4.2961L43.1529 55.27H37.792l4.8102-24.7851Z"></path><path fill="#000004" d="M70.5818 40.9865c2.0563 0 3.4149.3672 4.1125 1.1383.6977.7711.8446 2.0563.4774 3.8922-.3672 1.9094-1.1016 3.3047-2.1664 4.1125-1.0649.8078-2.6805 1.2117-4.8469 1.2117h-3.268L66.91 40.9865h3.6718ZM57.4365 61.8428h5.3977l1.2851-6.5727h4.6266c2.0562 0 3.7086-.2203 5.0305-.6609 1.3218-.4406 2.4968-1.1383 3.5984-2.1664.918-.8446 1.6523-1.7625 2.2031-2.7539.5508-.9914.9547-2.093 1.175-3.3047.5875-2.9375.1469-5.2141-1.2851-6.8664-1.4321-1.6524-3.7086-2.4602-6.8297-2.4602H62.2467l-4.8102 24.7852Z"></path><defs><radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="translate(29.219 31.979) scale(61.7224)" gradientUnits="userSpaceOnUse"><stop stopColor="#fff"></stop><stop offset=".5" stopColor="#4c6b97"></stop><stop offset="1" stopColor="#231f20"></stop></radialGradient></defs></svg>
-  ),
-  whatsapp: () => (
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="none" viewBox="0 0 353 353">
-<circle cx="176.5" cy="176.5" r="170.4" fill="#fff"></circle><path fill="#000" d="M164.94.095c-.759.069-3.174.31-5.348.483-50.138 4.52-97.101 31.569-126.846 73.143C16.183 96.837 5.59 123.058 1.587 150.83.173 160.526 0 163.39 0 176.535c0 13.145.173 16.008 1.587 25.703C11.18 268.515 58.35 324.2 122.325 344.832c11.456 3.691 23.533 6.21 37.267 7.728 5.348.587 28.468.587 33.816 0 23.706-2.622 43.789-8.487 63.595-18.596 3.037-1.553 3.623-1.967 3.209-2.312-.276-.207-13.216-17.561-28.743-38.538l-28.227-38.124-35.369-52.338c-19.461-28.774-35.472-52.304-35.61-52.304-.138-.034-.276 23.219-.345 51.614-.104 49.716-.138 51.717-.759 52.89-.898 1.691-1.588 2.381-3.037 3.14-1.104.552-2.07.656-7.281.656h-5.969l-1.588-1.001a6.45 6.45 0 01-2.312-2.519l-.724-1.552.069-69.175.103-69.21 1.07-1.345c.552-.725 1.725-1.656 2.553-2.105 1.415-.69 1.967-.759 7.937-.759 7.039 0 8.212.276 10.041 2.277.518.552 19.669 29.395 42.581 64.138 22.912 34.743 54.244 82.182 69.634 105.471l27.95 42.333 1.415-.932c12.526-8.142 25.776-19.735 36.266-31.81 22.326-25.635 36.715-56.893 41.546-90.221 1.414-9.695 1.587-12.558 1.587-25.703s-.173-16.009-1.587-25.704C341.82 84.554 294.65 28.869 230.675 8.237 219.391 4.58 207.383 2.062 193.926.544c-3.313-.346-26.122-.725-28.986-.449zm72.257 106.747c1.656.828 3.002 2.415 3.485 4.071.276.897.345 20.08.276 63.31l-.104 62.033-10.938-16.767-10.973-16.768v-45.093c0-29.154.138-45.542.345-46.335.552-1.932 1.76-3.451 3.416-4.348 1.415-.724 1.932-.793 7.35-.793 5.107 0 6.004.069 7.143.69z"></path></svg>
-  ),
-  googleDocs: () => (
-<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
-<path fill="#00acc1" d="M24,9.604c-6.4,0-10.4,3.199-12,9.597c2.4-3.199,5.2-4.398,8.4-3.599 c1.826,0.456,3.131,1.781,4.576,3.247C27.328,21.236,30.051,24,36,24c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.6 c-1.825-0.456-3.13-1.781-4.575-3.247C32.672,12.367,29.948,9.604,24,9.604L24,9.604z M12,24c-6.4,0-10.4,3.199-12,9.598 c2.4-3.199,5.2-4.399,8.4-3.599c1.825,0.457,3.13,1.781,4.575,3.246c2.353,2.388,5.077,5.152,11.025,5.152 c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.599c-1.826-0.456-3.131-1.781-4.576-3.246C20.672,26.764,17.949,24,12,24 L12,24z"></path>
-</svg>
-  ),
-  zapier: () => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Alpinejs-Icon--Streamline-Svg-Logos" height="100" width="100"><desc>Alpinejs Icon Streamline Icon: https://streamlinehq.com</desc><path fill="#77c1d2" d="m18.527775 6.6106 5.2222 5.199325 -5.2222 5.1993 -5.222225 -5.1993 5.222225 -5.199325Z" strokeWidth="0.25"></path><path fill="#2d3441" d="m5.472225 6.6106 10.826325 10.778825H5.8541L0.25 11.809925l5.222225 -5.199325Z" strokeWidth="0.25"></path></svg>
-  ),
-  messenger: () => (
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Figma--Streamline-Svg-Logos" height="100" width="100"><desc>Figma Streamline Icon: https://streamlinehq.com</desc><path fill="#0acf83" d="M8.0833 23.750025c2.162 0 3.91665 -1.754675 3.91665 -3.916675V15.916675H8.0833c-2.162 0 -3.916675 1.754675 -3.916675 3.916675s1.754675 3.916675 3.916675 3.916675Z" strokeWidth="0.25"></path><path fill="#a259ff" d="M4.166625 11.999975c0 -2.162 1.754675 -3.91665 3.916675 -3.91665h3.91665v7.833325H8.0833c-2.162 0 -3.916675 -1.754675 -3.916675 -3.916675Z" strokeWidth="0.25"></path><path fill="#f24e1e" d="M4.166625 4.166675C4.166625 2.0046675 5.9213 0.25 8.0833 0.25h3.91665v7.833325H8.0833c-2.162 0 -3.916675 -1.75465 -3.916675 -3.91665Z" strokeWidth="0.25"></path><path fill="#ff7262" d="M11.999875 0.25h3.916675c2.162 0 3.91665 1.7546675 3.91665 3.916675 0 2.162 -1.75465 3.91665 -3.91665 3.91665H11.999875V0.25Z" strokeWidth="0.25"></path><path fill="#1abcfe" d="M19.8332 11.999975c0 2.162 -1.75465 3.916675 -3.91665 3.916675s-3.916675 -1.754675 -3.916675 -3.916675 1.754675 -3.91665 3.916675 -3.91665 3.91665 1.75465 3.91665 3.91665Z" strokeWidth="0.25"></path></svg>
-  ),
-  vscode: () => (
-    <svg
-      width="100"
-      height="100"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <radialGradient
-        id="8O3wK6b5ASW2Wn6hRCB5xa_YFbzdUk7Q3F8_gr1"
-        cx="11.087"
-        cy="7.022"
-        r="47.612"
-        gradientTransform="matrix(1 0 0 -1 0 50)"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset="0" stopColor="#1292ff"></stop>
-        <stop offset=".079" stopColor="#2982ff"></stop>
-        <stop offset=".23" stopColor="#4e69ff"></stop>
-        <stop offset=".351" stopColor="#6559ff"></stop>
-        <stop offset=".428" stopColor="#6d53ff"></stop>
-        <stop offset=".754" stopColor="#df47aa"></stop>
-        <stop offset=".946" stopColor="#ff6257"></stop>
-      </radialGradient>
-      <path
-        fill="url(#8O3wK6b5ASW2Wn6hRCB5xa_YFbzdUk7Q3F8_gr1)"
-        d="M44,23.5C44,34.27,35.05,43,24,43c-1.651,0-3.25-0.194-4.784-0.564	c-0.465-0.112-0.951-0.069-1.379,0.145L13.46,44.77C12.33,45.335,11,44.513,11,43.249v-4.025c0-0.575-0.257-1.111-0.681-1.499	C6.425,34.165,4,29.11,4,23.5C4,12.73,12.95,4,24,4S44,12.73,44,23.5z"
-      />
-      <path
-        d="M34.992,17.292c-0.428,0-0.843,0.142-1.2,0.411l-5.694,4.215	c-0.133,0.1-0.28,0.15-0.435,0.15c-0.15,0-0.291-0.047-0.41-0.136l-3.972-2.99c-0.808-0.601-1.76-0.918-2.757-0.918	c-1.576,0-3.025,0.791-3.876,2.116l-1.211,1.891l-4.12,6.695c-0.392,0.614-0.422,1.372-0.071,2.014	c0.358,0.654,1.034,1.06,1.764,1.06c0.428,0,0.843-0.142,1.2-0.411l5.694-4.215c0.133-0.1,0.28-0.15,0.435-0.15	c0.15,0,0.291,0.047,0.41,0.136l3.972,2.99c0.809,0.602,1.76,0.918,2.757,0.918c1.576,0,3.025-0.791,3.876-2.116l1.211-1.891	l4.12-6.695c0.392-0.614,0.422-1.372,0.071-2.014C36.398,17.698,35.722,17.292,34.992,17.292L34.992,17.292z"
-        opacity=".05"
-      />
-      <path
-        d="M34.992,17.792c-0.319,0-0.63,0.107-0.899,0.31l-5.697,4.218	c-0.216,0.163-0.468,0.248-0.732,0.248c-0.259,0-0.504-0.082-0.71-0.236l-3.973-2.991c-0.719-0.535-1.568-0.817-2.457-0.817	c-1.405,0-2.696,0.705-3.455,1.887l-1.21,1.891l-4.115,6.688c-0.297,0.465-0.32,1.033-0.058,1.511c0.266,0.486,0.787,0.8,1.325,0.8	c0.319,0,0.63-0.107,0.899-0.31l5.697-4.218c0.216-0.163,0.468-0.248,0.732-0.248c0.259,0,0.504,0.082,0.71,0.236l3.973,2.991	c0.719,0.535,1.568,0.817,2.457,0.817c1.405,0,2.696-0.705,3.455-1.887l1.21-1.891l4.115-6.688c0.297-0.465,0.32-1.033,0.058-1.511	C36.051,18.106,35.531,17.792,34.992,17.792L34.992,17.792z"
-        opacity=".07"
-      />
-      <path
-        fill="#ffffff"
-        d="M34.394,18.501l-5.7,4.22c-0.61,0.46-1.44,0.46-2.04,0.01L22.68,19.74	c-1.68-1.25-4.06-0.82-5.19,0.94l-1.21,1.89l-4.11,6.68c-0.6,0.94,0.55,2.01,1.44,1.34l5.7-4.22c0.61-0.46,1.44-0.46,2.04-0.01	l3.974,2.991c1.68,1.25,4.06,0.82,5.19-0.94l1.21-1.89l4.11-6.68C36.434,18.901,35.284,17.831,34.394,18.501z"
-      />
-    </svg>
-  ),
-};

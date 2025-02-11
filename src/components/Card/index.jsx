@@ -2,36 +2,44 @@
 /* eslint-disable react/no-unknown-property */
 
 import * as THREE from 'three'
+
 import { useEffect, useRef, useState } from 'react'
 import { Canvas, extend, useThree, useFrame } from '@react-three/fiber'
-import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei'
+import { useGLTF, useTexture, Environment, Lightformer, Html } from '@react-three/drei'
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 // import { useControls } from 'leva'
-
+import DelayedComponent from "@/components/Delay";
 extend({ MeshLineGeometry, MeshLineMaterial })
-useGLTF.preload('/3d/tag6.glb')
+useGLTF.preload('/3d/tag.glb')
 useTexture.preload('https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/SOT1hmCesOHxEYxL7vkoZ/c57b29c85912047c414311723320c16b/band.jpg')
 
 export default function index() {
   // const { debug } = useControls({ debug: false })
   return (
 
-   <div className=' z-10 w-full h-full   absolute top-0    '>
+   <div className=' z-10 w-full  h-[110vh] md:top-0  bottom-0  absolute -top-28    '>
 
     <Canvas     camera={{ position: [0, 0, 13], fov: 25 }} >
 
       <ambientLight intensity={Math.PI} />
-  
+      <DelayedComponent>
+
       <Physics    interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
-        <Band />
+      
+
+
+        <Band   />
+   
+
       </Physics>
+      </DelayedComponent>
       <Environment  blur={0.75}>
         <color attach="background" args={['black']} />
-        <Lightformer intensity={2} color="white" position={[0, -1, 5]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
-        <Lightformer intensity={3} color="white" position={[-1, -1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
-        <Lightformer intensity={3} color="white" position={[1, 1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
-        <Lightformer intensity={10} color="white" position={[-10, 0, 14]} rotation={[0, Math.PI / 2, Math.PI / 3]} scale={[100, 10, 1]} />
+        <Lightformer intensity={5} color="white" position={[0, -1, 5]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
+        <Lightformer intensity={6} color="white" position={[-1, -1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
+        <Lightformer intensity={6} color="white" position={[1, 1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
+        <Lightformer intensity={9} color="white" position={[-10, 0, 14]} rotation={[0, Math.PI / 2, Math.PI / 3]} scale={[100, 10, 1]} />
       </Environment>
     </Canvas>
    </div>
@@ -43,7 +51,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const band = useRef(), fixed = useRef(), j1 = useRef(), j2 = useRef(), j3 = useRef(), card = useRef() // prettier-ignore
   const vec = new THREE.Vector3(), ang = new THREE.Vector3(), rot = new THREE.Vector3(), dir = new THREE.Vector3() // prettier-ignore
   const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 2, linearDamping: 2 }
-  const { nodes, materials } = useGLTF('/3d/tag6.glb')
+  const { nodes, materials } = useGLTF('/3d/tag5.glb')
   const texture = useTexture('https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/SOT1hmCesOHxEYxL7vkoZ/c57b29c85912047c414311723320c16b/band.jpg')
   const { width, height } = useThree((state) => state.size)
   const [curve] = useState(() => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]))
@@ -95,6 +103,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
   return (
     <>
+  
       <group position={[0, 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>

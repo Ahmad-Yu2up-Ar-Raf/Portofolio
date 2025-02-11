@@ -61,8 +61,8 @@ export default function index() {
         <div className='max-w-[73rem] m-auto'>
 
         <>
-          <section className="text-white  h-[70vh] pb-20  w-full  content-end ">
-            <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+          <section className="text-white  h-[40vh] pb-16  w-full  content-end ">
+            {/* <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div> */}
          <div className='md:flex  space-y-3 md:items-center md:justify-between'>
 
             <h1 className=" text-xl  font-semibold  tracking-tight leading-[120%]">
@@ -202,7 +202,7 @@ export const Card = ({
             className={`relative w-full h-full  rounded-2xl overflow-hidden `}
           >
             <motion.div
-              className={`w-full h-full`}
+              className={`w-full relative h-full`}
               style={{ scale: imageScale }}
             >
               <Image fill src='https://framerusercontent.com/images/ZXVxrdjNY7pALFn5Ya6mbHGW0.png?scale-down-to=2048' alt="image" className="object-cover" />

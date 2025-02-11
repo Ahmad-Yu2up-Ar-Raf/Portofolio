@@ -1,3 +1,6 @@
+
+
+
 import '@/styles/globals.css'
 import AppShell from '@/components/AppShell/AppShell';
 import { AnimatePresence } from 'framer-motion'
