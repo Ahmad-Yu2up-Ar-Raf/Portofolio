@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import SpotlightCard from "../combine/CPU";
+import Header from "@/components/ui/Header";
+import SpotlightCard from "../ui/combine/CPU";
 
 export default function AppShell(props) {
   const { children } = props;

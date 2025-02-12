@@ -23,14 +23,14 @@ const AnimatedCPU = () => {
 < >
   {/* svg 1 */}
 <svg 
-      className=" w-full md:hidden h-full" 
+      className="absolute top-[30px] block w-full h-[312px] md:hidden " 
      ref={svgRef}
        fill="none"
       viewBox="0 0 400 312"
       
       >
   
-    {/* <path d="M140 36L140 23C140 20.7909 138.209 19 136 19L62.0001 19" stroke="currentColor" strokeOpacity="0.1"/>
+    <path d="M140 36L140 23C140 20.7909 138.209 19 136 19L62.0001 19" stroke="currentColor" strokeOpacity="0.1"/>
     <path d="M116 62L16.0001 62" stroke="currentColor" strokeOpacity="0.1"/>
     <g>
     <motion.path
@@ -42,32 +42,32 @@ const AnimatedCPU = () => {
      
     <motion.path
      d="M284 62.0076L559 62.0076C561.209 62.0076 563 63.7985 563 66.0076L563 195.5"
-     stroke="url(#orange-pulse-2)"
+     stroke="url(#orange-pulse-22)"
      strokeLinecap="round" 
      strokeWidth="2"
      />
-    </g> */}
-    {/* <g>
+    </g>
+    <g>
     <motion.path 
          {...pathAnimation}
          transition={{ delay: 0.4 }}
 
     d="M116 81.9318L-160 81.9318C-162.209 81.9318 -164 83.7226 -164 85.9317L-164 105.841"
      stroke="currentColor" 
-     strokeOpacity="0.2"/>
+     strokeOpacity="0.1"/>
     <motion.path 
     d="M116 81.9318L-160 81.9318C-162.209 81.9318 -164 83.7226 -164 85.9317L-164 105.841"
-               stroke="url(#orange-pulse-1)"
+               stroke="url(#orange-pulse-11)"
                    strokeLinecap="round" 
                    strokeWidth="2"
                    
                    />
                    
-   </g>  */}
+   </g> 
     <path d="M284.5 82L370 82C372.209 82 374 83.7909 374 86L374 301.883C374 304.092 372.209 305.883 370 305.883L240 305.883C237.791 305.883 236 307.674 236 309.883L236 312" stroke="currentColor" strokeOpacity="0.1"/>
     <path d="M140 108L140 117.825C140 120.034 138.209 121.825 136 121.825L67.0001 121.825" stroke="currentColor" strokeOpacity="0.1"/>
     <path d="M164 36L164 4" stroke="url(#paint0_linear_114_9407)" strokeOpacity="0.1"/>
-    {/* <g>
+    <g>
 
     <motion.path
      d="M164 172.5L164 108"
@@ -75,20 +75,30 @@ const AnimatedCPU = () => {
      transition={{ delay: 0.4 }}/>
          <motion.path
      d="M164 172.5L164 108" 
-     stroke="url(#pink-pulse-1)" 
+     stroke="url(#blue-pulse-11)" 
    strokeLinecap="round" 
 
    strokeWidth="2"
     
      />
-    </g> */}
+    </g>
     <path d="M188 36L188 4" stroke="url(#paint1_linear_114_9407)" strokeOpacity="0.1"/>
     <path d="M188 137.689L188 107.803" stroke="currentColor" strokeOpacity="0.1"/>
     <path d="M212 36.1364L212 4.25757" stroke="currentColor" strokeOpacity="0.1"/>
     <path d="M212 138L212 108" stroke="currentColor" strokeOpacity="0.1"/>
     <path d="M236 36L236 8C236 5.79086 237.791 4 240 4L306 4" stroke="url(#paint2_linear_114_9407)" strokeOpacity="0.1"/>
     <path d="M236 107.803L236 133.689C236 135.898 237.791 137.689 240 137.689L312 137.689" stroke="currentColor" strokeOpacity="0.1"/>
+    <g>
+
     <path d="M260 36.1364L260 28.1819C260 25.9727 261.791 24.1819 264 24.1819L638 24.1819C640.209 24.1819 642 25.9727 642 28.1819L642 203.5" stroke="currentColor" strokeOpacity="0.1"/>
+    <motion.path 
+    d="M260 36.1364L260 28.1819C260 25.9727 261.791 24.1819 264 24.1819L638 24.1819C640.209 24.1819 642 25.9727 642 28.1819L642 203.5"
+    
+     stroke="url(#orange-pulse-21)" 
+     strokeLinecap="round" 
+  
+     strokeWidth="2"/>
+    </g>
     <path d="M260 107.803L260 116.754C260 118.963 261.791 120.754 264 120.754L312 120.754" stroke="currentColor" strokeOpacity="0.1"/>
     <ellipse cx="212" cy="4.25755" fill="var(--geist-background)" rx="4" ry="3.98485"/>
     <path d="M215.5 4.25755C215.5 6.18039 213.935 7.7424 212 7.7424C210.065 7.7424 208.5 6.18039 208.5 4.25755C208.5 2.33471 210.065 0.772705 212 0.772705C213.935 0.772705 215.5 2.33471 215.5 4.25755Z" stroke="currentColor" strokeOpacity="0.1"/>
@@ -108,8 +118,8 @@ const AnimatedCPU = () => {
     <path d="M315.5 120.754C315.5 122.677 313.935 124.239 312 124.239C310.065 124.239 308.5 122.677 308.5 120.754C308.5 118.831 310.065 117.269 312 117.269C313.935 117.269 315.5 118.831 315.5 120.754Z" stroke="currentColor" strokeOpacity="0.1"/>
   
     <defs>
-    {/* <motion.linearGradient
-          id="orange-pulse-1"
+    <motion.linearGradient
+          id="orange-pulse-11"
           gradientUnits="userSpaceOnUse"
           animate={{
             x1: [83, 400],
@@ -130,30 +140,10 @@ const AnimatedCPU = () => {
           <stop offset="1" stopColor="#F7CC4B" stopOpacity="0" />
         </motion.linearGradient>
 
-    <motion.linearGradient
-          id="pink-pulse-1"
-          gradientUnits="userSpaceOnUse"
-          animate={{
-            x1: [83, 400],
-            x2: [83, 350],
-            y1: [320, 83],
-            y2: [415, 133.75]
-          }}
-          transition={{
-            duration: 2.2,
-            repeat: Infinity,
-            repeatDelay: 1.8,
-            delay: 0.5
-          }}
-        >
-   <stop stopColor="#FF4A81" stopOpacity="0" />
-          <stop offset="0.0564843" stopColor="#FF4A81" />
-          <stop offset="0.4616" stopColor="#DF6CF6" />
-          <stop offset="1" stopColor="#0196FF" stopOpacity="0" />
-        </motion.linearGradient>
+
 
     <motion.linearGradient
-          id="blue-pulse-1"
+          id="blue-pulse-11"
           gradientUnits="userSpaceOnUse"
           animate={{
             x1: [83, 400],
@@ -162,65 +152,64 @@ const AnimatedCPU = () => {
             y2: [415, 133.75]
           }}
           transition={{
-            duration: 2.2,
+            duration: 0.9,
             repeat: Infinity,
-            repeatDelay: 1.8,
-            delay: 0.5
+            repeatDelay: 1.9,
+            delay: 0.3
           }}
         >
-   <stop stopColor="#FF4A81" stopOpacity="0" />
-          <stop offset="0.0564843" stopColor="#FF4A81" />
-          <stop offset="0.4616" stopColor="#DF6CF6" />
-          <stop offset="1" stopColor="#0196FF" stopOpacity="0" />
-        </motion.linearGradient>
-
-
-        <motion.linearGradient
-          id="orange-pulse-2"
-          gradientUnits="userSpaceOnUse"
-          animate={{
-            x1: [826, 360],
-            x2: [826, 400],
-            y1: [270, 130],
-            y2: [340, 170]
-          }}
-          transition={{
-            duration: 2.5,
-            repeat: Infinity,
-            repeatDelay: 2,
-            delay: 0.9
-          }}
-        >
-          <stop stopColor="#FF7432" stopOpacity="0" />
-          <stop offset="0.0550784" stopColor="#FF7432" />
-          <stop offset="0.373284" stopColor="#F7CC4B" />
-          <stop offset="1" stopColor="#F7CC4B" stopOpacity="0" />
-        </motion.linearGradient> */}
-
-
-        {/* <motion.linearGradient
-          id="blue-pulse-1"
-          gradientUnits="userSpaceOnUse"
-          animate={{
-            x1: [83, 400],
-            x2: [83, 350],
-            y1: [320, 83],
-            y2: [415, 133.75]
-          }}
-          transition={{
-            duration: 2.2,
-            repeat: Infinity,
-            repeatDelay: 1.4,
-            delay: 0.5
-          }}
-        >
-          <stop stopColor="#2EB9DF" stopOpacity="0" />
+  <stop stopColor="#2EB9DF" stopOpacity="0" />
           <stop offset="0.05" stopColor="#2EB9DF" />
           <stop offset="1" stopColor="#2EB9DF" stopOpacity="0" />
-        </motion.linearGradient> */}
+        </motion.linearGradient>
 
 
-       
+  
+
+        <motion.linearGradient
+          id="orange-pulse-22"
+          gradientUnits="userSpaceOnUse"
+          animate={{
+            x1: [563, 284],   
+            x2: [520, 284],  
+            y1: [105, 72],  
+            y2: [32, 162]  
+          }}
+          transition={{
+            duration: 0.9,
+            repeat: Infinity,
+            repeatDelay: 1.9,
+            delay: 0.3
+          }}
+        >
+   <stop stopColor="#FF4A81" stopOpacity="0" />
+          <stop offset="0.0564843" stopColor="#FF4A81" />
+          <stop offset="0.4616" stopColor="#DF6CF6" />
+          <stop offset="1" stopColor="#0196FF" stopOpacity="0" />
+        </motion.linearGradient>
+
+
+
+<motion.linearGradient
+    id="orange-pulse-21"
+    gradientUnits="userSpaceOnUse"
+    animate={{
+      x1: [642  ,260 ],
+      x2: [590  , 260],
+      y1: [204  , 36],
+      y2: [250   , 90]
+    }}
+    transition={{
+      duration: 2.2,
+      repeat: Infinity,
+      repeatDelay: 1.4,
+      delay: 0.5
+    }}
+  >
+    <stop stopColor="#FF4A81" stopOpacity="0" />
+    <stop offset="0.05" stopColor="#FF4A81" />
+    <stop offset="1" stopColor="#FF4A81" stopOpacity="0" />
+  </motion.linearGradient>
 
   </defs>
   </svg>

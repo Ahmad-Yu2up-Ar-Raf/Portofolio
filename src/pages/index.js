@@ -1,10 +1,10 @@
 'use client';
-import  Card  from "@/components/Card";
+import  Card  from "@/components/ui/Card";
 
-import Project from '../components/ui/Project'
-import Stacks from '../components/ui/Stacks'
+import Project from '../components/ui/Section/Project'
+import Stacks from '../components/ui/Section/Stacks'
 import Preloader from '../components/Preloader';
-import  Hero from '@/components/ui/Hero'
+import  Hero from '@/components/ui/Section/Hero'
 
 
 export default function Home() {

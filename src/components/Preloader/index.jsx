@@ -75,7 +75,7 @@ const SVG = ({height, width}) => {
 
     return (
         <motion.svg className={'preloard'} {...anim(translate)}>
-            <motion.path {...anim(curve(initialPath, targetPath))} />
+            <motion.path className={'preloardpath'}  {...anim(curve(initialPath, targetPath))} />
         </motion.svg>
     )
 }
