@@ -4,7 +4,7 @@ import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-import ModeToggle from "../core/Magnifier/mode-toggle";
+import ModeToggle from "../../core/Magnifier/mode-toggle";
 import { buttonVariants } from "@/components/ui/core/button"
 import { Separator } from "@/components/ui/core/Magnifier/separator";
 import {
@@ -14,7 +14,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/core/Magnifier/tooltip";
 import { cn } from "@/lib/utils";
-import { Dock, DockIcon } from "@/components/ui/magicui/dock";
+import { Dock, DockIcon } from "@/components/ui/core/magicui/dock";
 
 const Icons = {
   calendar: (props) => <CalendarIcon {...props} />,
@@ -63,7 +63,7 @@ const Icons = {
 const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: PencilIcon, label: "Blog" },
+    { href: "/about", icon: PencilIcon, label: "Blog" },
   ],
   contact: {
     social: {

@@ -8,6 +8,7 @@ export default {
   ],
   theme: {
   	extend: {
+		
   		colors: {
   			background: 'hsl(var(--background))',
   			customGray: 'rgb(153, 153, 153)',
@@ -51,12 +52,19 @@ export default {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
-  		fontFamily: {
-  			poppins: [
-  				'Poppins',
-  				'sans-serif'
-  			]
-  		},
+  		// fontFamily: {
+  		// 	poppins: [
+  		// 		'Poppins',
+  		// 		'sans-serif'
+  		// 	]
+  		// },
+		  fontFamily: {
+			montserrat: [
+				'Montserrat',
+				'sans-serif'
+			]
+		},
+		
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -67,9 +75,20 @@ export default {
   			'line-shadow': 'line-shadow 15s linear infinite',
   			shine: 'shine var(--duration) infinite linear',
   			'background-position-spin': 'background-position-spin 3000ms infinite alternate',
-  			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear'
+  			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
+				'star-movement-bottom': 'star-movement-bottom linear infinite alternate',
+									        'star-movement-top': 'star-movement-top linear infinite alternate',
   		},
   		keyframes: {
+		
+			shine: {
+				          '0%': { 'background-position': '100%' },
+				          '100%': { 'background-position': '-100%' },
+				        },
+						animation: {
+							        shine: 'shine 5s linear infinite',
+								
+							      },
   			orbit: {
   				'0%': {
   					transform: 'rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg))'
@@ -109,7 +128,15 @@ export default {
   				'100%': {
   					'offset-distance': '100%'
   				}
-  			}
+  			},
+			  'star-movement-bottom': {
+				          '0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+				          '100%': { transform: 'translate(-100%, 0%)', opacity: '0' },
+				        },
+				        'star-movement-top': {
+				          '0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+				          '100%': { transform: 'translate(100%, 0%)', opacity: '0' },
+				        },
   		}
   	}
   },

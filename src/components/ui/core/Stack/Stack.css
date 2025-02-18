@@ -1,0 +1,18 @@
+.stack::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.2px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index:20;
+    background: conic-gradient(from 180deg at 50% 50%,#333333 0deg,#333333 176deg,#333333 193deg,#333333 217deg, #333333 1turn);
+}
+
+
+
+
+

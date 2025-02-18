@@ -3,24 +3,28 @@
 
 import * as THREE from 'three'
 
-import { useEffect, useRef, useState } from 'react'
-import { Canvas, extend, useThree, useFrame } from '@react-three/fiber'
-import { useGLTF, useTexture, Environment, Lightformer, Html } from '@react-three/drei'
-import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier'
-import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
+import { useEffect, useRef, useState } from 'react';
+import { Canvas, extend, useThree, useFrame } from '@react-three/fiber';
+import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei';
+import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier';
+import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 // import { useControls } from 'leva'
-import DelayedComponent from "@/components/Delay";
+import DelayedComponent from "@/components/Animation/Content";
 extend({ MeshLineGeometry, MeshLineMaterial })
 useGLTF.preload('/3d/tag.glb')
 useTexture.preload('https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/SOT1hmCesOHxEYxL7vkoZ/c57b29c85912047c414311723320c16b/band.jpg')
 
-export default function index() {
+export default function index({ position = [0, 0, 13], gravity = [0, -40, 0], fov = 25, transparent = true }) {
   // const { debug } = useControls({ debug: false })
   return (
 
-   <div className=' z-10 w-full  h-[110vh] md:top-0  bottom-0  absolute -top-28    '>
+  <div className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100  origin-center">
 
-    <Canvas     camera={{ position: [0, 0, 13], fov: 25 }} >
+    <Canvas   
+    
+    camera={{ position: position, fov: fov }}
+        gl={{ alpha: transparent }}
+        onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)} >
 
       <ambientLight intensity={Math.PI} />
       <DelayedComponent>

@@ -57,8 +57,8 @@ export default function index() {
   return (
     <ReactLenis root>
 
-      <main className="px-4   " ref={container}>
-        <div className='max-w-[73rem] m-auto'>
+      <main className="px-3   " ref={container}>
+        <div className='max-w-6xl m-auto'>
 
         <>
           <section className="text-white  h-[40vh] pb-16  w-full  content-end ">
@@ -133,22 +133,29 @@ export const Card = ({
  onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
         style={{
-          background: isHovered ? `linear-gradient(to top, ${color} , ${color} )` : `linear-gradient(to top, #0D1A1A 40% , ${color} )`,
+          background: `linear-gradient(to top, #0D1A1A 40% , ${color} )`,
           scale,
-           willChange: "background-color",
-          transition: "background-color 0.3s ease-in-out",
+  
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className={`flex flex-col group     before:absolute before:inset-0 before:bg-[url('https://raw.githubusercontent.com/taimoorshahzada/Film-Grain-Noise-Effect-on-Background-in-Website-using-Pure-CSS/refs/heads/main/noise.gif')] before:opacity-5  cursor-pointer border  border-gray-600 group relative space-y-3  -top-[25%] lg:h-[120vh] h-[110vh] w-full rounded-2xl p-3 lg:p-5    origin-top`}
+        className={`flex flex-col group  projek  overflow-hidden   before:absolute before:inset-0 before:bg-[url('https://raw.githubusercontent.com/taimoorshahzada/Film-Grain-Noise-Effect-on-Background-in-Website-using-Pure-CSS/refs/heads/main/noise.gif')] before:opacity-5  cursor-pointer border  border-gray-600 group relative space-y-3  -top-[25%] lg:h-[120vh] h-[110vh] w-full rounded-2xl p-3 lg:p-5    origin-top`}
       >
-
+ <div className='z-10'
+      style={{
+        position: "absolute",
+        inset: 0,
+        background: `linear-gradient(to top, #0D1A1A, #0D1A1A)`,
+        opacity: isHovered ? 1 : 0,
+        transition: "opacity 0.3s ease-in-out",
+      }}
+    />
         
-        <div className='flex items-end border-b pt-3 border-customGray pb-4 justify-between'>
+        <div className='flex z-20 relative items-end border-b pt-3 border-customGray pb-4 justify-between'>
          
         <h2 className="text-base  font-semibold">2024</h2>
         <h2 className="text-sm  font-semibold">Mobile, Web, Website & Admin</h2>
         </div> 
-        <div className='block space-y-5  lg:space-y-8'>
+        <div className='block  z-20 relative space-y-5  lg:space-y-8'>
 
         <div className='flex justify-between text-3xl'>
           <h1  className='font-bold  lg:text-6xl'>
@@ -192,7 +199,7 @@ export const Card = ({
         
         </div> */}
         </div>
-        <div className={` block h-full lg:pt-6 pt-5 relative rounded-b-2xl  overflow-hidden  space-y-7  `}>
+        <div className={` block  z-20 relative h-full lg:pt-6 pt-5 relative rounded-b-2xl  overflow-hidden  space-y-7  `}>
           <div className={`w-full relative `}>
             <p className="text-base leading-5 font-medium">  Increase in user base, demonstrating significant growth and effectiveness</p>
        

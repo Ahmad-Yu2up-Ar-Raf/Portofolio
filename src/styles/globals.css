@@ -14,11 +14,16 @@
   }
 }
 
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Poppins', sans-serif;
-  
+  font-family: 'Montserrat', sans-serif;
+ 
 }
 
 @layer base {
