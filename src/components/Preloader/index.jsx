@@ -33,7 +33,7 @@ export function useFirstVisitHome() {
 
 
 export default function Curve({ children, backgroundColor }) {
- 
+  const pathname = usePathname();
   const router = useRouter();
  
   const [dimensions, setDimensions] = useState({
@@ -56,7 +56,7 @@ export default function Curve({ children, backgroundColor }) {
   }, []);
 
   const handleAnimationComplete = () => {
-    console.log(pathname);
+    // console.log(pathname);
   };
 
   // Mendapatkan varian animasi untuk teks
@@ -131,9 +131,9 @@ const SVG = ({ height, width }) => {
   );
 
   return (
-    <motion.svg className={'preloard'}  {...anim(translateVariants)}>
+    <motion.svg className={'preloard'} {...anim(translateVariants)}>
       <motion.path
-        className={'preloardpath'}
+
         {...anim(curveVariants)}
       />
     </motion.svg>

@@ -1,10 +1,24 @@
-import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useState,useEffect } from 'react';
+import { motion,useInView } from 'framer-motion';
 
 const AnimatedCPU = () => {
   const svgRef = useRef(null);
-  const isInView =  true;
+  const svgRefContainer = useRef(null);
+  const isInViewRaw = useInView(svgRefContainer, { once: false });
+  const [isInView, setIsInView] = useState(isInViewRaw);
 
+  useEffect(() => {
+
+    const timer = setTimeout(() => {
+      setIsInView(isInViewRaw);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [isInViewRaw]);
+
+   
+//  console.log(isInView)
+
+  
   const pathAnimation = {
     animate: { 
       pathLength: isInView ? 1 : 0,
@@ -20,7 +34,10 @@ const AnimatedCPU = () => {
   };
 
   return (
-< >
+<>
+
+<div className="" ref={svgRefContainer}></div>
+
   {/* svg 1 */}
 <svg 
       className="absolute top-[30px] block w-full h-[312px] md:hidden " 

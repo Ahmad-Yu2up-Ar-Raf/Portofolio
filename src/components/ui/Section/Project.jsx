@@ -199,7 +199,7 @@ export const Card = ({
         
         </div> */}
         </div>
-        <div className={` block  z-20 relative h-full lg:pt-6 pt-5 relative rounded-b-2xl  overflow-hidden  space-y-7  `}>
+        <div className={` block  z-20  h-full lg:pt-6 pt-5 relative rounded-b-2xl  overflow-hidden  space-y-7  `}>
           <div className={`w-full relative `}>
             <p className="text-base leading-5 font-medium">  Increase in user base, demonstrating significant growth and effectiveness</p>
        

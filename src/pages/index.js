@@ -10,21 +10,22 @@ import  Hero from '@/components/ui/section/Hero'
 export default function Home() {
 
   return (
-
-    <Preloader>
-
-
-    {/* <Card    /> */}
-
-  <Hero/>
-
-{/* <About/> */}
-   <Project/>
-
-   <Stacks/>
-     
+<Preloader>
 
 
-    </Preloader>
+
+{/* <Card    /> */}
+
+<Hero/>
+
+
+<Project/>
+
+<Stacks/>
+ 
+</Preloader>
+
+
+
   );
 }
