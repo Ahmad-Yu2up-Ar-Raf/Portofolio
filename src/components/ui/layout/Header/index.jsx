@@ -1,11 +1,15 @@
-import { FloatingNav } from "./Float";
-
+import { FloatingNav, Float } from "./Float";
+import { DockDemo } from "./Magnifier";
 export default function index() {
   return (
 
 
+<>
 
-    <FloatingNav/>
+<FloatingNav/>
+
+<Float/>
+</>
 
 
   );

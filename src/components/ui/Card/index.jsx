@@ -9,12 +9,12 @@ import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier';
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 // import { useControls } from 'leva'
-import DelayedComponent from "@/components/Animation/Content";
+
 extend({ MeshLineGeometry, MeshLineMaterial })
 useGLTF.preload('/3d/tag.glb')
 useTexture.preload('https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/SOT1hmCesOHxEYxL7vkoZ/c57b29c85912047c414311723320c16b/band.jpg')
 
-export default function index({ position = [0, 0, 13], gravity = [0, -40, 0], fov = 25, transparent = true }) {
+export default function Card({ position = [0, 0, 13], gravity = [0, -40, 0], fov = 25, transparent = true }) {
   // const { debug } = useControls({ debug: false })
   return (
 
@@ -27,7 +27,7 @@ export default function index({ position = [0, 0, 13], gravity = [0, -40, 0], fo
         onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)} >
 
       <ambientLight intensity={Math.PI} />
-      <DelayedComponent>
+   
 
       <Physics    interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
       
@@ -37,7 +37,7 @@ export default function index({ position = [0, 0, 13], gravity = [0, -40, 0], fo
    
 
       </Physics>
-      </DelayedComponent>
+
       <Environment  blur={0.75}>
         <color attach="background" args={['black']} />
         <Lightformer intensity={5} color="white" position={[0, -1, 5]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
@@ -107,7 +107,6 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
   return (
     <>
-  
       <group position={[0, 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>

@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
@@ -6,6 +8,9 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+	safelist: [
+		{pattern: /(bg|text|border|fill)-./}
+	  ],
   theme: {
   	extend: {
 		
@@ -53,14 +58,19 @@ export default {
   			}
   		},
   		// fontFamily: {
-  		// 	poppins: [
-  		// 		'Poppins',
-  		// 		'sans-serif'
-  		// 	]
+  	
   		// },
 		  fontFamily: {
 			montserrat: [
 				'Montserrat',
+				'sans-serif'
+			],
+			poppins: [
+				'Poppins',
+				'sans-serif'
+			],
+			Outfit: [
+				'Outfit',
 				'sans-serif'
 			]
 		},
@@ -140,5 +150,13 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+	require("tailwindcss-animate"),
+	
+	
+
+
+  ],
 };
+
+

@@ -26,14 +26,14 @@ const anim = (variants) => {
 
 
 export function useFirstVisitHome() {
-    const pathname = usePathname();
+ 
     const { isFirstVisit } = useSessionState();
-    return pathname === '/' && isFirstVisit ;
+    return isFirstVisit ;
   }
 
 
 export default function Curve({ children, backgroundColor }) {
-  const pathname = usePathname();
+ 
   const router = useRouter();
  
   const [dimensions, setDimensions] = useState({
@@ -55,12 +55,10 @@ export default function Curve({ children, backgroundColor }) {
     };
   }, []);
 
-  const handleAnimationComplete = () => {
-    // console.log(pathname);
-  };
+
 
   // Mendapatkan varian animasi untuk teks
-  const textVariants = createAnimationVariants('text', null, null, useFirstVisitHome());
+  const textVariants = createAnimationVariants('text', null, null,     useFirstVisitHome());
 
   return (
     <motion.div className='page curve' style={{ backgroundColor }}>
@@ -70,7 +68,7 @@ export default function Curve({ children, backgroundColor }) {
       />
 
       <motion.p className='route' {...anim(textVariants)}>
-        {useFirstVisitHome() ? (
+        {    useFirstVisitHome() ? (
           <SplitText
             text='Hello!'
             className='text-2xl font-semibold text-center'
@@ -80,7 +78,7 @@ export default function Curve({ children, backgroundColor }) {
             easing='easeOutCubic'
             threshold={0.2}
             rootMargin='-50px'
-            onLetterAnimationComplete={handleAnimationComplete}
+        
           />
         ) : (
           routes[router.route]
@@ -131,7 +129,7 @@ const SVG = ({ height, width }) => {
   );
 
   return (
-    <motion.svg className={'preloard'} {...anim(translateVariants)}>
+    <motion.svg className={'preloard'} fill={'#101010'} {...anim(translateVariants)}>
       <motion.path
 
         {...anim(curveVariants)}

@@ -1,6 +1,6 @@
 import React , { useRef } from "react"
 
-import { motion,useInView } from 'framer-motion';
+
 import FadeContent from "@/components/Animation/Content";
 const Connecttors = (props) => {
 
@@ -36,7 +36,7 @@ export default function Cpu() {
 
 
 <FadeContent threshold={1.0} blur={true} delay={10} duration={1000} easing="ease-out" initialOpacity={0}  ref={refs}
- className="poweredby translate-y-[2px] md:translate-y-[8px] flex items-center justify-center content-center  tracking-[-0.04em]  py-[15px] px-[21px] relative border-inherit md:py-[21px] md:px-[25px]  text-[20px] md:text-[24px] rounded-[8px] font-bold text-center w-fit m-auto  bg-[linear-gradient(180deg,#232323,#222222),linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.05)_26.56%,rgba(0,0,0,0.05)_51.56%,rgba(0,0,0,0.05))] ">
+ className="poweredby translate-x-[1px] md:translate-x-0 translate-y-[4px] md:translate-y-[8px] flex items-center justify-center content-center  tracking-[-0.04em]  py-[15px] px-[21px] relative border-inherit md:py-[21px] md:px-[25px]  text-[20px] md:text-[24px] rounded-[8px] font-bold text-center w-fit m-auto  bg-[linear-gradient(180deg,#232323,#222222),linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.05)_26.56%,rgba(0,0,0,0.05)_51.56%,rgba(0,0,0,0.05))] ">
      
 
      <div className="poweredby2 "></div>
@@ -52,7 +52,7 @@ export default function Cpu() {
              background: "linear-gradient(92.66deg, #919191, #eaeaea 19.79%, #828181 33.33%, #c6c6c6 70.31%, #606060)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
-        }} >Crafted with</span>
+        }} >Powered By</span>
       
     <Connecttors variants=" -bottom-[10px]  gap-[18px] "  space="18" length="6"  />
 

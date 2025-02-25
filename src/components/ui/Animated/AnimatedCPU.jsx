@@ -36,7 +36,7 @@ const AnimatedCPU = () => {
   return (
 <>
 
-<div className="" ref={svgRefContainer}></div>
+<div className="relative" ref={svgRefContainer}></div>
 
   {/* svg 1 */}
 <svg 
@@ -106,7 +106,7 @@ const AnimatedCPU = () => {
     strokeOpacity="0.1"/>
     <motion.path
                        {...pathAnimation} 
-                       transition={{ delay: 0.4 }}
+                       transition={{ delay: 0.9 }}
      d="M284.5 82L370 82C372.209 82 374 83.7909 374 86L374 301.883C374 304.092 372.209 305.883 370 305.883L240 305.883C237.791 305.883 236 307.674 236 309.883L236 312"
      
        
@@ -270,32 +270,34 @@ const AnimatedCPU = () => {
 
 
         <motion.linearGradient
-    id="blue-pulse-12"
-    gradientUnits="userSpaceOnUse"
-    initial={{
-      x1: 73,
-      x2: 73,
-      y1: 260,
-      y2: 230
-    }}
-    animate={{
-      x1: [73, 388],   
-      x2: [73, 353],   
-      y1: [260, 184],  
-      y2: [230, 220]   
-    }}
-
-    transition={{
-      duration: 2.5,
-      repeat: Infinity,
-      repeatDelay: 2,
-      delay: 0.9
-    }}
-  >
-    <stop stopColor="#2EB9DF" stopOpacity="0" />
-    <stop offset="0.05" stopColor="#2EB9DF" />
-    <stop offset="1" stopColor="#2EB9DF" stopOpacity="0" />
-  </motion.linearGradient>
+  id="blue-pulse-12"
+  gradientUnits="userSpaceOnUse"
+  initial={{
+    x1: 236,
+    x2: 312,
+    y1: 246,
+    y2: 322
+  }}
+  animate={{
+    // Smoothed coordinates with better continuity
+    x1: [236, 284.5, ],     // Create a complete loop
+    y1: [312, 70, ],        // Create a complete loop
+    x2: [246, 294.5, ],     // Matching offset loop
+    y2: [322, 72, ]        // Matching offset loop
+  }}
+  transition={{
+    duration: 4,              // Slower for smoother transition
+    repeat: Infinity,
+    repeatType: "loop",       // Important for smooth looping
+    delay: 0,
+    ease: [0.45, 0, 0.55, 1]  // Custom ease for smoother transitions
+  }}
+>
+  <stop offset="0" stopColor="#2EB9DF" stopOpacity="0" />
+  <stop offset="0.3" stopColor="#2EB9DF" />
+  <stop offset="0.7" stopColor="#2EB9DF" />
+  <stop offset="1" stopColor="#2EB9DF" stopOpacity="0" />
+</motion.linearGradient>
 
   
 

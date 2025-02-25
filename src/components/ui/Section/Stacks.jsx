@@ -1,15 +1,16 @@
-import React, { useRef  ,useEffect, useState } from "react";
+import React from "react";
 
 import { motion } from 'framer-motion'
 import AnimatedCPU from "@/components/ui/Animated/AnimatedCPU";
 import Cpu from "@/components/ui/Animated/CPU";
 import Tech from "@/components/ui/core/Stack/Tech";
 import "./Stack.css";
+
 export default function index() {
  
 
   return (
-    <section  className="min-h-screen px-1   py-52  content-center "
+    <section  className="min-h-[700px] mt-9 px-1 py-[80px]  border-t   border-b  content-center "
     
     style={{
       background: "radial-gradient(50% 50% at 50% 50%,#121212 0,#000000 100%)"
@@ -23,7 +24,8 @@ export default function index() {
         WebkitTextFillColor: 'transparent'
       }}
       className="text-center  text-[linear-gradient(180deg,#ffffff,#adadad)] lg:text-[32px] text-[24px] leading-[1.25]  tracking-[-0.04em] text-[#fafafa] font-bold ">
-     Committed to Staying Updated with <span className="md:block">the Latest Design Trends & Techniques</span> </h1>
+     <span className="md:hidden">   Built on a foundation of fast, production-grade tooling
+     </span>  <span className="hidden md:inline">Committed to Staying Updated with <span className="md:block">the Latest Design Trends & Techniques</span> </span>   </h1>
 
 
       <div

@@ -17,7 +17,7 @@ export default function Tech() {
       background: "linear-gradient(180deg, #242424, #121212 65.62%)",
       backgroundSize: "cover"}}   >
 <Link  href={"https://react.dev/"} target="blank"  className="absolute left-0 top-0 bottom-0 right-0 flex justify-between  flex-col  gap-[24px] p-[24px]">
-<Image width={100} height={100} className="size-[44px] z-20 flex items-center mb-auto" src='https://nextjs.org/icons/react.svg' alt="image"  />
+<Image height={42} width={42} src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="tailwind" />
 
 <div className="flex flex-col gap-1.5 z-20">
 <div className="flex items-center gap-1" >

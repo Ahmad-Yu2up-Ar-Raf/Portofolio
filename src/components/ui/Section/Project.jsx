@@ -1,225 +1,104 @@
 'use client';
-import { ReactLenis } from 'lenis/react';
-import { useTransform, motion, useScroll } from 'framer-motion';
+
+import { useTransform, motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { ArrowRight} from "lucide-react";
 import Link from 'next/link'; 
+// import { Card } from '../core/Project/Card';
+import { StickyScroll } from '../core/Project/sticky-scroll-reveal';
+import Detail from '../core/Project/Detail';
+  
 
-const projects = [
+
+//   {
+//     title: 'LiveUp',
+//     description:
+//       'Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.',
+//     src: 'rock.jpg',
+//     image: 'Project/LiveUp',
+//     link: 'https://liveup-host.vercel.app/',
+//     Code: 'https://github.com/Ahmad-Yu2up-Ar-Raf/Liveup',
+//     color: 'emerald-',
+//     Tech: [
+//       "Html","Tailwind", "AlpineJS","Javascript","PrelineUI"
+//     ]
+//   },
+//   {
+//     title: 'To Do App',
+//     description:
+//       'This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément.',
+//     src: 'tree.jpg',
+//     image: 'Project/LiveUp',
+//     link: 'https://liveup-host.vercel.app/',
+//     Code: 'https://github.com/Ahmad-Yu2up-Ar-Raf/Liveup',
+//     color: 'purple-',
+//     Tech: [
+//       "Html","Css", "Php","Javascript"
+//     ]
+//   },
+
+// ];
+
+
+const content = [
+
   {
-    title: 'Matthias Leidinger',
-    description:
-      'Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.',
-    src: 'rock.jpg',
-    link: 'https://images.unsplash.com/photo-1605106702842-01a887a31122?q=80&w=500&auto=format&fit=crop',
-    color: '#2C1A47',
+    stackx: ["Tailwindcss", "Alpine.Js","Javascript"],
+    title: "LiveUp",
+    imag: "/Project/fluxLura.avif",
+    colore: "emerald",
+    listx: ["Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus obcaecati voluptates. Amet.","Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus obcaecati voluptates. Amet.", "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus obcaecati voluptates. Amet.","Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus obcaecati voluptates. Amet."],
+    deskripcion:
+      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
   },
   {
-    title: 'Clément Chapillon',
-    description:
-      'This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément.',
-    src: 'tree.jpg',
-    link: 'https://images.unsplash.com/photo-1605106250963-ffda6d2a4b32?w=500&auto=format&fit=crop&q=60',
-    color: '#1B3A6D',
+    stackx: ["Tailwindcss", "Alpine.Js","Javascript"],
+    title: "LiveUp",
+    imag: "/Project/fluxLura.avif",
+    colore: "pink",
+    listx: ["Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus obcaecati voluptates. Amet.","Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus obcaecati voluptates. Amet.", "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus obcaecati voluptates. Amet.","Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus obcaecati voluptates. Amet."],
+    deskripcion:
+      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
   },
-  {
-    title: 'Zissou',
-    description:
-      'Though he views photography as a medium for storytelling, Zissou’s images don’t insist on a narrative. Both crisp and ethereal.',
-    src: 'water.jpg',
-    link: 'https://images.unsplash.com/photo-1605106901227-991bd663255c?w=500&auto=format&fit=crop',
-    color: '#4A1C1C',
-  },
-  {
-    title: 'Mathias Svold and Ulrik Hasemann',
-    description:
-      'The coastlines of Denmark are documented in tonal colors in a pensive new series by Danish photographers Ulrik Hasemann and Mathias Svold; an ongoing project investigating how humans interact with and disrupt the Danish coast.',
-    src: 'house.jpg',
-    link: 'https://images.unsplash.com/photo-1605106715994-18d3fecffb98?w=500&auto=format&fit=crop&q=60',
-    color: '#1F4E3D',
-  },
-  {
-    title: 'Mark Rammers',
-    description:
-      'Dutch photographer Mark Rammers has shared with IGNANT the first chapter of his latest photographic project, ‘all over again’—captured while in residency at Hektor, an old farm in Los Valles, Lanzarote.',
-    src: 'cactus.jpg',
-    link: 'https://images.unsplash.com/photo-1506792006437-256b665541e2?w=500&auto=format&fit=crop',
-    color: '#693D1A',
-  },
+
 ];
+
+
+
 export default function index() {
   const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start start', 'end end'],
-  });
+
   return (
-    <ReactLenis root>
-
-      <main className="px-3   " ref={container}>
-        <div className='max-w-6xl m-auto'>
-
-        <>
-          <section className="text-white  h-[40vh] pb-16  w-full  content-end ">
-            {/* <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div> */}
-         <div className='md:flex  space-y-3 md:items-center md:justify-between'>
-
-            <h1 className=" text-xl  font-semibold  tracking-tight leading-[120%]">
-            Featured Case Studie
-            </h1>
-            <div className="re flex items-center space-x-2 md:space-x-3">
-  <span className="size-1 rounded-full bg-green-500 animate-ping "></span>
-  <h1 className='text-sm text-customGray'>Available for new projects</h1>
-</div>
-         </div>
-          </section>
-        </>
-
-        <section className="text-white   w-full   ">
-          {projects.map((project, i) => {
-            const targetScale = 1 - (projects.length - i) * 0.05;
-            return (
-              <Card
-                key={`p_${i}`}
-                i={i}
-                url={project?.link}
-                src={project?.src}
-                title={project?.title}
-                color={project?.color}
-                description={project?.description}
-                progress={scrollYProgress}
-                range={[i * 0.25, 1]}
-                targetScale={targetScale}
-              />
-            );
-          })}
-        </section>
-        </div>
 
 
-      </main>
-    </ReactLenis>
+      <section className="relative fill mx-auto w-full max-w-7xl mt-0 px-4 py-36 "  
+      style={{opacity:1, transform: "none"}} ref={container}>
+
+
+      <div style={{
+        textShadow: "text-shadow:0px 4px 8px rgba(255,255,255,.05),0px 8px 30px rgba(255,255,255,.25)"
+      }} className='z-2 relative mb-36 text-4xl md:text-5xl text-center'>
+
+<h2 className='mb-4 text-xs block uppercase tracking-widest text-white/70 md:text-sm'>FEATURED CASE STUDIES</h2>
+ 
+ <h1>
+ <span className='font-Outfit'>Curated </span>
+ <span
+
+ >Work</span>
+
+ </h1>
+      </div>
+          <StickyScroll content={content} />
+
+  
+          <Link
+          
+          className="flex justify-center gap-2 text-neutral-300 transition-colors hover:text-neutral-100 md:mt-16" href="/">See more projects
+          <div className="rounded-full bg-white/5 p-0.5 backdrop-blur-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"></path></svg></div></Link>
+      </section>
+  
   );
 }
-export const Card = ({
-  i,
-  title,
-  description,
-  src,
-  url,
-  color,
-  progress,
-  range,
-  targetScale,
-}) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start end', 'start start'],
-  });
-  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
-  const scale = useTransform(progress, range, [1, targetScale]);
-  return (
-    <div
-      ref={container}
-      className="h-full flex items-center justify-center sticky top-40"
-    >
-
-<Link href={`/project/${i}`}>
-      <motion.div 
- 
- onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-        style={{
-          background: `linear-gradient(to top, #0D1A1A 40% , ${color} )`,
-          scale,
-  
-          top: `calc(-5vh + ${i * 25}px)`,
-        }}
-        className={`flex flex-col group  projek  overflow-hidden   before:absolute before:inset-0 before:bg-[url('https://raw.githubusercontent.com/taimoorshahzada/Film-Grain-Noise-Effect-on-Background-in-Website-using-Pure-CSS/refs/heads/main/noise.gif')] before:opacity-5  cursor-pointer border  border-gray-600 group relative space-y-3  -top-[25%] lg:h-[120vh] h-[110vh] w-full rounded-2xl p-3 lg:p-5    origin-top`}
-      >
- <div className='z-10'
-      style={{
-        position: "absolute",
-        inset: 0,
-        background: `linear-gradient(to top, #0D1A1A, #0D1A1A)`,
-        opacity: isHovered ? 1 : 0,
-        transition: "opacity 0.3s ease-in-out",
-      }}
-    />
-        
-        <div className='flex z-20 relative items-end border-b pt-3 border-customGray pb-4 justify-between'>
-         
-        <h2 className="text-base  font-semibold">2024</h2>
-        <h2 className="text-sm  font-semibold">Mobile, Web, Website & Admin</h2>
-        </div> 
-        <div className='block  z-20 relative space-y-5  lg:space-y-8'>
-
-        <div className='flex justify-between text-3xl'>
-          <h1  className='font-bold  lg:text-6xl'>
-
-        Boosting Roqqu's Expansion Across Africa & Europe
-          </h1>
-        <span >
-
-        <ArrowRight  className='size-8 lg:size-20 group-hover:-rotate-45 transition-all ease-in-out duration-100'/>
-        </span>
-        </div>
-        <div className='space-y-5 lg:gap-10 lg:flex lg:space-y-0'>
-
-        <div className='block space-y-2 lg:w-80'>
-          <h1  className='font-bold  lg:text-3xl text-[22px]'>
-
-        Over1m
-          </h1>
-        <p className='text-base font-medium'>
-
-        Increase in user base, demonstrating significant growth and effectiveness
-        </p>
-        </div>
-        <div className='block space-y-2 lg:w-80'>
-          <h1  className='font-bold lg:text-3xl  text-[22px]'>
-
-          35%
-          </h1>
-        <p className='text-base font-medium'>
-
-        Increase in user base, demonstrating significant growth and effectiveness
-        </p>
-        </div>
-        </div>
-        {/* <div className='block '>
-  
-        <p className='text-base'>
-
-        Increase in user base, demonstrating significant growth and effectiveness
-        </p>
-        
-        </div> */}
-        </div>
-        <div className={` block  z-20  h-full lg:pt-6 pt-5 relative rounded-b-2xl  overflow-hidden  space-y-7  `}>
-          <div className={`w-full relative `}>
-            <p className="text-base leading-5 font-medium">  Increase in user base, demonstrating significant growth and effectiveness</p>
-       
-          </div>
-
-          <div
-            className={`relative w-full h-full  rounded-2xl overflow-hidden `}
-          >
-            <motion.div
-              className={`w-full relative h-full`}
-              style={{ scale: imageScale }}
-            >
-              <Image fill src='https://framerusercontent.com/images/ZXVxrdjNY7pALFn5Ya6mbHGW0.png?scale-down-to=2048' alt="image" className="object-cover" />
-            </motion.div>
-          </div>
-        </div>
-      </motion.div>
-
-</Link>
- 
-    </div>
-  );
-};
