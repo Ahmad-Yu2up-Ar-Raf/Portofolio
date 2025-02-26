@@ -54,7 +54,6 @@ export const FloatingNav = ({
   const [visible, setVisible] = useState(true);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
     if (typeof current === "number") {
       let direction = current - scrollYProgress.getPrevious();
  
@@ -114,23 +113,17 @@ export const Float = ({
   const [visible, setVisible] = useState(true);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
-    if (typeof current === "number") {
-      let direction = current - scrollYProgress.getPrevious();
- 
 
-        if (direction >= 0) {
-         setVisible(false);
-        } else {
-          setVisible(true);
-        }
-    
+    if (typeof current === "number") {
+   
+      if (current >= 0.95) { 
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
     }
   });
 
-
-
-  
   return (
     (<AnimatePresence mode="wait">
       <motion.nav
@@ -143,7 +136,8 @@ export const Float = ({
           opacity: visible ? 1 : 0,
         }}
         transition={{
-          duration: 0.2,
+          duration: 0.4,
+          ease: "easeInOut" 
         }}
         className={cn(
             "fixed z-[5000]  md:hidden bottom-7 w-full  ",

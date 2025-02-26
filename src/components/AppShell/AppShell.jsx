@@ -7,7 +7,7 @@ export default function AppShell(props) {
   return (
     <main>
 
-      {/* <Header /> */}
+      <Header />
       {children}
       {/* <Footer/> */}
       

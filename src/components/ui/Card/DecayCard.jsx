@@ -110,8 +110,8 @@ const DecayCard = ({
   return (
     <div
       ref={svgRef}
-      className="relative"
-      style={{ width: `${width}px`, height: `${height}px` }}
+      className="relative  h-full "
+      // style={{ width: `${width}px`, height: `${height}px` }}
     >
       <svg
         viewBox="-60 -75 720 900"

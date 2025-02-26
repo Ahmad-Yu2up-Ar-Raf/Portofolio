@@ -19,19 +19,16 @@ export default function App({ Component, pageProps, router }) {
         disableTransitionOnChange
       >
        
-
+<SessionStateProvider>
           <ReactLenis root >
         <AppShell >
-     
             <AnimatePresence mode='wait'>
                 <Component key={router.route} {...pageProps}  />
             </AnimatePresence>
         </AppShell>
-
-          </ReactLenis>
         <Cursors/>
-{/* 
-            <SpotlightCursor  radius={100}/> */}
+          </ReactLenis>
+          </SessionStateProvider>
       
         </ThemeProvider >
     )

@@ -4,11 +4,11 @@ import Preloader from '@/components/Preloader';
 
 export default function About() {
   return (
-    <>
+    <Preloader>
 
  
   
     
-    </>
+    </Preloader>
   )
 }

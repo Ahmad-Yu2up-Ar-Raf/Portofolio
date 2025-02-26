@@ -46,6 +46,8 @@ export const StickyScroll = ({
               tech={item?.stackx}
               images={item?.imag}
               color={item?.colore}
+              Web={item?.web}
+              Code={item?.Code}
             />
           ))}
         </div>
@@ -57,6 +59,7 @@ export const StickyScroll = ({
               Description={content[activeCard]?.deskripcion}
               Tech={content[activeCard]?.stackx}
               list={content[activeCard]?.listx}
+              Code={content[activeCard]?.Code}
               color={content[activeCard]?.colore}
             />
           </div>

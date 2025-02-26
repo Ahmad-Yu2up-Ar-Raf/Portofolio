@@ -10,12 +10,9 @@
         pointer-events: none;
         left: 0;
         top: 0;
-        .preloardpath{
-            fill: #101010
-        }
     }
     .background{
-        background-color: black;
+        background-color: #101010;
         transition: opacity 0s linear 0.1s;
         z-index: 9999 !important;
     }
