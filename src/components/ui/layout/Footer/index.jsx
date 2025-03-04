@@ -1,4 +1,4 @@
-import SplitText from "@/components/Animation/BlurAnimation"
+import SplitText from "@/components/ui/Animation/BlurAnimation"
 import Link from "next/link"
 
 export default function footer(){

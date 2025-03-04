@@ -4,14 +4,15 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { createAnimationVariants } from './anim';
-import SplitText from '../Animation/BlurAnimation';
-import { useSessionState } from '@/context/StateContext';
-import { usePathname } from 'next/navigation';
+import SplitText from '../ui/Animation/BlurAnimation';
+import { useSessionState } from '@/hooks/StateContext';
+
 
 const routes = {
   '/': 'Home',
-  '/about': 'About',
-  '/contact': 'Contact',
+  '/About': 'About',
+  '/Blogs': 'Blogs',
+  '/Contact': 'Contact',
   '/project/[id]': 'Project',
 };
 
@@ -26,10 +27,11 @@ const anim = (variants) => {
 
 
 export function useFirstVisitHome() {
- 
-    const { isFirstVisit } = useSessionState();
-    return isFirstVisit ;
-  }
+  const { isFirstVisit } = useSessionState();
+  // Ensure we're on client side
+  if (typeof window === 'undefined') return false;
+  return isFirstVisit;
+}
 
 
 export default function Curve({ children, backgroundColor }) {
@@ -61,16 +63,22 @@ export default function Curve({ children, backgroundColor }) {
   const textVariants = createAnimationVariants('text', null, null,     useFirstVisitHome());
 
   return (
-    <motion.div className='page curve' style={{ backgroundColor }}>
+    // Changed from 'page curve' to Tailwind classes
+    <motion.div className="relative w-full" style={{ backgroundColor }}>
       <motion.div
         style={{ opacity: dimensions.width == null ? 1 : 0 }}
-        className='background'
+        // Changed from 'background' to Tailwind classes
+        className="fixed inset-0 bg-[#131313] transition-opacity duration-0 delay-100 pointer-events-none z-[9999]"
       />
 
-      <motion.p className='route' {...anim(textVariants)}>
-        {    useFirstVisitHome() ? (
+      <motion.p 
+        // Changed from 'route' to Tailwind classes
+        className="fixed left-1/2 top-[40%] -translate-x-1/2 text-white text-[46px] text-center z-[99999]" 
+        {...anim(textVariants)}
+      >
+        {useFirstVisitHome() ? (
           <SplitText
-            text='Hello!'
+            text='Hello World!'
             className='text-2xl font-semibold text-center'
             delay={150}
             animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
@@ -92,7 +100,9 @@ export default function Curve({ children, backgroundColor }) {
       
         />
       )}
+      <main>
       {children}
+      </main>
     </motion.div>
   );
 }
@@ -129,7 +139,11 @@ const SVG = ({ height, width }) => {
   );
 
   return (
-    <motion.svg className={'preloard'} fill={'#101010'} {...anim(translateVariants)}>
+    <motion.svg 
+      // Changed from 'preloard' to Tailwind classes
+      className="fixed inset-0 w-screen h-[calc(100vh+600px)] pointer-events-none z-[9999] fill-[#131313]" 
+      {...anim(translateVariants)}
+    >
       <motion.path
 
         {...anim(curveVariants)}

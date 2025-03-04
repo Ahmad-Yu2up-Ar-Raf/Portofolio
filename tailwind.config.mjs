@@ -1,5 +1,3 @@
-
-
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
@@ -57,23 +55,17 @@ export default {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
-  		// fontFamily: {
-  	
-  		// },
+
 		  fontFamily: {
-			montserrat: [
-				'Montserrat',
-				'sans-serif'
-			],
-			poppins: [
-				'Poppins',
-				'sans-serif'
-			],
-			Outfit: [
-				'Outfit',
-				'sans-serif'
-			]
-		},
+			montserrat: ["var(--font-montserrat)"],
+			Outfit: ["var(--font-outfit)"],
+			ppmedium: ["var(--font-ppmedium)"],
+			ppregular: ["var(--font-ppregular)"],
+			ppbook: ["var(--font-ppre)"],
+			NyghtSerif: ["var(--font-nyghtserif)"],
+			 
+			},
+
 		
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -81,6 +73,7 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		animation: {
+			"shiny-text": "shiny-text 8s infinite",
   			orbit: 'orbit calc(var(--duration)*1s) linear infinite',
   			'line-shadow': 'line-shadow 15s linear infinite',
   			shine: 'shine var(--duration) infinite linear',
@@ -88,9 +81,22 @@ export default {
   			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
 				'star-movement-bottom': 'star-movement-bottom linear infinite alternate',
 									        'star-movement-top': 'star-movement-top linear infinite alternate',
+											  gradient: 'gradient 8s linear infinite'
   		},
   		keyframes: {
-		
+			"shiny-text": {
+				"0%, 90%, 100%": {
+				  "background-position": "calc(-100% - var(--shiny-width)) 0",
+				},
+				"30%, 60%": {
+				  "background-position": "calc(100% + var(--shiny-width)) 0",
+				},
+			  },
+			gradient: {
+				          '0%': { backgroundPosition: '0% 50%' },
+				          '50%': { backgroundPosition: '100% 50%' },
+				          '100%': { backgroundPosition: '0% 50%' },
+				        },
 			shine: {
 				          '0%': { 'background-position': '100%' },
 				          '100%': { 'background-position': '-100%' },

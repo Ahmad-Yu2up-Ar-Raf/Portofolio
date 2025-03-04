@@ -2,11 +2,11 @@ import { useRef} from 'react';
 
 import Link from 'next/link'; 
 
-import { StickyScroll } from '../core/Project/sticky-scroll-reveal';
-
-  
-
-
+import { StickyScroll } from '../core/Fragments/Project';
+// import GradientText from '../Animation/Text/GradientText';
+import { ChevronRight } from 'lucide-react';
+import FadeContent from '../Animation/Content';
+import { AnimatedShinyText } from '../Animation/Text/ShinyText';
 
 
 
@@ -14,7 +14,7 @@ const content = [
   {
     stackx: ["Html","Css","Php","Javascript"],
     title: "Expro Travel",
-    imag: "/Project/fluxLura.avif",
+    imag: "/Project/expro.jpeg",
     colore: "sky",
     listx: [
       "Built responsive frontend layouts using HTML5 and CSS3, ensuring optimal display across all devices and screen sizes",
@@ -28,7 +28,7 @@ const content = [
   {
     stackx: ["Tailwind Css", "Alpine.Js","Javascript"],
     title: "LiveUp",
-    imag: "/Project/fluxLura.avif",
+    imag: "/Project/liveup.jpeg",
     colore: "emerald", 
     web: "https://liveup-host.vercel.app/",
     Code: "https://github.com/Ahmad-Yu2up-Ar-Raf/Liveup",
@@ -53,29 +53,54 @@ export default function index() {
   return (
 
 
-      <section className="relative fill mx-auto w-full max-w-7xl mt-0 px-4 py-36 "  
+      <section id='Projects' className="relative fill  w-full px-3 py-36 "  
       style={{opacity:1, transform: "none"}} ref={container}>
-
-
-      <div style={{
+<main className='max-w-7xl mt-0 mx-auto '>
+<header style={{
         textShadow: "text-shadow:0px 4px 8px rgba(255,255,255,.05),0px 8px 30px rgba(255,255,255,.25)"
-      }} className='z-2 relative mb-28 md:mb-36 text-4xl md:text-5xl text-center'>
+      }} className='z-2 relative m-20 md:mb-36 text-4xl md:text-5xl text-center'>
 
 <h2 className='mb-4 text-xs block uppercase tracking-widest text-white/70 md:text-sm'>FEATURED CASE STUDIES</h2>
  
- <h1>
- <span className='font-Outfit'>Curated </span>
- <span
+ <h1 
+ 
 
- >Work</span>
+className="text-center   md:text-[52px] text-[29px] leading-[1.25]  tracking-[-0.04em] font-bold ">
+ <span
+ 
+ style={{
+
+  background: "linear-gradient(180deg,#ffffff,#adadad)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: 'transparent'
+}}
+ 
+ className=' text-[linear-gradient(180deg,#ffffff,#adadad)] text-[#fafafa] '
+ >Curated</span> <AnimatedShinyText>Work</AnimatedShinyText> 
  </h1>
-      </div>
+      </header>
           <StickyScroll content={content} />
 
-  
-          <Link className="flex justify-center gap-2 text-neutral-300 transition-colors hover:text-neutral-100 md:mt-16" href="https://github.com/Ahmad-Yu2up-Ar-Raf?tab=repositories" target='_blank'>See more projects
+  <FadeContent
+  blur={true} duration={1000} easing="ease-out" initialOpacity={0}
+
+  >
+          <Link className="flex group m-auto relative justify-center gap-2 w-fit items-center cursor-pointer text-neutral-300 transition-colors hover:text-neutral-100 md:mt-16" href="https://github.com/Ahmad-Yu2up-Ar-Raf?tab=repositories" target='_blank'>
+         <h6 className="relative w-fit inline-flex overflow-hidden">
+          <span className='group-hover:-translate-y-[235%] md:group-hover:-translate-y-[135%] group-hover:skew-y-12 translate-y-0 skew-y-0 transition duration-500'>See more projects</span>
+          <span className='absolute w-fit translate-y-[233%] md:translate-y-[133%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>
+           See my repository
+          </span>
+         </h6>
           <div className="rounded-full bg-white/5 p-0.5 backdrop-blur-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"></path></svg></div></Link>
+          <ChevronRight size={18} />
+         
+           </div>
+</Link>
+  </FadeContent>
+</main>
+
+
       </section>
   
   );
