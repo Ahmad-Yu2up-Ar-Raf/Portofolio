@@ -3,7 +3,7 @@ import { useRef} from 'react';
 import Link from 'next/link'; 
 
 import { StickyScroll } from '../core/Fragments/Project';
-// import GradientText from '../Animation/Text/GradientText';
+
 import { ChevronRight } from 'lucide-react';
 import FadeContent from '../Animation/Content';
 import { AnimatedShinyText } from '../Animation/Text/ShinyText';
@@ -29,7 +29,7 @@ const content = [
     stackx: ["Tailwind Css", "Alpine.Js","Javascript"],
     title: "LiveUp",
     imag: "/Project/liveup.jpeg",
-    colore: "emerald", 
+    colore: "teal", 
     web: "https://liveup-host.vercel.app/",
     Code: "https://github.com/Ahmad-Yu2up-Ar-Raf/Liveup",
     listx: [
@@ -41,7 +41,6 @@ const content = [
     deskripcion:
       "LiveUp is an innovative platform dedicated to connecting people with disabilities to meaningful job opportunities. We understand the unique challenges faced by disabled individuals in the job market and have created a specialized space where talent meets opportunity. Our platform bridges the gap between qualified candidates and inclusive employers, making the job search process more accessible and equitable for everyone.",
   },
- 
 
 ];
 
@@ -60,7 +59,7 @@ export default function index() {
         textShadow: "text-shadow:0px 4px 8px rgba(255,255,255,.05),0px 8px 30px rgba(255,255,255,.25)"
       }} className='z-2 relative m-20 md:mb-36 text-4xl md:text-5xl text-center'>
 
-<h2 className='mb-4 text-xs block uppercase tracking-widest text-white/70 md:text-sm'>FEATURED CASE STUDIES</h2>
+<h3 className='mb-4 text-xs block uppercase tracking-widest text-white/70 md:text-sm'>FEATURED CASE STUDIES</h3>
  
  <h1 
  

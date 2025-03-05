@@ -23,7 +23,7 @@ export default function Body({links, selectedLink, setSelectedLink}) {
     }
     
     return (
-        <ul className="flex flex-col  mb-[3rem]  mt-[9rem]  gap-[0.8rem] items-center justify-center">
+        <ul className="flex flex-col h-fit  mb-[3rem]  mt-[9rem] items-center justify-center">
             {links.map((link, index) => {
                 const { title, href } = link;
                 return (
@@ -31,14 +31,14 @@ export default function Body({links, selectedLink, setSelectedLink}) {
                         <Link 
                             scroll={false}
                             href={href}
-                            className="text-white no-underline uppercase"
+                            className="text-white h-fit uppercase"
                         >
                             <motion.h5
                                 onMouseOver={() => {setSelectedLink({isActive: true, index})}} 
                                 onMouseLeave={() => {setSelectedLink({isActive: false, index})}} 
                                 variants={blur} 
                                 animate={selectedLink.isActive && selectedLink.index != index ? "open" : "closed"}
-                                className=" flex overflow-hidden text-[1.8rem] md:text-[2.2rem] font-light lg:text-[2.27rem] lg:pr-[2vw]"
+                                className=" flex  font-ppregular  h-fit overflow-hidden text-[1.8rem]   md:text-[2.2rem]   lg:text-[2.67rem] "
                             >
                                 {getChars(title)}
                             </motion.h5>

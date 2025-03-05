@@ -9,17 +9,17 @@ const links = [
   {
     title: "Home",
     href: "/",
-    src: "home.png"
+
   },
   {
     title: "Blogs",
     href: "/Blogs",
-    src: "shop.png"
+
   },
   {
     title: "About",
     href: "/About",
-    src: "home.png"
+    
   },
 ]
 

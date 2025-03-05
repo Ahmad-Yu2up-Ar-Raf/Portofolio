@@ -14,10 +14,8 @@ export default function Hero() {
       <section id="Hero" className="w-full h-[90vh] lg:h-screen lg:p-[2rem] p-[1rem]  content-center flex flex-col  relative justify-end items-center">
         <main className="">
 
-       <SmearCard
-       
-       />
-     
+       <SmearCard/>
+
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  w-[100vw]  whitespace-nowrap -z-10">
       
         <div style={{ width: '100%', height: '600px', position: 'relative' }} className="hidden lg:block" >

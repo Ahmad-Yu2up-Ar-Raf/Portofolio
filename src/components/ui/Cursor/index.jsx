@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef,useState } from "react";
 import gsap from "gsap";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight,Dot  } from "lucide-react";
 const Cursors = () => {
   const cursorRef = useRef(null);
   const cursorTextRef = useRef(null);
@@ -52,12 +52,12 @@ const Cursors = () => {
           setCursorText("Visit Website")
         }else{
           setCursorText(
-            <div className="flex h-full px-[3.5px] py-[1.4px] overflow-hidden  gap-x-[3px] content-center ">
+            <div className="flex py-[0.5px] px-[3px]  items-center  gap-x-[2px] content-center ">
           
 
-              <span className="size-[1.6px] mt-[1.3px]   rounded-full bg-white" />
+          <Dot className="size-2 " />
        
-              <span className="">Coming Soon</span>
+            <h6 className="mt-auto mb-[0.7px]">Coming Soon</h6>
             </div>
           )
         }
@@ -121,7 +121,7 @@ const Cursors = () => {
         : 'size-2 p-[13.5px] -top-4'
     } fixed left-0 hidden   md:flex justify-center overflow-hidden  text-[3.5px] font-medium text-white items-center opacity-0 pointer-events-none z-[9999] rounded-full bg-white/10 backdrop-blur-[2px] shadow-[0_0_0_0.25px_rgba(255,255,255,0.3)]`}
   >
-    <h1
+    <div
       ref={cursorTextRef}
       className={`${
         cursorText != 'Visit Website' 
@@ -130,7 +130,7 @@ const Cursors = () => {
       } `}
     >
       {cursorText}
-    </h1>
+    </div>
   </div>
   );
 };
