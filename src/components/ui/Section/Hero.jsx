@@ -11,8 +11,8 @@ export default function Hero() {
 
     
     return(
-      <section id="Hero" className="w-full h-[90vh] lg:h-screen lg:p-[2rem] p-[1rem]  content-center flex flex-col  relative justify-end items-center">
-        <main className="">
+      <section id="Hero" className="w-full h-[90vh] lg:h-screen lg:p-[2rem] p-[1rem]    relative  ">
+        <main className="content-center flex flex-col justify-end items-center" >
 
        <SmearCard/>
 

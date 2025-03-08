@@ -18,8 +18,8 @@ export default function Header() {
         menuRef.current &&
         !menuRef.current.contains(event.target) &&
         buttonRef.current &&
-        !buttonRef.current.contains(event.target) &&
-        event.target.tagName == "l"
+        !buttonRef.current.contains(event.target) 
+      
       ) {
         setIsActive(false);
       }
@@ -92,7 +92,7 @@ export default function Header() {
             aria-label="Main menu"
             className="relative z-40"
           >
-            <Nav />
+            <Nav setIsActive={setIsActive} />
           </div>
         )}
       </AnimatePresence>

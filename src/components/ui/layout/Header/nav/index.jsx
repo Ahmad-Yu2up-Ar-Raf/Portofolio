@@ -23,9 +23,15 @@ const links = [
   },
 ]
 
-export default function Index() {
+export default function Index({ setIsActive }) {
 
   const [selectedLink, setSelectedLink] = useState({isActive: false, index: 0});
+
+
+  const closeMenu = () => {
+    setIsActive(false);
+  };
+
 
   return (
     <motion.nav 
@@ -47,6 +53,7 @@ aria-label='Main Navigation'
             links={links} 
             selectedLink={selectedLink} 
             setSelectedLink={setSelectedLink}
+            closeMenu={closeMenu}
           />
       
         

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { blur, translate } from '../../anim';
 
-export default function Body({links, selectedLink, setSelectedLink}) {
+export default function Body({links, selectedLink, setSelectedLink, closeMenu}) {
     const getChars = (word) => {
         let chars = [];
         word.split("").forEach((char, i) => {
@@ -31,6 +31,7 @@ export default function Body({links, selectedLink, setSelectedLink}) {
                         <Link 
                             scroll={false}
                             href={href}
+                            onClick={() => closeMenu()} 
                             className="text-white h-fit uppercase"
                         >
                             <motion.h5
