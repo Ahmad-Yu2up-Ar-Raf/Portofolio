@@ -4,6 +4,9 @@ import CPu from "@/components/ui/core/Fragments/Stack/CPu";
 import Tech from "@/components/ui/core/Fragments/Stack/Tech";
 import FadeContent from "../Animation/Content";
 
+import Container from "../Shared";
+
+
 const Stacks = [
     {
         Name: "Tailwind CSS",
@@ -34,13 +37,14 @@ export default function index() {
  
 
   return (
-    <section id="Stacks"  className="min-h-[700px] py-7 md:mt-9 px-1 md:py-[80px]   content-center "
-    
-    style={{
-      background: "radial-gradient(50% 50% at 50% 50%,#121212 0,#000000 100%)"
-    }}
-    >
-      <main>
+ <Container
+ id="Tech Stack "
+ sectionName="Tech Stack  Section"
+ ariaLabel="Tech Stack Powered Section"
+ role="banner"   
+ maxW
+ >
+
       <header 
       style={{
 
@@ -49,8 +53,11 @@ export default function index() {
         WebkitTextFillColor: 'transparent'
       }}
       className="text-center  text-[linear-gradient(180deg,#ffffff,#adadad)] lg:text-[32px] text-[24px] leading-[1.25]  tracking-[-0.04em] text-[#fafafa] font-bold ">
-     <span className="md:hidden">Built on a foundation of fast,<span className="block">production-grade tooling</span>
-     </span>  <span className="hidden md:inline">Committed to Staying Updated with <span className="md:block">the Latest Design Trends & Techniques</span></span></header>
+        <h1>
+        <span className="md:hidden">Built on a foundation of fast,<span className="block">production-grade tooling</span>
+        </span><span className="hidden md:inline">Committed to Staying Updated with <span className="md:block">the Latest Design Trends & Techniques</span></span>
+        </h1>
+     </header>
 
     <CPu/>
 
@@ -63,7 +70,7 @@ export default function index() {
 
 
 blur={true} delay={2000} duration={1000} easing="ease-out" initialOpacity={0}
-className="max-w-[74rem] justify-center flex flex-col m-auto gap-[16px] lg:gap-[32px] lg:grid lg:grid-cols-3">
+className="max-w-[74rem] justify-center  flex flex-col m-auto gap-[16px] lg:gap-[32px] lg:grid lg:grid-cols-3">
     {Stacks.map((stack, index) => ( 
         <Tech key={index} {...stack} 
         i={index}
@@ -77,7 +84,7 @@ className="max-w-[74rem] justify-center flex flex-col m-auto gap-[16px] lg:gap-[
    
 </FadeContent>
       </div>
-      </main>
-    </section>
+ </Container>
+
   );
 }

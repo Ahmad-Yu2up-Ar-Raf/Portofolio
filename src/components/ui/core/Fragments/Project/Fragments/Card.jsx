@@ -45,9 +45,9 @@ export const Card = ({
   <div className="hidden w-full flex-row items-center justify-between px-12 py-8 opacity-85 lg:flex">
     <h3 className="max-w-[90%] font-medium tracking-tight   text-xl line-clamp-2 ">{description}</h3>
     <ArrowRight  className="size-6"/>
-    {/* <svg xmlns="http://www.w3.org/2000/svg"  width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"  className="lucide lucide-arrow-right size-6"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg> */}
+   
     </div>
-  <Image  width={1203} height={753} alt={title} src={`${images}`} style={{color:'transparent'}} loading='lazy' className='lg:group-hover:translsate-y-10 w-full max-w-[85%] translate-y-5 -rotate-3 rounded-t-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,1)] transition-all duration-300 will-change-transform  lg:block lg:rotate-0 lg:group-hover:scale-[1.08] lg:group-hover:-rotate-3'/>
+  <Image  width={1203} height={753} alt={title} src={`/Assets/Project/${images}`} style={{color:'transparent'}} loading='lazy' className='lg:group-hover:translsate-y-10 w-full max-w-[85%] translate-y-5 -rotate-3 rounded-t-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,1)] transition-all duration-300 will-change-transform  lg:block lg:rotate-0 lg:group-hover:scale-[1.08] lg:group-hover:-rotate-3'/>
   
   
   </div>

@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
@@ -58,11 +60,11 @@ export default {
 
 		  fontFamily: {
 			montserrat: ["var(--font-montserrat)"],
-			Outfit: ["var(--font-outfit)"],
+		
 			ppmedium: ["var(--font-ppmedium)"],
 			ppregular: ["var(--font-ppregular)"],
 			ppbook: ["var(--font-ppre)"],
-			NyghtSerif: ["var(--font-nyghtserif)"],
+		    SixCaps: ["var(--Six-Cap)"]
 			 
 			},
 
@@ -81,9 +83,26 @@ export default {
   			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
 				'star-movement-bottom': 'star-movement-bottom linear infinite alternate',
 									        'star-movement-top': 'star-movement-top linear infinite alternate',
-											  gradient: 'gradient 8s linear infinite'
+											  gradient: 'gradient 8s linear infinite',
+											  float: 'floation 3s infinite ease-in-out',
+											  glow: "texx 3s ease-out infinite"
   		},
   		keyframes: {
+			floation : {
+				'0%' : { transform: 'translate(-50%,-50%)' },
+			 '50%' : { transform: 'translate(-50%,-60%)' },
+			 '100%' : { transform: 'translate(-50%, -50%)' },
+			  },
+			  texx: {
+				"0%, 100%" : {
+				   color: "#525252",
+				   "text-shadow":  "0 0px 14px #525252"
+				},
+				"50%" :{
+				  color: "#ffffff",
+				  "text-shadow":  "0 0px 20px #ffff"
+				},
+			  },
 			"shiny-text": {
 				"0%, 90%, 100%": {
 				  "background-position": "calc(-100% - var(--shiny-width)) 0",

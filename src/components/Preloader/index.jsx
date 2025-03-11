@@ -1,10 +1,10 @@
-// SomeComponent.js
+
 'use client';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { createAnimationVariants } from './anim';
-import SplitText from '../ui/Animation/BlurAnimation';
+
 import { useSessionState } from '@/hooks/StateContext';
 
 
@@ -26,18 +26,34 @@ const anim = (variants) => {
 };
 
 
+
+
+
 export function useFirstVisitHome() {
   const { isFirstVisit } = useSessionState();
-  // Ensure we're on client side
+ 
   if (typeof window === 'undefined') return false;
   return isFirstVisit;
 }
 
 
+
+const words = ["Hello", "Bonjour", "Ciao", "Olà", "やあ", "Hallå", "Guten tag", "Hallo"]
+
+
 export default function Curve({ children, backgroundColor }) {
- 
+  const [index, setIndex] = useState(0);
   const router = useRouter();
  
+
+  useEffect( () => {
+    if(index == words.length - 1) return;
+    setTimeout( () => {
+        setIndex(index + 1)
+    }, index == 0 ? 1000 : 150)
+}, [index])
+
+
   const [dimensions, setDimensions] = useState({
     width: null,
     height: null,
@@ -59,15 +75,15 @@ export default function Curve({ children, backgroundColor }) {
 
 
 
-  // Mendapatkan varian animasi untuk teks
   const textVariants = createAnimationVariants('text', null, null,     useFirstVisitHome());
+  const opacityVariants = createAnimationVariants('opacity', null, null,     useFirstVisitHome());
 
   return (
-    // Changed from 'page curve' to Tailwind classes
+   
     <motion.div className="relative w-full" style={{ backgroundColor }}>
       <motion.div
         style={{ opacity: dimensions.width == null ? 1 : 0 }}
-        // Changed from 'background' to Tailwind classes
+    
         className="fixed inset-0 bg-[#131313] transition-opacity duration-0 delay-100 pointer-events-none z-[9999]"
       />
 
@@ -77,17 +93,7 @@ export default function Curve({ children, backgroundColor }) {
         {...anim(textVariants)}
       >
         {useFirstVisitHome() ? (
-          <SplitText
-            text='Hello World!'
-            className='text-2xl font-semibold text-center'
-            delay={150}
-            animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-            animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-            easing='easeOutCubic'
-            threshold={0.2}
-            rootMargin='-50px'
-        
-          />
+      <motion.p   {...anim(opacityVariants)} initial="initial" animate="enter"><span></span>{words[index]}</motion.p>
         ) : (
           routes[router.route]
         )}

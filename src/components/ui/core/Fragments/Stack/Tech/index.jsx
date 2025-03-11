@@ -29,7 +29,7 @@ canvasStyle={'[mask-image:_linear-gradient(to_top,transparent_0,_black_125px,_bl
       background: "linear-gradient(180deg, #242424, #121212 65.62%)",
       backgroundSize: "cover"}}   >
 <Link  href={Url} target="blank"  className="absolute left-0 top-0 bottom-0 right-0 flex justify-between  flex-col  gap-[24px] p-[24px]">
-<Image height={42} width={42} src={`/Tech/${Imagex}`} alt={Name}   />
+<Image height={42} width={42} src={`/Assets/Tech/${Imagex}`} alt={Name}   />
 
 <article className="flex flex-col gap-1.5 z-20">
 <header className="flex items-center gap-1" >

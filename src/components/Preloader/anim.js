@@ -1,6 +1,6 @@
 // anim.js
 export const createAnimationVariants = (type, initialPath, targetPath, isFirstVisit) => {
-const delay = isFirstVisit ? 4 : 0.35 
+const delay = isFirstVisit ? 3 : 0.35 
   
     const variants = {
       text: {
@@ -40,6 +40,16 @@ const delay = isFirstVisit ? 4 : 0.35
           transition: { duration: .75, ease: [0.76, 0, 0.24, 1] },
         },
       },
+      opacity: {
+        initial: {
+            opacity: 0
+        },
+        enter: {
+            opacity: 0.75,
+            transition: {duration: 1, delay: 0.2}
+        },
+    }
+
     };
   
     return variants[type];

@@ -2,11 +2,11 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-
+import Image from "next/image";
 const SmearCard = ({
   width = 200,
   height = 300,
-  image = "/Galery/Mantap.JPG",
+  image = "Assets//Galery/Mantap.JPG",
   layers = 10,
   maxDelay = 0.2,
   borderRadius = 12,
@@ -79,16 +79,21 @@ const SmearCard = ({
   return (
     <div
       ref={containerRef}
-      className=" relative w-[18em] md:w-[24em]  md:h-[32em] h-[24em]"
+      className="  relative w-full h-full "
     >
       {Array.from({ length: layers }, (_, index) => (
          index === 9 ? null : (
-        <img
+        <Image
           key={index}
           ref={(el) => (imagesRef.current[index] = el)}
           src={image}
+      
+           priority
+          width={1000} // Increase from 500
+          height={1000} // Increase from 500
+          quality={100}
           alt={`Trail ${index + 1}`}
-          className={`   absolute bottom-7 left-0 w-full h-full object-cover object-[60%_60%]`}  
+          className={`      transform  -translate-x-1/2 -translate-y-1/2  left-1/2 right-1/2  w-[80vw] h-[55vh] absolute md:w-[19em] md:h-[60vh]    lg:w-[23em] lg:h-[30em]    object-cover object-[60%_60%]`}  
           style={{
             opacity: (index + 1) / layers,
             borderRadius: `${borderRadius}px`,

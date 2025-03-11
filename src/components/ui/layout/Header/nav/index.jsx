@@ -45,7 +45,7 @@ aria-label='Main Navigation'
     clipPath: "inset(0%)",
     visibility: "inherit",
    }}
-      className="overflow-hidden top-[10px] left-[10px]     fixed   text-center  w-[calc(100%-20px)] rounded-[8px]   bg-[rgba(45,45,45,0.35)] backdrop-blur-xl   z-40" 
+      className="overflow-hidden top-[10px] left-[10px]   right-[10px]   fixed   text-center  m-auto w-[90vw] rounded-[8px]   bg-[rgba(45,45,45,0.35)] backdrop-blur-xl   z-40" 
     >
   
    

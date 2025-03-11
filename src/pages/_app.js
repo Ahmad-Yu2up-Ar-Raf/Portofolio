@@ -7,6 +7,9 @@ import { SessionStateProvider } from '@/hooks/StateContext';
 import ReactLenis from 'lenis/react'
 import { fontVariables } from '@/hooks/Font';
 
+
+
+
 export default function App({ Component, pageProps, router }) {
     return (
         <ThemeProvider

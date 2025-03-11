@@ -1,7 +1,9 @@
+'use client'
+
 import { useRef} from 'react';
 
 import Link from 'next/link'; 
-
+import Container from '../Shared';
 import { StickyScroll } from '../core/Fragments/Project';
 
 import { ChevronRight } from 'lucide-react';
@@ -14,7 +16,7 @@ const content = [
   {
     stackx: ["Html","Css","Php","Javascript"],
     title: "Expro Travel",
-    imag: "/Project/expro.jpeg",
+    imag: "expro.jpeg",
     colore: "sky",
     listx: [
       "Built responsive frontend layouts using HTML5 and CSS3, ensuring optimal display across all devices and screen sizes",
@@ -28,7 +30,7 @@ const content = [
   {
     stackx: ["Tailwind Css", "Alpine.Js","Javascript"],
     title: "LiveUp",
-    imag: "/Project/liveup.jpeg",
+    imag: "liveup.jpeg",
     colore: "teal", 
     web: "https://liveup-host.vercel.app/",
     Code: "https://github.com/Ahmad-Yu2up-Ar-Raf/Liveup",
@@ -52,19 +54,26 @@ export default function index() {
   return (
 
 
-      <section id='Projects' className="relative fill  w-full px-3 py-36 "  
-      style={{opacity:1, transform: "none"}} ref={container}>
-<main className='max-w-7xl mt-0 mx-auto '>
+ <Container
+ id="Projects"
+ sectionName="Projects Section"
+ ariaLabel="Portfolio Pojects Section"
+ role="Projects"   
+  className="mt-0 max-w-7xl "
+ ref={container}
+ 
+ >
+
 <header style={{
         textShadow: "text-shadow:0px 4px 8px rgba(255,255,255,.05),0px 8px 30px rgba(255,255,255,.25)"
-      }} className='z-2 relative m-20 md:mb-36 text-4xl md:text-5xl text-center'>
+      }} className='z-2 relative  mb-14 md:mb-28 text-4xl md:text-5xl text-center'>
 
 <h3 className='mb-4 text-xs block uppercase tracking-widest text-white/70 md:text-sm'>FEATURED CASE STUDIES</h3>
  
  <h1 
  
 
-className="text-center   md:text-[52px] text-[29px] leading-[1.25]  tracking-[-0.04em] font-bold ">
+className="text-center   text-[40px] md:text-[52px]  leading-[1.25]  tracking-[-0.04em] font-bold ">
  <span
  
  style={{
@@ -97,10 +106,8 @@ className="text-center   md:text-[52px] text-[29px] leading-[1.25]  tracking-[-0
            </div>
 </Link>
   </FadeContent>
-</main>
+ </Container>
 
-
-      </section>
   
   );
 }

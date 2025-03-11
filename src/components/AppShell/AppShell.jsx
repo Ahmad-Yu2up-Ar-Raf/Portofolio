@@ -5,7 +5,11 @@ import Footer from "../ui/layout/Footer";
 export default function AppShell(props) {
   const { children, cla } = props;
   return (
-    <div className={`${cla}`}>
+    <div 
+    
+    id="AppShell"
+    role="wrapper"
+    className={`${cla} relative w-full h-full`}>
 
  <Header/>
       <main>

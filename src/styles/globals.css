@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #eaeaf1;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
     --foreground: #eaeaf1;
   }
-}
+} */
 
 
 ::-webkit-scrollbar {
@@ -22,7 +22,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  @apply font-montserrat; /* Add this instead */
+  @apply font-montserrat  ; /* Add this instead */
 }
 
 
@@ -90,7 +90,7 @@ body {
     @apply border-border p-0 m-0 box-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#010101] text-foreground;
   }
   
 }

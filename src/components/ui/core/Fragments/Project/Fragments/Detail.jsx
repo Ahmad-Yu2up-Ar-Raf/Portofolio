@@ -10,7 +10,7 @@ import {
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
-  } from "@/components/ui/core/Provider/tooltip"
+  } from "@/components/ui/core/common/tooltip"
 const Detail = ({
     i,
     title,
@@ -148,7 +148,7 @@ const Detail = ({
                                 }}
                                 className="flex items-center gap-2 rounded-xl  border border-white/[0.14] bg-neutral-900 px-3 py-1 text-sm"
                             >
-                                <Image width={16} height={16} alt={Stack} src={`/Tech/${Stack}.svg`} />
+                                <Image width={16} height={16} alt={Stack} src={`Assets/Tech/${Stack}.svg`} />
                                 {Stack}
                             </motion.li>
                         ))}
