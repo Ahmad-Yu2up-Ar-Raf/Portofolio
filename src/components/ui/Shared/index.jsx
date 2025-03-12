@@ -9,6 +9,7 @@ const Container = forwardRef((
     children,
     className,
     maxW = false,
+    bg = false,
     role,
     ariaLabel,
     dataTestId,
@@ -22,13 +23,13 @@ const Container = forwardRef((
 
   return (
     <section
-    // style={{
-    //   background: "radial-gradient(50% 50% at 50% 50%,#121212 0,#000000 100%)"
-    // }}
+    
+   
       id={id}
       className={cn(
-        "relative min-h-[90vh] lg:min-h-screen  mb-36 w-full content-center",
-        maxW ? '' : 'p-4'
+        "relative min-h-[90vh]   lg:min-h-screen  mb-36 w-full content-center",
+        maxW ? '' : 'p-4',
+        bg ? '' : 'bg-[radial-gradient(50%_50%_at_50%_50%,#121212_0,#000000_100%)]'
       )}
       role={role || "region"}
       aria-label={ariaLabel || sectionName || id}

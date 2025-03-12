@@ -12,14 +12,16 @@ const Card = forwardRef(({
         <li
         
       
-        className="lg:absolute relative m-auto my-40   lg:my-0   h-[70vh]  lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2  lg:-translate-y-1/2 w-[90vw]   md:w-[24em]  lg:w-[19em]  perspective-[1000px] "
+        className="lg:absolute relative m-auto my-40   lg:my-0  h-[38em]  lg:h-[30em]  lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2   lg:-translate-y-1/2  w-[22em] md:w-[24em]  lg:w-[19em] "
   ref={ref}
  id={id}
  
- 
+  style={{
+    perspective: "1000px"
+  }}
  >
-            <div className={cn("absolute top-[50%]  lg:transform lg:-translate-x-1/2  lg:-translate-y-1/2  left-[50%]   w-full h-full   animate-float      ",
-                                     id ==  'card-2' ? 'delay-200' : id == 'card-3' ? 'delay-500 ' : id == 'card-4' ? 'delay-500' : 'delay-0'
+            <div className={cn("absolute top-[50%]   left-[50%]   w-full h-full   animate-float      ",
+                id ==  'card-2' ? 'delay-100' : id == 'card-3' ? 'delay-200' : id == 'card-4' ? 'delay-300' : 'delay-0'
 
                 
             )
@@ -28,13 +30,12 @@ const Card = forwardRef(({
           
           
           } id="card-wrapper">
-                <div className="relative w-full h-full  "
+                <div className="relative w-full h-full " id="flip-card-inner"
                 style={{
                     transformStyle: "preserve-3d"
                 }}
-                id="flip-card-inner">
-                    <div className="absolute w-full h-full  rounded-[0.4em] overflow-hidden "
-                    
+                >
+                    <div className="absolute w-full h-full rounded-[0.4em] overflow-hidden "
                     style={{
                         backfaceVisibility: "hidden"
                     }}
@@ -48,16 +49,17 @@ const Card = forwardRef(({
                                className="w-full h-full object-cover"                   
                         />
                     </div>
-                    <div className="absolute  bg-[#1a1a1a] p-[1em] transform  w-full h-full  rounded-[0.4em] overflow-hidden "
+                    <div className="absolute  bg-[#1a1a1a] p-[1em]  w-full h-full  rounded-[0.4em] overflow-hidden "
                     
                     style={{
                         backfaceVisibility: "hidden",
-                        transform: "rotateY(180deg)"
+                        transform: "rotateY(185deg)"
                     }}
                     id="flip-card-back">
-                        <h2 className={cn("uppercase  font-SixCaps animate-pulse  lg:animate-glow    pointer-events-none       tracking-tight   font-semibold absolute transform  top-1/2 left-1/2   -translate-x-1/2  -translate-y-1/2  text-center  text-[12em] " ,
- 'leading-[1em]',
-                                            id ==  'card-2' ? 'delay-200' : id == 'card-3' ? 'delay-500 ' : id == 'card-4' ? 'delay-500' : 'delay-0'
+                        <h2 className={cn("uppercase    animate-pulse  lg:animate-glow   pointer-events-none       font-SixCaps tracking-tight   font-semibold absolute transform  top-1/2 left-1/2   -translate-y-1/2 -translate-x-1/2  text-center  text-[12em] " ,
+'leading-[11rem]',
+id ==  'card-2' ? 'delay-100' : id == 'card-3' ? 'delay-200' : id == 'card-4' ? 'delay-300' : 'delay-0'
+
                         ) }>{backText}</h2>
                     </div>
                 </div>

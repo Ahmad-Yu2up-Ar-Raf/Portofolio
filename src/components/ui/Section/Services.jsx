@@ -37,8 +37,8 @@ gsap.registerPlugin(ScrollTrigger)
 
       mm.add( {
      
-        isDesktop: "(min-width: 768px)",
-        isMobile: "(max-width: 1024px)"
+        isDesktop: "(min-width: 1024px)",
+        isMobile: "(max-width: 1023px)"
 
       }, (context) => {
 
@@ -162,10 +162,10 @@ return () => {
         sectionName="Service Section"
         ariaLabel="Portfolio Service Section"
         role="banner"
-          className=" relative   hidden  lg:inline   h-full "
+ className=" relative  max-w-[82em]  h-full "
    maxW
       >
-<ul className="">
+<ul >
         {Text.map((text, i) => (
           <Card
             ref={(el) => {
@@ -173,7 +173,7 @@ return () => {
             }}
             key={i}
             id={`card-${i + 1}`} 
-            ix={i}
+          
             frontAlt={"Card Image"} 
             backText={text}
           />

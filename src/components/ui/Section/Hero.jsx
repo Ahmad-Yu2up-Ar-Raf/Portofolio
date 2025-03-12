@@ -17,7 +17,7 @@ export default function Hero() {
    sectionName="Hero Section"
     ariaLabel="Portfolio Hero Section"
     role="banner"
-    
+    bg
    maxW 
    >
 

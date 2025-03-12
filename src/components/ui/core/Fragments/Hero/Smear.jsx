@@ -93,7 +93,7 @@ const SmearCard = ({
           height={1000} // Increase from 500
           quality={100}
           alt={`Trail ${index + 1}`}
-          className={`      transform  -translate-x-1/2 -translate-y-1/2  left-1/2 right-1/2  w-[80vw] h-[55vh] absolute md:w-[19em] md:h-[60vh]    lg:w-[23em] lg:h-[30em]    object-cover object-[60%_60%]`}  
+          className={`      transform  -translate-x-1/2 -translate-y-1/2  left-1/2 right-1/2  w-[80vw] h-[55vh] absolute md:w-[19em] md:h-[60vh]    lg:w-[25em] lg:h-[35em]    object-cover object-[60%_60%]`}  
           style={{
             opacity: (index + 1) / layers,
             borderRadius: `${borderRadius}px`,

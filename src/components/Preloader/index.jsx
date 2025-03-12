@@ -88,12 +88,12 @@ export default function Curve({ children, backgroundColor }) {
       />
 
       <motion.p 
-        // Changed from 'route' to Tailwind classes
-        className="fixed left-1/2 top-[40%] -translate-x-1/2 text-white text-[46px] text-center z-[99999]" 
+      
+        className="fixed left-1/2 top-[40%] -translate-x-1/2  text-white text-[30px]  md:text-[46px] text-center z-[99999]" 
         {...anim(textVariants)}
       >
         {useFirstVisitHome() ? (
-      <motion.p   {...anim(opacityVariants)} initial="initial" animate="enter"><span></span>{words[index]}</motion.p>
+      <motion.span   className='animate-pulse'  {...anim(opacityVariants)} initial="initial" animate="enter">{words[index]}</motion.span>
         ) : (
           routes[router.route]
         )}

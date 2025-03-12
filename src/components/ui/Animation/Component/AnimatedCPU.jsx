@@ -163,7 +163,7 @@ const AnimatedCPU = () => {
     <motion.path
                        {...pathAnimation} 
                        transition={{ delay: 0.4 }} d="M236 107.803L236 133.689C236 135.898 237.791 137.689 240 137.689L312 137.689" stroke="currentColor" strokeOpacity="0.1"/>
-    <g transform="translate(4, 0)">
+    <g transform="translate(2, 0)">
 
     <motion.path
                        {...pathAnimation} 
