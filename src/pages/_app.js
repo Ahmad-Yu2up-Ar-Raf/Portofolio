@@ -1,6 +1,8 @@
+
+
 import '@/styles/globals.css'
 import AppShell from '@/components/AppShell/AppShell';
-import { AnimatePresence } from 'framer-motion'
+
 
 import { ThemeProvider } from '@/hooks/theme-provider';
 import { SessionStateProvider } from '@/hooks/StateContext';
@@ -11,6 +13,8 @@ import { fontVariables } from '@/hooks/Font';
 
 
 export default function App({ Component, pageProps, router }) {
+    
+
     return (
         <ThemeProvider
             attribute="class"
@@ -18,15 +22,17 @@ export default function App({ Component, pageProps, router }) {
             enableSystem
             disableTransitionOnChange
         >
-            <SessionStateProvider>
+          <SessionStateProvider>
+
                 <ReactLenis root>
                     <AppShell cla={`${fontVariables} font-montserrat`}> 
-                        <AnimatePresence mode='wait'>
+                     
                             <Component key={router.route} {...pageProps} />
-                        </AnimatePresence>
+                       
                     </AppShell>
                 </ReactLenis>
-            </SessionStateProvider>
+          </SessionStateProvider>
+           
         </ThemeProvider>
     )
 }

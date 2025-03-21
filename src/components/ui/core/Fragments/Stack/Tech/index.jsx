@@ -2,8 +2,6 @@
 
 import Link from "next/link"
 import Image from "next/image"
-
-
 import styles from './style.module.css';
 import PixelCard from '@/components/ui/core/Fragments/Stack/PixelCard';
 
@@ -23,13 +21,18 @@ export default function Tech({
 
 key={i}
 
-canvasStyle={'[mask-image:_linear-gradient(to_top,transparent_0,_black_125px,_black_calc(0%),transparent_100%)] '}  colors={Colors} className={`${styles.stack}  group  rounded-[12px] h-[200px]  md:h-[230px] overflow-hidden `}   gaya={{
+canvasStyle={'[mask-image:_linear-gradient(to_top,transparent_0,_black_125px,_black_calc(0%),transparent_100%)] '}  colors={Colors} className={`${styles.stack}
+ ${i == 0 ? 
+    'before:bg-[conic-gradient(from_180deg_at_50%_50%,#333333_0deg,#333333_176deg,#61dafb_193deg,#333333_217deg,#333333_1turn)]'
+     : i == 1 ? 'before:bg-[conic-gradient(from_0deg_at_50%_50%,#333333_0deg,#333333_3deg,#333333_328deg,#df2e6c_349deg,#333333_1turn)]' :
+      'before:bg-[conic-gradient(from_0deg_at_50%_50%,#ffbc31_-7.19deg,#333333_14deg,#333333_51deg,#333333_311deg,#ffbc31_353deg,#333333_374deg)]'}   
+group  rounded-[12px] h-[200px]  md:h-[230px] overflow-hidden `}   gaya={{
    boxShadow: "0 1px 0 1px rgba(0,0,0,.02),0 4px 6px rgba(0,0,0,.02),inset 0 0 0 6px #111111",
       
       background: "linear-gradient(180deg, #242424, #121212 65.62%)",
       backgroundSize: "cover"}}   >
 <Link  href={Url} target="blank"  className="absolute left-0 top-0 bottom-0 right-0 flex justify-between  flex-col  gap-[24px] p-[24px]">
-<Image height={42} width={42} src={`/Assets/Tech/${Imagex}`} alt={Name}   />
+<Image className="size-9 lg:size-10" height={42} width={42} src={`/Assets/Tech/${Imagex}`} alt={Name}   />
 
 <article className="flex flex-col gap-1.5 z-20">
 <header className="flex items-center gap-1" >

@@ -9,7 +9,7 @@
     mask-composite: exclude;
     pointer-events: none;
     z-index:20;
-    background: conic-gradient(from 180deg at 50% 50%,#333333 0deg,#333333 176deg,#333333 193deg,#333333 217deg, #333333 1turn);
+
 }
 
 

@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import { Montserrat, Six_Caps } from 'next/font/google';
+import { Montserrat, Six_Caps, Inter, Outfit} from 'next/font/google';
 
 export const pp = localFont({
     src: "../../public/Assets/Fonts/ppneuemontreal-medium.otf",
@@ -10,6 +10,12 @@ export const pp = localFont({
 export const pps = localFont({
     src: "../../public/Assets/Fonts/ppneuemontreal-book.otf",
     variable: "--font-ppre",
+    display: "swap",
+
+});
+export const Degular = localFont({
+    src: "../../public/Assets/Fonts/fonnts.com-DegularDemo-Bold.otf",
+    variable: "--font-degular",
     display: "swap",
 
 });
@@ -27,6 +33,17 @@ export const ppw = localFont({
     variable: "--font-montserrat",
     display: "swap",
  })
+ export const outfit = Outfit({
+    subsets: ['latin'],
+    variable: "--font-outfit",
+    display: "swap",
+ })
+ export const inter = Inter({
+    subsets: ['latin'],
+    variable: "--font-inter",
+    display: "swap",
+ })
+
 
  export const SixCaps = Six_Caps({
     subsets: ['latin'],
@@ -35,4 +52,4 @@ export const ppw = localFont({
    weight: "400"
  })
 
-export const fontVariables = `${montserrat.variable} ${pp.variable} ${ppw.variable} ${pps.variable}  ${SixCaps.variable}   `;
+export const fontVariables = `${montserrat.variable} ${outfit.variable} ${pp.variable} ${Degular.variable} ${inter.variable}  ${ppw.variable} ${pps.variable}  ${SixCaps.variable}   `;

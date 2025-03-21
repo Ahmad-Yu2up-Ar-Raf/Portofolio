@@ -87,12 +87,14 @@ body {
 
 @layer base {
   * {
-    @apply border-border p-0 m-0 box-border;
+    @apply border-border p-0 m-0 box-border  ;
   }
   body {
     @apply bg-[#010101] text-foreground;
   }
-  
+  div {
+    @apply block  [unicode-bidi:isolate]
+  }
 }
 
 

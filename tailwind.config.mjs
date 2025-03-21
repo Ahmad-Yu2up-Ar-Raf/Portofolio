@@ -64,8 +64,10 @@ export default {
 			ppmedium: ["var(--font-ppmedium)"],
 			ppregular: ["var(--font-ppregular)"],
 			ppbook: ["var(--font-ppre)"],
-		    SixCaps: ["var(--Six-Cap)"]
-			 
+		    SixCaps: ["var(--Six-Cap)"],
+			degular: ["var(--font-degular)"],
+			 inter: ["var(--font-inter)"],
+			 oufit: ["var(--font-outfit)"]
 			},
 
 		
@@ -85,14 +87,22 @@ export default {
 									        'star-movement-top': 'star-movement-top linear infinite alternate',
 											  gradient: 'gradient 8s linear infinite',
 											  float: 'floation 3s infinite ease-in-out',
-											  glow: "texx 3s ease-out infinite"
+											  glow: "texx 3s ease-out infinite",
+											  shine: "shine 5s ease infinite"
   		},
   		keyframes: {
+			
 			floation : {
 				'0%' : { transform: 'translate(-50%,-50%)' },
 			 '50%' : { transform: 'translate(-50%,-60%)' },
 			 '100%' : { transform: 'translate(-50%, -50%)' },
 			  },
+			  shine : {
+				to : {
+					backgroundPosition :"200%",
+					opacity: "0"
+				}
+			},
 			  texx: {
 				"0%, 100%" : {
 				   color: "#525252",
@@ -182,6 +192,6 @@ export default {
 
 
   ],
-};
+}
 
 

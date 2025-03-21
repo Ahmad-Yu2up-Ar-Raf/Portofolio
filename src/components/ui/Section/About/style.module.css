@@ -1,0 +1,75 @@
+.gallery {
+   
+
+    display: flex;
+    gap: 2vw;
+    
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.gallery .column {
+    position: relative;
+    height: 100%;
+    width: 25%;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.gallery .column .imageContainer {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    border-radius: 1vw;
+    overflow: hidden;
+}
+
+.gallery .column .imageContainer img {
+    opacity: 0.2;
+    object-fit: cover;
+}
+
+.gallery .column:nth-of-type(1) {
+    top: -45%;
+}
+
+.gallery .column:nth-of-type(2) {
+    top: -95%;
+}
+
+.gallery .column:nth-of-type(3) {
+    top: -45%;
+}
+
+.gallery .column:nth-of-type(4) {
+    top: -75%;
+}
+
+
+
+/* .text {
+   @apply h-[175vh]  content-center  ;
+    width: 100%;
+     text-align: center;
+
+    position: relative;
+} */
+
+    .gradient {
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+      background-color: #000;
+      @apply mix-blend-darken ;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .textMask {
+        background-image: linear-gradient(#000 12%, #351073 26%, #c958de 38%, #fbb1f7 50%, #c958de 64%, #351073 76%, #000 88%);
+     height: 100%;
+       width: 100%;
+     }

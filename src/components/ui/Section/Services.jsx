@@ -11,9 +11,9 @@ import {  useRef } from "react";
 
 const Text = [
    "web design",
-   "3d design",
-   "ui/ux design",
-   "graphic design"
+   "AI Merge ",
+   "SEO Boost",
+   "web develop"
 ]
 
 
@@ -102,7 +102,7 @@ cards.forEach((card, i) => {
     ScrollTrigger.create({
       trigger: isDesktop ? sectionRef.current : card,
       start: isDesktop ? "top top" : "top 80%",
-      end: isDesktop ? () => `+=${totalScrollHeight}` : "top 20%",
+      end: isDesktop ? () => `+=${totalScrollHeight}` : "top 10%",
       scrub: isDesktop ? 1 : true,
       id: `rotate-flip-${i}`,
       onUpdate: (self) => {
@@ -165,7 +165,7 @@ return () => {
  className=" relative  max-w-[82em]  h-full "
    maxW
       >
-<ul >
+<ul className="w-full ">
         {Text.map((text, i) => (
           <Card
             ref={(el) => {

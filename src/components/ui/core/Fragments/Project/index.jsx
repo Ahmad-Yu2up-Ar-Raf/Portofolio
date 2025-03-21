@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, {  useRef } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -37,7 +37,7 @@ export const StickyScroll = ({
       ref={ref}
     >
  
-        <div className="mx-auto flex max-w-2xl flex-col gap-y-6 md:gap-y-24 lg:max-w-[65%]">
+        <div className="mx-auto flex  flex-col gap-y-6 md:gap-y-24 lg:max-w-[65%]">
           {content.map((item, i) => (
             <Card
               key={i}
@@ -48,6 +48,7 @@ export const StickyScroll = ({
               color={item?.colore}
               Web={item?.web}
               Code={item?.Code}
+              hex={item?.hex}
             />
           ))}
         </div>

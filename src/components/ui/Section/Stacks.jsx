@@ -1,3 +1,5 @@
+
+'use client'
 import React from "react";
 
 import CPu from "@/components/ui/core/Fragments/Stack/CPu";
@@ -7,27 +9,30 @@ import FadeContent from "../Animation/Content";
 import Container from "../Shared";
 
 
+
+
+
 const Stacks = [
     {
-        Name: "Tailwind CSS",
-        Description: "A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup. Rapidly build modern websites without ever leaving your HTML.",
-        Imaged: "Tailwind Css.svg",
-        Url: "https://tailwindcss.com/",
-        colore: "#06B6D4"
+        Name: "React",
+        Description: "React is a JavaScript library developed by Facebook that, among other things, was used to build Instagram.com. It aims to allow developers to easily create user interfaces for websites, desktop apps and mobile applications. A React application usually works fast and efficiently",
+        Imaged: "react.svg",
+        Url: "https://react.dev/",
+        Colors: "#61dafb"
     },
     {
-        Name: "WordPress",
-        Description: "WordPress is a free and open-source content management system that powers over 40% of all websites on the internet. It offers a flexible platform for building websites, blogs and applications.",
-        Imaged: "wordpress.svg",
-        Url: "https://wordpress.org/",
-        colore: "#8A63E8"
+        Name: "Figma",
+        Description: "Figma is a cloud-based design tool that helps users create, share, and test designs for websites, apps, and other digital products. It's a popular choice for designers, product managers, writers, and developers. ",
+        Imaged: "Figma.svg",
+        Url: "https://figma.com/",
+        Colors: "#df2e6c"
     },
     {
         Name: "AI Integration", 
         Description: "Leveraging artificial intelligence and machine learning capabilities through modern APIs and tools to create smarter, more dynamic web experiences and automated solutions.",
         Imaged: "claude-ai-icon.svg",
         Url: "https://claude.ai/",
-        colore: "#FF7432"
+        Colors: "#ffbc31"
     }
 ];
 
@@ -61,7 +66,7 @@ export default function index() {
 
     <CPu/>
 
-      <div className="px-3">
+   
 <FadeContent
 
 
@@ -70,7 +75,7 @@ export default function index() {
 
 
 blur={true} delay={2000} duration={1000} easing="ease-out" initialOpacity={0}
-className="max-w-[74rem] justify-center  flex flex-col m-auto gap-[16px] lg:gap-[32px] lg:grid lg:grid-cols-3">
+className="max-w-[74rem] px-3 justify-center  flex flex-col m-auto gap-[16px] lg:gap-[32px] lg:grid lg:grid-cols-3">
     {Stacks.map((stack, index) => ( 
         <Tech key={index} {...stack} 
         i={index}
@@ -78,13 +83,19 @@ className="max-w-[74rem] justify-center  flex flex-col m-auto gap-[16px] lg:gap-
         Description={stack?.Description}
         Imagex={stack?.Imaged}
         Url={stack?.Url}
-        Colors={stack?.colore}
+        Colors={stack?.Colors}
         />
     ))}
    
 </FadeContent>
-      </div>
+
+
+
+     
+
  </Container>
 
   );
 }
+
+

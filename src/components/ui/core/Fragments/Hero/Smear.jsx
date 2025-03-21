@@ -7,7 +7,7 @@ const SmearCard = ({
   width = 200,
   height = 300,
   image = "Assets//Galery/Mantap.JPG",
-  layers = 10,
+  layers = 9,
   maxDelay = 0.2,
   borderRadius = 12,
 }) => {
@@ -37,10 +37,10 @@ const SmearCard = ({
 
     let animationFrame;
     const animate = () => {
-      // Keep the wide movement range
+    
       let targetX = map(cursor.current.x, 0, winsize.current.width, -250, 250);
       let targetY = map(cursor.current.y, 0, winsize.current.height, -250, 250);
-      // Reduced rotation range from -25,25 to -10,10 for subtler tilt
+
       let targetRotation = map(cursor.current.x, 0, winsize.current.width, -10, 10);
 
       const bound = 300;
@@ -50,14 +50,14 @@ const SmearCard = ({
       imagesRef.current.forEach((imageEl, index) => {
         if (imageEl) {
           const opacity = (index + 1) / layers;
-          const delay = (layers - index - 1) * 0.020 ; 
+          const delay = (layers - index - 1) * 0.018 ; 
 
           gsap.to(imageEl, {
             x: targetX,
             y: targetY,
             rotation: targetRotation,
             opacity: opacity,
-            duration: 0.35,
+            duration: 0.25,
             delay: delay,
             ease: "power2.out",
             force3D: true,
@@ -77,33 +77,37 @@ const SmearCard = ({
   }, [layers]);
 
   return (
-    <div
+    <ul
       ref={containerRef}
       className="  relative w-full h-full "
     >
       {Array.from({ length: layers }, (_, index) => (
-         index === 9 ? null : (
-        <Image
-          key={index}
-          ref={(el) => (imagesRef.current[index] = el)}
-          src={image}
-      
-           priority
-          width={1000} // Increase from 500
-          height={1000} // Increase from 500
-          quality={100}
-          alt={`Trail ${index + 1}`}
-          className={`      transform  -translate-x-1/2 -translate-y-1/2  left-1/2 right-1/2  w-[80vw] h-[55vh] absolute md:w-[19em] md:h-[60vh]    lg:w-[25em] lg:h-[35em]    object-cover object-[60%_60%]`}  
-          style={{
-            opacity: (index + 1) / layers,
-            borderRadius: `${borderRadius}px`,
-            willChange: "transform",
-          }}
-        />
+        
+          <li  ref={(el) => (imagesRef.current[index] = el)}  key={index}>
 
-         )
+            <Image
+             
+             
+              src={image}
+              
+            loading={index == 8 ? "eager" : "lazy"}
+               priority={ index == 8 ? true : false}
+              width={500} 
+              height={500}
+              quality={index == 8 ? 100 : false}
+              alt={`Trail ${index + 1}`}
+              className={`      transform  -translate-x-1/2 -translate-y-1/2  left-1/2 right-1/2  w-[77vw] h-[55vh] absolute  md:h-[70vh] xl:h-[70vh]  max-w-sm xl:max-w-none xl:w-[25vw]  lg:h-[35em]    object-cover object-[60%_60%]`}  
+              style={{
+                opacity: (index + 1) / layers,
+                borderRadius: `${borderRadius}px`,
+                willChange: "transform",
+              }}
+            />
+          </li>
+
+      
       ))}
-    </div>
+    </ul>
   );
 };
 

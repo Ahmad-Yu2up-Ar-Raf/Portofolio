@@ -1,15 +1,15 @@
 
-import Preloader from '@/components/Preloader';
-export default function Detail (props) {
+// import Preloader from '@/components/Preloader1';
+// export default function Detail (props) {
  
 
 
 
-   return(
-    <Preloader>
+//    return(
+//     <Preloader>
 
-         <h1>Hello</h1>
-    </Preloader>
-   )
+//          <h1>Hello</h1>
+//     </Preloader>
+//    )
 
- }
+//  }

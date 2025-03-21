@@ -1,9 +1,9 @@
-import Preloader from '@/components/Preloader';
+// import Preloader from '@/components/Preloader1';
 
 export default function index() {
     return ( 
-        <Preloader>
+        <h1>
         About
-        </Preloader>
+        </h1>
     )
 }
