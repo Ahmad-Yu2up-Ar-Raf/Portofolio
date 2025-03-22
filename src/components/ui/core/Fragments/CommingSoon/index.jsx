@@ -1,10 +1,12 @@
-export default function CommingSoon() {
-    return (
-        <section className="text-center w-full h-screen  flex justify-center items-center">
-        <h1 className="text-4xl font-bold font-ppmedium">
-        Comming Soon
+import React from 'react';
 
-        </h1>
-        </section>
-    )
-}
+const CommingSoon = () => {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <h1 className="text-4xl font-bold mb-4">Coming Soon</h1>
+      <p className="text-xl text-gray-500">This page is under construction. Please check back later.</p>
+    </div>
+  );
+};
+
+export default CommingSoon;
