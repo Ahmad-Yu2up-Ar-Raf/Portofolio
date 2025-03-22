@@ -1,7 +1,5 @@
-import { cn } from "@/lib/utils"
+import { cn } from "@/hooks/lib/utils"
 import React, { forwardRef } from "react"
-
-
 
 const Container = forwardRef((
   {
@@ -14,35 +12,32 @@ const Container = forwardRef((
     ariaLabel,
     dataTestId,
     sectionName,
-    containerclasName = "relative min-h-[90vh] overflow-x-hidden  lg:overflow-visible   lg:min-h-screen  mb-36 w-full content-center",
+    containerclasName = "relative  min-h-[90vh] overflow-x-hidden  lg:overflow-visible   md:min-h-screen mb-20  w-full content-center",
     ...props
-  }, 
+  },
   ref
 ) => {
- 
-
+  // Use a consistent class for the background instead of inline gradient
+  const bgClass = bg ? '' : 'container-gradient-bg';
+  
   return (
     <section
-    
-   
       id={id}
       className={cn(
-        
         maxW ? '' : 'p-4',
-        bg ? '' : 'bg-[radial-gradient(50%_50%_at_50%_50%,#121212_0,#000000_100%)]',
+        bgClass,
         containerclasName
-
       )}
       role={role || "region"}
       aria-label={ariaLabel || sectionName || id}
       data-testid={dataTestId || `section-${id}`}
       data-section-name={sectionName || id}
-      ref={ref} 
+      ref={ref}
     >
       <main
         {...props}
         className={cn(
-          "m-auto   w-full",
+          "m-auto w-full",
           className,
           maxW ? '' : 'max-w-7xl'
         )}
@@ -52,7 +47,5 @@ const Container = forwardRef((
     </section>
   )
 })
-
-
 
 export default Container;

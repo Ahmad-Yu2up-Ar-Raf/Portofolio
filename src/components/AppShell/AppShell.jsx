@@ -4,40 +4,30 @@
 import Header from "../ui/layout/Header";
 import Cursors from "../ui/Cursor/link";
 // import Footer from "../ui/layout/Footer";
-import { useEffect,useState } from "react";
 import { useSessionState } from "@/hooks/StateContext";
 import Preloader2 from "../Preload";
-import useMobile from "@/hooks/use-mobile";
-
+import { useMediaQuery } from "@/hooks/lib/use-media-query";
+import { useRouter } from "next/router"
 
 export function useFirstVisitHome() {
   const { isFirstVisit } = useSessionState();
-  const isMobile = useMobile(768)
+    const isMobile = useMediaQuery("(max-width: 768px)")
   if (typeof window === 'undefined') return false;
-  return isFirstVisit && !isMobile;
+  return isFirstVisit || !isMobile;
 }
 
 
 
-
+const disable = ["/_error", "/404"]
 
 
 export default function AppShell(props) {
 
 
-  
-useEffect(() => {
-    if (typeof window !== 'undefined') {
-    
-      setTimeout(() => {
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'instant' 
-        });
-      }, 0);
-    }
-  }, []);
+  const { pathname } = useRouter()
+
+
+
  
 
 
@@ -51,13 +41,13 @@ useEffect(() => {
     
     id="AppShell"
     role="wrapper"
-    className={`${cla}  relative w-full h-full`}>
+    className={`${cla}   relative w-full h-full`}>
 
 
-  {  useFirstVisitHome()  ? <Preloader2 /> : null}
+  {  useFirstVisitHome()  && !disable.includes(pathname) && <Preloader2 /> }
       
 
- <Header/>
+  { !disable.includes(pathname) && <Header/>}
       <main >
       {children}
         <Cursors />

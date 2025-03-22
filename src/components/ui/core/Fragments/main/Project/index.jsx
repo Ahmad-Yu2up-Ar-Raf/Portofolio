@@ -2,9 +2,12 @@
 import React, {  useRef } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn } from "@/hooks/lib/utils";
 import { Card } from "./Fragments/Card";
 import Detail from "./Fragments/Detail";
+import { useMediaQuery } from "@/hooks/lib/use-media-query";
+
+
 
 export const StickyScroll = ({
   content,
@@ -16,7 +19,7 @@ export const StickyScroll = ({
     target: ref,
     offset: ["start start", "end end"],
   });
-
+  const isMobile = useMediaQuery("(max-width: 1024px)")
   const cardLength = content.length;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -53,10 +56,11 @@ export const StickyScroll = ({
           ))}
         </div>
         
-        <div className="hidden py-4 lg:sticky lg:block lg:w-[35%]">
-          <div className={cn("sticky top-40")}>
-            <Detail 
-              title={content[activeCard]?.title}
+        {!isMobile && (
+          <div className=" py-4 sticky block lg:w-[35%]">
+            <div className={cn("sticky top-40")}>
+              <Detail 
+                title={content[activeCard]?.title}
               Description={content[activeCard]?.deskripcion}
               Tech={content[activeCard]?.stackx}
               list={content[activeCard]?.listx}
@@ -64,8 +68,8 @@ export const StickyScroll = ({
               color={content[activeCard]?.colore}
             />
           </div>
-        </div>
-
+          </div>
+        )}
     </motion.div>
   );
 };

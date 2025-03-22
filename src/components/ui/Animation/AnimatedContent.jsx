@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from "react"
 import { useSpring, animated } from "@react-spring/web"
-import useMobile from "@/hooks/use-mobile"
+import { useMediaQuery } from "@/hooks/lib/use-media-query";
 
 const AnimatedContent = ({
   children,
@@ -16,12 +16,11 @@ const AnimatedContent = ({
   threshold = 0.1,
   delay = 0,
   disableOnMobile = true,
-  mobileBreakpoint = 768,
   className,
 }) => {
   const [inView, setInView] = useState(false)
   const ref = useRef()
-  const isMobile = useMobile(mobileBreakpoint)
+  const isMobile = useMediaQuery("(max-width: 768px)")
 
   // Skip animation if on mobile and disableOnMobile is true
   const shouldAnimate = !(isMobile && disableOnMobile)

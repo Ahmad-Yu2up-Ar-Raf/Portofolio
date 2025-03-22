@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import styles from './style.module.css';
-import PixelCard from '@/components/ui/core/Fragments/Stack/PixelCard';
+import PixelCard from '@/components/ui/core/Fragments/main/Stack/PixelCard';
 
 
 export default function Tech({
@@ -18,7 +18,7 @@ export default function Tech({
      
 
 <PixelCard 
-
+ Url={Url}
 key={i}
 
 canvasStyle={'[mask-image:_linear-gradient(to_top,transparent_0,_black_125px,_black_calc(0%),transparent_100%)] '}  colors={Colors} className={`${styles.stack}
@@ -31,7 +31,7 @@ group  rounded-[12px] h-[200px]  md:h-[230px] overflow-hidden `}   gaya={{
       
       background: "linear-gradient(180deg, #242424, #121212 65.62%)",
       backgroundSize: "cover"}}   >
-<Link  href={Url} target="blank"  className="absolute left-0 top-0 bottom-0 right-0 flex justify-between  flex-col  gap-[24px] p-[24px]">
+<div  href={Url} target="blank"  className="absolute left-0 top-0 bottom-0 right-0 flex justify-between  flex-col  gap-[24px] p-[24px]">
 <Image className="size-9 lg:size-10" height={42} width={42} src={`/Assets/Tech/${Imagex}`} alt={Name}   />
 
 <article className="flex flex-col gap-1.5 z-20">
@@ -43,7 +43,7 @@ group  rounded-[12px] h-[200px]  md:h-[230px] overflow-hidden `}   gaya={{
 </header>
 <p className="text-[14px] group-hover:text-[#bcbcbc]  transition-all ease-in-out duration-700 line-clamp-3 leading-[1.5] text-[#888888] m-0 max-w-[50ch] tracking-[-0.01em]">{Description}</p>      
 </article>
-</Link>
+</div>
             <div className="pointer-events-none z-50 absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
             <div className="pointer-events-none z-50 absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
 </PixelCard>

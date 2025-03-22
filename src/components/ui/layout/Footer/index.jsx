@@ -1,7 +1,7 @@
 import SplitText from "@/components/ui/Animation/BlurAnimation"
 import Link from "next/link"
 import Image from "next/image"
-import { BorderBeam } from "../../core/Fragments/Stack/border-beam"
+import { BorderBeam } from "../../core/Fragments/main/Stack/border-beam"
 export default function footer(){
 
 return(

@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useRef, useEffect, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import AnimatedContent from "../../../../Animation/AnimatedContent";
+import AnimatedContent from "../../../../../Animation/AnimatedContent";
 import {
     Tooltip,
     TooltipContent,
@@ -121,7 +121,7 @@ const Detail = ({
                                 >
                                     <path d="M12 1C12 1 12 8 10 10C8 12 1 12 1 12C1 12 8 12 10 14C12 16 12 23 12 23C12 23 12 16 14 14C16 12 23 12 23 12C23 12 16 12 14 10C12 8 12 1 12 1Z"></path>
                                 </svg>
-                                <span className="line-clamp-2">{lis}</span>
+                                <span className="line-clamp-2 text-white/80">{lis}</span>
                             </motion.li>
                         ))}
                     </motion.ul>
@@ -146,7 +146,7 @@ const Detail = ({
                                     delay: i * 0.1 + 0.3, 
                                     ease: "easeOut" 
                                 }}
-                                className="flex items-center gap-2 rounded-xl  border border-white/[0.14] bg-neutral-900 px-3 py-1 text-sm"
+                                className="flex items-center gap-2 rounded-xl   border border-white/[0.14] bg-neutral-900 px-3 py-1 text-sm"
                             >
                                 <Image width={16} height={16} className="size-4" alt={Stack} src={`Assets/Tech/${Stack}.svg`} />
                                 {Stack}

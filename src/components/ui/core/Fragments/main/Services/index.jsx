@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { cn } from "@/lib/utils"
+import { cn } from "@/hooks/lib/utils"
 import { forwardRef } from "react"
 
 
@@ -12,7 +12,8 @@ const Card = forwardRef(({
         <li
         
       
-        className="lg:absolute relative mx-auto my-40   lg:my-0   lg:h-[29em]  lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2  lg:-translate-y-1/2 h-[58vh]   w-[80vw] max-w-[19rem]    "
+        className="lg:absolute relative mx-auto my-40   lg:my-0   lg:h-[29em]  lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2
+          lg:-translate-y-1/2 h-[58vh]   w-[90vw] max-w-[19rem]    "
   ref={ref}
  id={id}
  
@@ -35,7 +36,7 @@ const Card = forwardRef(({
                     transformStyle: "preserve-3d"
                 }}
                 >
-                    <div className="absolute  w-full h-full rounded-[0.98em] overflow-hidden "
+                    <div className="absolute  w-full h-full rounded-[0.76em] overflow-hidden "
                     style={{
                         backfaceVisibility: "hidden"
                     }}
@@ -49,9 +50,10 @@ const Card = forwardRef(({
                                className="w-full  h-full object-cover"                   
                         />
                     </div>
-                    <div className="absolute  bg-[#1a1a1a] p-[1em]  w-full h-full  rounded-[0.4em] overflow-hidden "
+                    <div className="absolute  bg-[#1a1a1a] p-[1em]  w-full h-full rounded-[0.76em] overflow-hidden "
                     
                     style={{
+                        transformStyle: "preserve-3d",
                         backfaceVisibility: "hidden",
                         transform: "rotateY(185deg)"
                     }}

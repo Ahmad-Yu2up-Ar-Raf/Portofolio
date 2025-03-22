@@ -26,7 +26,10 @@ body {
 }
 
 
-
+.container-gradient-bg {
+  background-image: radial-gradient(50% 50% at 50% 50%, #121212 0, #000000 100%);
+  will-change: transform; /* Helps with performance */
+}
 
 
 @layer base {

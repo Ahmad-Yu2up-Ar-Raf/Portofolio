@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import gsap from "gsap"
-
 import { useRef,useEffect} from "react"
 import MaskText from "@/components/ui/Animation/Text/Mask"
 
@@ -12,7 +11,15 @@ const phrases = [
 
 ]
 
+
+
+
+
 export default function Preloader2() {
+
+
+
+
     const containerRef = useRef(null);
     const loadeRef = useRef(null);
     const imgRef = useRef([])
@@ -22,10 +29,8 @@ export default function Preloader2() {
 
   const ctx = gsap.context(() => {
   
-    let mm = gsap.matchMedia();
 
-    // add a media query. When it matches, the associated function will run
-    mm.add("(min-width: 800px)", () => {
+  
  
       
       const loader = loadeRef?.current;
@@ -37,7 +42,7 @@ export default function Preloader2() {
 
 
    
-      if (container && imgRe) {
+      if (container && imgRe  ) {
       
         
       setTimeout(() => {
@@ -72,15 +77,15 @@ export default function Preloader2() {
       }
       
       
-      return () => { 
-      };
-    });
+    
  
   });
   
  
   return () => {
     ctx.revert(); 
+    ctx.kill(); 
+    ctx.clear(); 
   };
 }, []);
 

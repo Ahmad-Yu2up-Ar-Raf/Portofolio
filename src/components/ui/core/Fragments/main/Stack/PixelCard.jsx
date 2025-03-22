@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useRef } from "react";
-
+import Link from "next/link";
 class Pixel {
   constructor(canvas, context, x, y, color, speed, delay) {
     this.width = canvas.width;
@@ -139,7 +139,8 @@ export default function PixelCard({
   className = "",
   children,
   gaya,
-  canvasStyle
+  canvasStyle,
+  Url
 }) {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
@@ -258,9 +259,11 @@ export default function PixelCard({
   }, [finalGap, finalSpeed, finalColors, finalNoFocus]);
 
   return (
-    <div
+    <Link
+      href={Url ?? "#"}
+      target="blank"
       ref={containerRef}
-      className={` cursor-pointer  w-full relative overflow-hidden grid place-items-center aspect-[4/5] border   isolate transition-colors duration-200 ease-&lsqb;cubic-bezier(0.5,1,0.89,1)&rsqb; select-none ${className}`}
+      className={` cursor-pointer  w-full relative overflow-hidden grid place-items-center aspect-[4/5] border  border-neutral-900  isolate transition-colors duration-200 ease-&lsqb;cubic-bezier(0.5,1,0.89,1)&rsqb; select-none ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       style={gaya}
@@ -273,6 +276,6 @@ export default function PixelCard({
         ref={canvasRef}
       />
       {children}
-    </div>
+    </Link>
   );
 }

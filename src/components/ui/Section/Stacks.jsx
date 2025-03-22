@@ -2,8 +2,8 @@
 'use client'
 import React from "react";
 
-import CPu from "@/components/ui/core/Fragments/Stack/CPu";
-import Tech from "@/components/ui/core/Fragments/Stack/Tech";
+import CPu from "@/components/ui/core/Fragments/main/Stack/CPu";
+import Tech from "@/components/ui/core/Fragments/main/Stack/Tech";
 import FadeContent from "../Animation/Content";
 
 import Container from "../Shared";

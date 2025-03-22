@@ -1,7 +1,7 @@
 'use client'
 
 import Container from "../Shared";
-import Card from "../core/Fragments/Services";
+import Card from "../core/Fragments/main/Services";
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -85,7 +85,7 @@ gsap.registerPlugin(ScrollTrigger)
 
  
 
-// flip
+
 
 
 
@@ -127,12 +127,11 @@ cards.forEach((card, i) => {
            backRotation = 180 - 180 * progress;
         }
 
-        gsap.to(frontEl, { rotateY: frontRotation, ease: "power1.out"})
+        gsap.to(frontEl, { rotateY:  frontRotation, ease: "power1.out"})
         gsap.to(backEl, { rotateY: backRotation, ease: "power1.out"})
         if(isDesktop){
           gsap.to(card, {
-            // xPercent: -50,
-            // yPercent: -50,
+         
                  rotate: cardRotation,
                  ease: "power1.out"
                 })
@@ -162,10 +161,11 @@ return () => {
         sectionName="Service Section"
         ariaLabel="Portfolio Service Section"
         role="banner"
- className=" relative  max-w-[82em]  h-full "
+ className=" relative  max-w-[82em]   h-full  " 
    maxW
       >
-<ul className="w-full ">
+     
+  <ul className="w-full ">
         {Text.map((text, i) => (
           <Card
             ref={(el) => {

@@ -1,7 +1,7 @@
 
 import Container from "../Shared";
 import ScrollVelocity from "../Animation/Text/ScrollVelocity";
-import SmearCard from "../core/Fragments/Hero/Smear";
+import SmearCard from "../core/Fragments/main/Hero/Smear";
 
 
 
