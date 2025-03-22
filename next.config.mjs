@@ -1,25 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    transpilePackages: ['three'],
+  transpilePackages: ['three'],
   reactStrictMode: true,
-  productionBrowserSourceMaps: true,
   images: {
-    // Allow unoptimized images for animation effects
     unoptimized: process.env.NODE_ENV === "development",
-    // Configure higher quality defaults
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512, 768, 1024, 1280, 1600],
-    formats: ["image/webp", "image/avif"],
-    // If your images are on another domain, add it here
     domains: ["localhost:3000"],
   },
-  // Compression for better performance
   compress: true,
-  // Improve page load time
   poweredByHeader: false,
-  // Improve page speed with asset optimization
-  swcMinify: true,
-  // Configure strict headers for security and performance
   async headers() {
     return [
       {
@@ -56,8 +45,16 @@ const nextConfig = {
         ]
       },
       {
-        // Cache static assets for better performance
         source: '/(.*)\\.(jpg|jpeg|png|gif|webp|avif|svg|ico|css|js)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
+          }
+        ]
+      },
+      {
+        source: '/(.*)\\.(woff|woff2|ttf|otf|eot)',
         headers: [
           {
             key: 'Cache-Control',
