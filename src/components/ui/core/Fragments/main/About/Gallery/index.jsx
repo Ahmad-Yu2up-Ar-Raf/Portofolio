@@ -55,7 +55,9 @@ const images = [
 
 
      return (
-        <div ref={gallery} role="background" id="Paralax-Background" className={`${styles.gallery} [mask-image:linear-gradient(0deg,transparent,#000)]  h-full  w-full `}>
+        <div ref={gallery} role="background" id="Paralax-Background" className={`${styles.gallery}
+         [mask-image:linear-gradient(to_bottom,transparent_0%,#000_15%,#000_85%,transparent_100%)] 
+          h-full  w-full `}>
       
         <Column images={[images[0], images[1], images[2]]} y={y}/>
         <Column images={[images[3], images[4], images[5]]} y={y2}/>

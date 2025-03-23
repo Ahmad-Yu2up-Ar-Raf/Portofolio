@@ -7,7 +7,7 @@ import { useMediaQuery } from '@/hooks/lib/use-media-query';
 import Head from 'next/head';
 
 export default function Home() {
-  const isMobile = useMediaQuery("(max-width: 768px)")
+  const isMobile = useMediaQuery("(max-width: 1024px)")
   return (
     <>
       <Head>

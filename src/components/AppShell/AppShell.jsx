@@ -11,7 +11,7 @@ import { useRouter } from "next/router"
 
 export function useFirstVisitHome() {
   const { isFirstVisit } = useSessionState();
-    const isMobile = useMediaQuery("(max-width: 768px)")
+    const isMobile = useMediaQuery("(max-width: 1024px)")
   if (typeof window === 'undefined') return false;
   return isFirstVisit || !isMobile;
 }
@@ -41,7 +41,7 @@ export default function AppShell(props) {
     
     id="AppShell"
     role="wrapper"
-    className={`${cla}   relative w-full h-full`}>
+    className={`${cla}  overflow-x-hidden  lg:overflow-visible   relative w-full h-full`}>
 
 
   {  useFirstVisitHome()  && !disable.includes(pathname) && <Preloader2 /> }

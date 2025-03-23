@@ -97,7 +97,7 @@ className="text-center   text-[40px] md:text-[52px]  leading-[1.25]  tracking-[-
   blur={true} duration={1000} easing="ease-out" initialOpacity={0}
 
   >
-          <Link className="flex group m-auto relative justify-center gap-2 w-fit items-center  cursor-pointer text-neutral-300 transition-colors hover:text-neutral-100 mt-10 md:mt-16" href="https://github.com/Ahmad-Yu2up-Ar-Raf?tab=repositories" target='_blank'>
+          <Link className="flex group m-auto relative justify-center gap-2 w-fit items-center  cursor-pointer text-neutral-300 transition-colors hover:text-neutral-100 md:mt-16" href="https://github.com/Ahmad-Yu2up-Ar-Raf?tab=repositories" target='_blank'>
          <h6 className="relative w-fit inline-flex ">
           <span className='translate-y-0 skew-y-0 transition duration-500'>See more projects</span>
       
