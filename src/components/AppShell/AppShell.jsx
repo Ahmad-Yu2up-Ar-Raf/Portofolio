@@ -3,7 +3,7 @@
 
 import Header from "../ui/layout/Header";
 import Cursors from "../ui/Cursor/link";
-// import Footer from "../ui/layout/Footer";
+
 import { useSessionState } from "@/hooks/StateContext";
 import Preloader2 from "../Preload";
 import { useMediaQuery } from "@/hooks/lib/use-media-query";
@@ -44,7 +44,7 @@ export default function AppShell(props) {
     className={`${cla}  overflow-x-hidden  lg:overflow-visible   relative w-full h-full`}>
 
 
-  {  useFirstVisitHome()  && !disable.includes(pathname) && <Preloader2 /> }
+  {  useFirstVisitHome()  && !disable.includes(pathname) ? <Preloader2 /> : null }
       
 
   { !disable.includes(pathname) && <Header/>}

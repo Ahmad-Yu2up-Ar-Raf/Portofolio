@@ -1,9 +1,7 @@
 // next.config.js (ganti .mjs dengan .js)
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+
  
   reactStrictMode: true,
   productionBrowserSourceMaps: true,

@@ -34,7 +34,7 @@ const content = [
     
     stackx: ["Tailwind Css", "Alpine.Js","Javascript"],
     title: "LiveUp",
-    imag: "liveup.jpeg",
+    imag: "LiveUp.jpeg",
     colore: "teal", 
     web: "https://liveup-host.vercel.app/",
     Code: "https://github.com/Ahmad-Yu2up-Ar-Raf/Liveup",

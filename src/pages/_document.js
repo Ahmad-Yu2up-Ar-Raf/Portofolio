@@ -4,10 +4,7 @@ export default function Document() {
   return (
     <Html lang="en" suppressHydrationWarning>
       <Head>
-      <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Six+Caps:wght@400&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+      
         <meta charSet="utf-8" />
         {/* Person Schema */}
         <script
