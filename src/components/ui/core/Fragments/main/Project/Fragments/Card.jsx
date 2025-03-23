@@ -1,4 +1,4 @@
-import AnimatedContent from "../../../../../Animation/AnimatedContent";
+import AnimatedContent from "@/components/ui/Animation/AnimatedContent";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";

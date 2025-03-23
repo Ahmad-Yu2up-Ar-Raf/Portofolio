@@ -1,4 +1,3 @@
-
 'use client'
 import React from "react";
 
@@ -12,7 +11,7 @@ import Container from "../Shared";
 
 
 
-const Stacks = [
+const TechStacks = [
     {
         Name: "React",
         Description: "React is a JavaScript library developed by Facebook that, among other things, was used to build Instagram.com. It aims to allow developers to easily create user interfaces for websites, desktop apps and mobile applications. A React application usually works fast and efficiently",
@@ -38,7 +37,7 @@ const Stacks = [
 
 
 
-export default function index() {
+export default function StacksSection() {
  
 
   return (
@@ -76,7 +75,7 @@ export default function index() {
 
 blur={true} delay={2000} duration={1000} easing="ease-out" initialOpacity={0}
 className="max-w-[74rem] px-3 justify-center  flex flex-col m-auto gap-[16px] lg:gap-[32px] lg:grid lg:grid-cols-3">
-    {Stacks.map((stack, index) => ( 
+    {TechStacks.map((stack, index) => ( 
         <Tech key={index} {...stack} 
         i={index}
         Name={stack?.Name}

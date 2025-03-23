@@ -52,7 +52,7 @@ const content = [
 
 
 
-export default function index() {
+export default function Project() {
   const container = useRef(null);
 
   return (

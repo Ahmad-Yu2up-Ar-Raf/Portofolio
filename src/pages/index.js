@@ -1,5 +1,5 @@
-import Project from '../components/ui/section/Project'
-import Stacks from '../components/ui/section/Stacks'
+import Project from '@/components/ui/section/Project'
+import StacksSection from '@/components/ui/Section/Stacks';
 import Hero from '@/components/ui/section/Hero'
 import Service from '@/components/ui/Section/Services';
 import About from '@/components/ui/Section/About';
@@ -20,7 +20,7 @@ export default function Home() {
         <About/>
        {!isMobile &&  <Service/>}
         <Project/>
-        <Stacks/>
+        <StacksSection/>
       </section>
     </>
   );
