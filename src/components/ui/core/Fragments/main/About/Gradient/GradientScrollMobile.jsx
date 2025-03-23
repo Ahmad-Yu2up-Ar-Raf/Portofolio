@@ -43,7 +43,7 @@ export default function GradientScrollMobile({ text}) {
           }
         });
       };
-    }, []);
+    }, [text]);
     return (
         < >
         <p  className="text-center relative  m-auto  md:text-3xl text-2xl w-[85%]  font-semibold">I am Ahmad Yusuf Ar-Rafi, a student who loves to dig into programming science.</p>
