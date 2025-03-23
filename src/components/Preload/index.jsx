@@ -109,15 +109,15 @@ export default function Preloader2() {
                 className="absolute w-screen h-screen img [clip-path:polygon(0_100%,100%_100%,100%_100%,0_100%)]"  id={`imgload-${i}`}>
                    
                    <Image 
-                    quality={100}
+                    quality={90}
                     
                     priority
-                    width={100}
-                    height={100}
+                    width={300}
+                    height={300}
                     src={`/Assets/Preload/${i}.jpg`}
                     alt={`preload-image-${i}`}
                     className="w-full h-full object-cover "
-                  
+                    
                     />
                     </div>  
                 ))}

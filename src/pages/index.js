@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Head>
         <title>Ahmad Yusuf Ar-Rafi | Web Developer & Designer from Indonesia</title>
-        <link rel="canonical" href="https://ahmadyusufarrafi.id/" />
+        <link rel="canonical" href="https://yusufffffffffff.vercel.app/" />
         <meta name="description" content="Web developer & designer from Bogor, Indonesia specializing in creating stunning and functional websites with Next.js and React." />
       </Head>
       <section >

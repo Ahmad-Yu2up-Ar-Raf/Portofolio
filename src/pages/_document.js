@@ -14,7 +14,7 @@ export default function Document() {
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Ahmad Yusuf Ar-Rafi",
-              "url": "https://ahmadyusufarrafi.id",
+              "url": "https://yusufffffffffff.vercel.app/",
               "jobTitle": "Web Developer",
               "description": "Creative web developer from Bogor, Indonesia specializing in Next.js and modern web technologies",
               "knowsAbout": ["Web Development", "React", "Next.js", "Tailwind CSS", "JavaScript"],
@@ -57,7 +57,7 @@ export default function Document() {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "Ahmad Yusuf Ar-Rafi Portfolio",
-              "url": "https://ahmadyusufarrafi.id",
+              "url": "https://yusufffffffffff.vercel.app/",
               "description": "Personal portfolio of Ahmad Yusuf Ar-Rafi, a web developer and designer from Indonesia",
               "inLanguage": ["en-US", "id-ID"],
               "author": {
@@ -69,7 +69,7 @@ export default function Document() {
                 "@type": "SearchAction",
                 "target": {
                   "@type": "EntryPoint",
-                  "urlTemplate": "https://ahmadyusufarrafi.id/search?q={search_term_string}"
+                  "urlTemplate": "https://yusufffffffffff.vercel.app/search?q={search_term_string}"
                 },
                 "query-input": "required name=search_term_string"
               }
@@ -94,7 +94,7 @@ export default function Document() {
                       "@type": "Person",
                       "name": "Ahmad Yusuf Ar-Rafi"
                     },
-                    "url": "https://github.com/Ahmad-Yu2up-Ar-Raf/Travel-Website",
+                    "url": "https://yusufffffffffff.vercel.app/",
                     "description": "Comprehensive fullstack travel booking platform with curated travel packages.",
                     "keywords": "travel booking, PHP, JavaScript, web development"
                   }

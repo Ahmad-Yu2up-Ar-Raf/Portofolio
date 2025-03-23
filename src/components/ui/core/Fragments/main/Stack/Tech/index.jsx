@@ -32,7 +32,7 @@ group  rounded-[12px] h-[200px]  md:h-[230px] overflow-hidden `}   gaya={{
       background: "linear-gradient(180deg, #242424, #121212 65.62%)",
       backgroundSize: "cover"}}   >
 <div  href={Url} target="blank"  className="absolute left-0 top-0 bottom-0 right-0 flex justify-between  flex-col  gap-[24px] p-[24px]">
-<Image className="size-9 lg:size-10" height={42} width={42} src={`/Assets/Tech/${Imagex}`} alt={Name}   />
+<Image className="size-9 lg:size-10" height={42} width={42} src={`/Assets/Tech/${Imagex}.svg`} alt={Name}   />
 
 <article className="flex flex-col gap-1.5 z-20">
 <header className="flex items-center gap-1" >

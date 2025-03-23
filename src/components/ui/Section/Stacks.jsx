@@ -15,21 +15,21 @@ const TechStacks = [
     {
         Name: "React",
         Description: "React is a JavaScript library developed by Facebook that, among other things, was used to build Instagram.com. It aims to allow developers to easily create user interfaces for websites, desktop apps and mobile applications. A React application usually works fast and efficiently",
-        Imaged: "react.svg",
+        Imaged: "react",
         Url: "https://react.dev/",
         Colors: "#61dafb"
     },
     {
         Name: "Figma",
         Description: "Figma is a cloud-based design tool that helps users create, share, and test designs for websites, apps, and other digital products. It's a popular choice for designers, product managers, writers, and developers. ",
-        Imaged: "Figma.svg",
+        Imaged: "figma",
         Url: "https://figma.com/",
         Colors: "#df2e6c"
     },
     {
         Name: "AI Integration", 
         Description: "Leveraging artificial intelligence and machine learning capabilities through modern APIs and tools to create smarter, more dynamic web experiences and automated solutions.",
-        Imaged: "claude-ai-icon.svg",
+        Imaged: "claude-ai-icon",
         Url: "https://claude.ai/",
         Colors: "#ffbc31"
     }

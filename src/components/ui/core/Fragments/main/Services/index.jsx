@@ -36,7 +36,7 @@ const Card = forwardRef(({
                     transformStyle: "preserve-3d"
                 }}
                 >
-                    <div className="absolute  w-full h-full rounded-[0.76em] overflow-hidden "
+                    <div className="absolute  w-full h-full rounded-[0.6em] overflow-hidden "
                     style={{
                         backfaceVisibility: "hidden"
                     }}
@@ -50,7 +50,7 @@ const Card = forwardRef(({
                                className="w-full  h-full object-cover"                   
                         />
                     </div>
-                    <div className="absolute  bg-[#1a1a1a] p-[1em]  w-full h-full rounded-[0.76em] overflow-hidden "
+                    <div className="absolute  bg-[#1a1a1a] p-[1em]  w-full h-full rounded-[0.6em] overflow-hidden "
                     
                     style={{
                         transformStyle: "preserve-3d",
