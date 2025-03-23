@@ -1,6 +1,6 @@
-import Project from '@/components/ui/section/Project'
+import Project from '@/components/ui/Section/Project'
 import StacksSection from '@/components/ui/Section/Stacks';
-import Hero from '@/components/ui/section/Hero'
+import Hero from '@/components/ui/Section/Hero'
 import Service from '@/components/ui/Section/Services';
 import About from '@/components/ui/Section/About';
 import { useMediaQuery } from '@/hooks/lib/use-media-query';
