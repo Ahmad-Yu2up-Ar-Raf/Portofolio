@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Crawl delay
+Crawl-delay: 1
 
 # Sitemap
-Sitemap: https://yusufffffffffff.vercel.app/sitemap.xml 
+Sitemap: https://www.yusuffff.my.id/sitemap.xml 

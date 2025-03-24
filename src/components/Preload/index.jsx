@@ -54,7 +54,7 @@ export default function Preloader2() {
               ease: "power4.inOut",
               delay: 2,
               onComplete: () => {
-                // Properly unlock scrolling when animation completes
+               
                 document.documentElement.style.overflow = '';
                 document.body.style.overflow = '';
                 document.body.style.position = '';
@@ -71,7 +71,7 @@ export default function Preloader2() {
         ctx.revert(); 
         ctx.kill(); 
         ctx.clear();
-        // Ensure scrolling is re-enabled if component unmounts
+      
         document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
         document.body.style.position = '';
@@ -80,7 +80,7 @@ export default function Preloader2() {
       };
     }, []);
     
-    // Prevent scrolling with a wheel event handler
+
     useEffect(() => {
       const preventDefault = (e) => {
         e.preventDefault();
@@ -111,8 +111,8 @@ export default function Preloader2() {
                     quality={90}
                     
                     priority
-                    width={300}
-                    height={300}
+                    width={500}
+                    height={500}
                     src={`/Assets/Preload/${i}.jpg`}
                     alt={`preload-image-${i}`}
                     className="w-full h-full object-cover "

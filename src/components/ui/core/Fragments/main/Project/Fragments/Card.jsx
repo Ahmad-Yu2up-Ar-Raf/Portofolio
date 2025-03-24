@@ -27,6 +27,7 @@ export const Card = ({
       initialOpacity={0.2}
       animateOpacity
       scale={0.9}
+      enableExitAnimation={true}
       key={i}
       threshold={0.2}>
   <div className="project-card flex w-full flex-row font-oufit max-w-[46rem]">

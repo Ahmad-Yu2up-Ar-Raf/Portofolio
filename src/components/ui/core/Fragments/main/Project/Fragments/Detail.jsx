@@ -46,6 +46,7 @@ const Detail = ({
       
         >
         <AnimatedContent
+        
           distance={150}
           direction="vertical"
           reverse={false}

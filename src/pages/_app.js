@@ -28,8 +28,8 @@ export default function App({ Component, pageProps, router }) {
                     <meta property="og:title" content="Ahmad Yusuf Ar-Rafi | Web Developer & Designer" />
                     <meta property="og:description" content="Creative web developer from Indonesia specializing in Next.js and React." />
                     <meta property="og:type" content="website" />
-                    <meta property="og:url" content="https://yusufffffffffff.vercel.app/" />
-                    <meta property="og:image" content="https://yusufffffffffff.vercel.app/og-image.jpg" />
+                    <meta property="og:url" content="https://www.yusuffff.my.id/" />
+                    <meta property="og:image" content="https://www.yusuffff.my.id/og-image.jpg" />
                     <meta property="og:image:alt" content="Ahmad Yusuf Ar-Rafi - Web Developer" />
                     <meta property="og:image:width" content="1200" />
                     <meta property="og:image:height" content="630" />
@@ -41,14 +41,14 @@ export default function App({ Component, pageProps, router }) {
                     <meta name="twitter:card" content="summary_large_image" />
                     <meta name="twitter:title" content="Ahmad Yusuf Ar-Rafi | Web Developer & Designer" />
                     <meta name="twitter:description" content="Creative web developer from Indonesia specializing in Next.js and React." />
-                    <meta name="twitter:image" content="https://yusufffffffffff.vercel.app/og-image.jpg" />
+                    <meta name="twitter:image" content="https://www.yusuffff.my.id/og-image.jpg" />
                     <meta name="twitter:creator" content="@a_yu2up_a_r" />
                     <meta name="twitter:site" content="@a_yu2up_a_r" />
 
                     {/* Internationalization */}
-                    <link rel="alternate" hrefLang="en" href="https://yusufffffffffff.vercel.app/" />
-                    <link rel="alternate" hrefLang="id" href="https://yusufffffffffff.vercel.app/" />
-                    <link rel="alternate" hrefLang="x-default" href="https://yusufffffffffff.vercel.app/" />
+                    <link rel="alternate" hrefLang="en" href="https://www.yusuffff.my.id/" />
+                    <link rel="alternate" hrefLang="id" href="https://www.yusuffff.my.id/" />
+                    <link rel="alternate" hrefLang="x-default" href="https://www.yusuffff.my.id/" />
 
                     {/* Geo Meta Tags */}
                     <meta name="geo.region" content="ID-JB" />
@@ -57,7 +57,7 @@ export default function App({ Component, pageProps, router }) {
                     <meta name="ICBM" content="-6.5971, 106.8060" />
 
                     {/* Link Tags */}
-                    <link rel="canonical" href={`https://yusufffffffffff.vercel.app${router.asPath === '/' ? '' : router.asPath}`} />
+                    <link rel="canonical" href={`https://www.yusuffff.my.id${router.asPath === '/' ? '' : router.asPath}`} />
                     <link rel="icon" href="/favicon.ico" />
                 
                     <link rel="preconnect" href="https://fonts.googleapis.com" />

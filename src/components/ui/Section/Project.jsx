@@ -30,7 +30,7 @@ const content = [
       "Expro Travel is a comprehensive fullstack travel booking platform that revolutionizes how people plan and book their adventures. Our website offers an extensive collection of curated travel packages, complete with detailed itineraries, pricing, and real-time availability. Users can easily browse through various destinations, compare packages, and make secure online bookings. With an intuitive interface and robust backend system, we provide a seamless experience from initial search to final booking confirmation.",
   },
   { 
-    hex : ["#083926", "#059669", "#34D399", "#F9D793"],
+    hex : ["#08392e", "#059683", "#34d3be", "#F9D793"],
     
     stackx: ["Tailwind Css", "Alpine.Js","Javascript"],
     title: "LiveUp",

@@ -79,6 +79,8 @@ const images = [
         images.map( (src, i) => {
           return <div key={i} className={styles.imageContainer}>
             <Image 
+            loading="lazy"
+            
               src={`/Assets/About/${src}`}
               alt='image'
               fill

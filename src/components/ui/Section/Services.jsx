@@ -30,6 +30,7 @@ gsap.registerPlugin(ScrollTrigger)
     const sectionRef = useRef(null);
     const cardRefs = useRef([]);
     
+
     useGSAP(() => {
       
       if (!sectionRef.current) return;
@@ -148,6 +149,7 @@ return () => {
 }
 });
     }, { scope: sectionRef });
+
   
 
 
@@ -161,7 +163,7 @@ return () => {
         sectionName="Service Section"
         ariaLabel="Portfolio Service Section"
         role="banner"
- className=" relative  max-w-[82em]   h-full  " 
+ className=" relative  max-w-[85vw]   h-full  " 
    maxW
       >
      

@@ -16,6 +16,7 @@ const AnimatedContent = ({
   threshold = 0.1,
   delay = 0,
   disableOnMobile = true,
+  enableExitAnimation = false,
   className,
 }) => {
   const [inView, setInView] = useState(false)
@@ -36,20 +37,35 @@ const AnimatedContent = ({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          observer.unobserve(ref.current)
-          setTimeout(() => {
-            setInView(true)
-          }, delay)
+        // When enableExitAnimation is true, update inView based on current visibility
+        if (enableExitAnimation) {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              setInView(true)
+            }, delay)
+          } else {
+            // Only reset to initial state when completely outside viewport
+            if (entry.intersectionRatio === 0) {
+              setInView(false)
+            }
+          }
+        } else {
+          // Original behavior: set inView once and disconnect
+          if (entry.isIntersecting) {
+            observer.unobserve(ref.current)
+            setTimeout(() => {
+              setInView(true)
+            }, delay)
+          }
         }
       },
-      { threshold },
+      { threshold: [0, threshold] },
     )
 
     observer.observe(ref.current)
 
     return () => observer.disconnect()
-  }, [threshold, delay, isMobile, disableOnMobile])
+  }, [threshold, delay, isMobile, disableOnMobile, enableExitAnimation])
 
   const directions = {
     vertical: "Y",
@@ -73,7 +89,12 @@ const AnimatedContent = ({
           transform: `translate${directions[direction]}(0px) scale(1)`,
           opacity: 1,
         }
-      : undefined,
+      : enableExitAnimation
+        ? {
+            transform: `translate${directions[direction]}(${reverse ? `-${distance}px` : `${distance}px`}) scale(${scale})`,
+            opacity: animateOpacity ? initialOpacity : 1,
+          }
+        : undefined,
     config,
   }
 
@@ -88,4 +109,3 @@ const AnimatedContent = ({
 }
 
 export default AnimatedContent
-

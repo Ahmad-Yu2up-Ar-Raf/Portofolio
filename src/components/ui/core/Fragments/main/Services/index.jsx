@@ -12,8 +12,8 @@ const Card = forwardRef(({
         <li
         
       
-        className="lg:absolute relative mx-auto my-40   lg:my-0   lg:h-[29em]  lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2
-          lg:-translate-y-1/2 h-[58vh]   w-[90vw] max-w-[19rem]    "
+        className="lg:absolute relative mx-auto my-40   lg:my-0   lg:h-[65vh]  lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2
+          lg:-translate-y-1/2 h-[58vh]   w-[90vw]  lg:w-[20vw]   "
   ref={ref}
  id={id}
  
@@ -58,8 +58,8 @@ const Card = forwardRef(({
                         transform: "rotateY(185deg)"
                     }}
                     id="flip-card-back">
-                        <h2 className={cn("uppercase    animate-pulse lg:animate-glow  select-none        font-SixCaps tracking-tighter  absolute transform  top-1/2 left-1/2  text-[10rem]  -translate-y-1/2 -translate-x-1/2  text-center md:text-[11.5em] " ,
-'  leading-[9rem] md:leading-[10rem]  ',
+                        <h2 className={cn("uppercase    animate-pulse lg:animate-glow  select-none        font-SixCaps tracking-tighter  absolute transform  top-1/2 left-1/2  text-[10rem]  -translate-y-1/2 -translate-x-1/2  text-center md:text-[11.5vw] " ,
+'  leading-[9rem] md:leading-[21vh]  ',
 id ==  'card-2' ? 'delay-100' : id == 'card-3' ? 'delay-300' : id == 'card-4' ? 'delay-500' : 'delay-0'
 
                         ) }>{backText}</h2>

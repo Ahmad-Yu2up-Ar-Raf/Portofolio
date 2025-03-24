@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://yusufffffffffff.vercel.app/</loc>
-    <lastmod>2023-08-28</lastmod>
+    <loc>https://www.yusuffff.my.id/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://yusufffffffffff.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://yusufffffffffff.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.yusuffff.my.id/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.yusuffff.my.id/"/>
   </url>
   <url>
-    <loc>https://yusufffffffffff.vercel.app/Blogs</loc>
-    <lastmod>2023-08-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.yusuffff.my.id/Blogs</loc>
+    <lastmod>2024-06-29</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://yusufffffffffff.vercel.app/Blogs"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://yusufffffffffff.vercel.app/Blogs"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.yusuffff.my.id/Blogs"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.yusuffff.my.id/Blogs"/>
   </url>
   <url>
-    <loc>https://yusufffffffffff.vercel.app/about</loc>
-    <lastmod>2023-08-28</lastmod>
+    <loc>https://www.yusuffff.my.id/about</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://yusufffffffffff.vercel.app/about"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://yusufffffffffff.vercel.app/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.yusuffff.my.id/about"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.yusuffff.my.id/about"/>
   </url>
 
 </urlset> 
