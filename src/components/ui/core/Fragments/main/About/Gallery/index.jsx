@@ -79,7 +79,7 @@ const images = [
         images.map( (src, i) => {
           return <div key={i} className={styles.imageContainer}>
             <Image 
-              src={`Assets/About/${src}`}
+              src={`/Assets/About/${src}`}
               alt='image'
               fill
             />

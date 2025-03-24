@@ -6,7 +6,7 @@ import Image from "next/image";
 const SmearCard = ({
   width = 200,
   height = 300,
-  image = "Assets//Galery/Mantap.JPG",
+  image = "/Assets/Galery/Mantap.JPG",
   layers = 9,
   maxDelay = 0.2,
   borderRadius = 12,

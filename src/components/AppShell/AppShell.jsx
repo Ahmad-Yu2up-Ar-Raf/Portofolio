@@ -13,7 +13,7 @@ export function useFirstVisitHome() {
   const { isFirstVisit } = useSessionState();
     const isMobile = useMediaQuery("(max-width: 1024px)")
   if (typeof window === 'undefined') return false;
-  return isFirstVisit || !isMobile;
+  return isFirstVisit && !isMobile;
 }
 
 
@@ -24,6 +24,7 @@ const disable = ["/_error", "/404"]
 export default function AppShell(props) {
 
 
+ 
   const { pathname } = useRouter()
 
 
@@ -44,7 +45,7 @@ export default function AppShell(props) {
     className={`${cla}  overflow-x-hidden  lg:overflow-visible   relative w-full h-full`}>
 
 
-  {  useFirstVisitHome()  && !disable.includes(pathname) ? <Preloader2 /> : null }
+{  useFirstVisitHome() && !disable.includes(pathname) && <Preloader2 /> }
       
 
   { !disable.includes(pathname) && <Header/>}

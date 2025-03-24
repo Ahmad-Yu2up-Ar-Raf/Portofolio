@@ -2,6 +2,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+
   productionBrowserSourceMaps: true,
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -9,6 +10,13 @@ const nextConfig = {
     formats: ["image/webp", "image/avif"],
     domains: ["localhost", "yusufffffffffff.vercel.app"], // Remove https:// from domain
 
+  },
+  webpack: (config, { isServer }) => {
+    // Fix for webpack hot update issues
+    if (!isServer) {
+      config.optimization.runtimeChunk = 'single';
+    }
+    return config;
   },
 };
 

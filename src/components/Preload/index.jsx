@@ -2,103 +2,102 @@
 
 import Image from "next/image"
 import gsap from "gsap"
-import { useRef,useEffect} from "react"
+import { useRef, useEffect } from "react"
 import MaskText from "@/components/ui/Animation/Text/Mask"
 
 const phrases = [
   "AN INDEPENDENT CREATIVE DESIGNER & ",
   "DEVELOPER BASED IN INDONESIA",
-
 ]
 
-
-
-
-
 export default function Preloader2() {
-
-
-
-
     const containerRef = useRef(null);
     const loadeRef = useRef(null);
     const imgRef = useRef([])
   
-
     useEffect(() => {
-
-  const ctx = gsap.context(() => {
-  
-
-  
- 
+      // Save the current scroll position
+      const scrollPosition = window.pageYOffset;
       
-      const loader = loadeRef?.current;
-      const container = containerRef?.current;
+      // More robust scroll locking
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPosition}px`;
+      document.body.style.width = '100%';
 
-      const imgRe = imgRef?.current;
-      
-
-
-
-   
-      if (container && imgRe  ) {
-      
+      const ctx = gsap.context(() => {
+        const loader = loadeRef?.current;
+        const container = containerRef?.current;
+        const imgRe = imgRef?.current;
         
-      setTimeout(() => {
-        gsap.to(container, {
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-          ease: "power4.inOut",
-          duration: 2,
-        });
-        
-        gsap.to(imgRe, {
-          duration: 2,
-          clipPath: "polygon(0 100%, 100% 100%, 100% 0%, 0% 0%)",
-          ease: "power4.inOut",
-          stagger: {
-            amount: 1.5
-          }
-        });
-        
-        gsap.to(loader, {
-          duration: 2,
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0% )",
-          ease: "power4.inOut",
-          delay: 2,
-        });
-      },3000)
-        
-
-
-
-          
+        if (container && imgRe) {
+          setTimeout(() => {
+            gsap.to(container, {
+              clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+              ease: "power4.inOut",
+              duration: 2,
+            });
+            
+            gsap.to(imgRe, {
+              duration: 2,
+              clipPath: "polygon(0 100%, 100% 100%, 100% 0%, 0% 0%)",
+              ease: "power4.inOut",
+              stagger: {
+                amount: 1.5
+              }
+            });
+            
+            gsap.to(loader, {
+              duration: 2,
+              clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0% )",
+              ease: "power4.inOut",
+              delay: 2,
+              onComplete: () => {
+                // Properly unlock scrolling when animation completes
+                document.documentElement.style.overflow = '';
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                window.scrollTo(0, 0);
+              }
+            });
+          }, 3000);
+        }
+      });
       
-      }
-      
-      
+      return () => {
+        ctx.revert(); 
+        ctx.kill(); 
+        ctx.clear();
+        // Ensure scrolling is re-enabled if component unmounts
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+      };
+    }, []);
     
- 
-  });
-  
- 
-  return () => {
-    ctx.revert(); 
-    ctx.kill(); 
-    ctx.clear(); 
-  };
-}, []);
-
-
-
-
-   
+    // Prevent scrolling with a wheel event handler
+    useEffect(() => {
+      const preventDefault = (e) => {
+        e.preventDefault();
+      };
+      
+      window.addEventListener('wheel', preventDefault, { passive: false });
+      window.addEventListener('touchmove', preventDefault, { passive: false });
+      
+      return () => {
+        window.removeEventListener('wheel', preventDefault);
+        window.removeEventListener('touchmove', preventDefault);
+      };
+    }, []);
+    
     return(
         <>
-        <div ref={loadeRef} className="fixed hidden md:inline   z-[999] [clip-path:polygon(0_100%,100%_100%,100%_0,0_0)] w-screen h-screen " id="loader"
-        
-   
-        >
+        <div ref={loadeRef} className="fixed hidden md:inline   z-[999] [clip-path:polygon(0_100%,100%_100%,100%_0,0_0)] w-screen h-screen " id="loader">
                 {Array.from({ length: parseInt(7) }, (_, i) => (
                 <div 
                 ref={(el) => {
