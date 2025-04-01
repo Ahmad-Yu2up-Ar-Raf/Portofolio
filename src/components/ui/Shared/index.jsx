@@ -12,7 +12,7 @@ const Container = forwardRef((
     ariaLabel,
     dataTestId,
     sectionName,
-    containerclasName = "relative  min-h-screen mb-20  w-full content-center",
+    containerclasName = "relative min-h-[95vh]  md:min-h-screen mb-20  w-full content-center",
     ...props
   },
   ref

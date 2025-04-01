@@ -13,7 +13,7 @@ const Card = forwardRef(({
         
       
         className="lg:absolute relative mx-auto my-40   lg:my-0   lg:h-[65vh]  lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2
-          lg:-translate-y-1/2 h-[58vh]   w-[90vw]  lg:w-[20vw]   "
+          lg:-translate-y-1/2 h-[57vh]   w-[90vw]  lg:w-[19.5vw]   "
   ref={ref}
  id={id}
  
@@ -36,7 +36,7 @@ const Card = forwardRef(({
                     transformStyle: "preserve-3d"
                 }}
                 >
-                    <div className="absolute  w-full h-full rounded-[0.6em] overflow-hidden "
+                    <div className="absolute  w-full h-full rounded-[0.5em] overflow-hidden "
                     style={{
                         backfaceVisibility: "hidden"
                     }}
@@ -50,7 +50,7 @@ const Card = forwardRef(({
                                className="w-full  h-full object-cover"                   
                         />
                     </div>
-                    <div className="absolute  bg-[#1a1a1a] p-[1em]  w-full h-full rounded-[0.6em] overflow-hidden "
+                    <div className="absolute  bg-[#1a1a1a] p-[1em]  rounded-[0.5em] w-full h-full  overflow-hidden "
                     
                     style={{
                         transformStyle: "preserve-3d",

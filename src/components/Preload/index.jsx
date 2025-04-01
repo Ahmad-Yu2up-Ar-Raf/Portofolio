@@ -27,44 +27,56 @@ export default function Preloader2() {
       document.body.style.width = '100%';
 
       const ctx = gsap.context(() => {
-        const loader = loadeRef?.current;
-        const container = containerRef?.current;
-        const imgRe = imgRef?.current;
+
+        let mm = gsap.matchMedia(); 
+
+
+        mm.add("(min-width: 1024px)", () => {
+
+          const loader = loadeRef?.current;
+          const container = containerRef?.current;
+          const imgRe = imgRef?.current;
+          
+          if (container && imgRe) {
+            setTimeout(() => {
+              gsap.to(container, {
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+                ease: "power4.inOut",
+                duration: 2,
+              });
+              
+              gsap.to(imgRe, {
+                duration: 2,
+                clipPath: "polygon(0 100%, 100% 100%, 100% 0%, 0% 0%)",
+                ease: "power4.inOut",
+                stagger: {
+                  amount: 1.5
+                }
+              });
+              
+              gsap.to(loader, {
+                duration: 2,
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0% )",
+                ease: "power4.inOut",
+                delay: 2,
+                onComplete: () => {
+                 
+                  document.documentElement.style.overflow = '';
+                  document.body.style.overflow = '';
+                  document.body.style.position = '';
+                  document.body.style.top = '';
+                  document.body.style.width = '';
+                  window.scrollTo(0, 0);
+                }
+              });
+            }, 3000);
+          }
         
-        if (container && imgRe) {
-          setTimeout(() => {
-            gsap.to(container, {
-              clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-              ease: "power4.inOut",
-              duration: 2,
-            });
-            
-            gsap.to(imgRe, {
-              duration: 2,
-              clipPath: "polygon(0 100%, 100% 100%, 100% 0%, 0% 0%)",
-              ease: "power4.inOut",
-              stagger: {
-                amount: 1.5
-              }
-            });
-            
-            gsap.to(loader, {
-              duration: 2,
-              clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0% )",
-              ease: "power4.inOut",
-              delay: 2,
-              onComplete: () => {
-               
-                document.documentElement.style.overflow = '';
-                document.body.style.overflow = '';
-                document.body.style.position = '';
-                document.body.style.top = '';
-                document.body.style.width = '';
-                window.scrollTo(0, 0);
-              }
-            });
-          }, 3000);
-        }
+          return () => { 
+          };
+        });
+
+   
       });
       
       return () => {
