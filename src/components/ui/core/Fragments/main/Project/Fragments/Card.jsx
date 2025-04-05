@@ -52,7 +52,7 @@ export const Card = ({
     <ArrowRight  className="size-6"/>
    
     </div>
-  <Image  width={1203} height={753} alt={title} src={`/Assets/Project/${images}`} style={{color:'transparent', boxShadow: `0 0 30px ${hex[1]}`}} loading='lazy' 
+  <Image placeholder="blur" blurDataURL="/Assets/Project/${images}"  width={1203} height={753} alt={title} src={`/Assets/Project/${images}`} style={{color:'transparent', boxShadow: `0 0 30px ${hex[1]}`}} loading='lazy' 
   className={cn('lg:group-hover:translsate-y-10 w-full max-w-[85%] translate-y-7 -rotate-3 rounded-t-lg border-[1.5px] border-white/20 transition-all duration-300 will-change-transform lg:block lg:rotate-0 lg:group-hover:scale-[1.08] lg:group-hover:-rotate-3 ' 
 
  

@@ -4,17 +4,16 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 const SmearCard = ({
-  width = 200,
-  height = 300,
+
   image = "/Assets/Galery/Mantap.JPG",
   layers = 9,
-  maxDelay = 0.2,
+  
   borderRadius = 12,
 }) => {
   const containerRef = useRef(null);
   const imagesRef = useRef(Array.from({ length: layers }, () => null));
   const cursor = useRef({ x: 0, y: 0 });
-  const lastPosition = useRef({ x: 0, y: 0, rotation: 0 });
+ 
   const winsize = useRef({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -89,7 +88,8 @@ const SmearCard = ({
              
              
               src={image}
-              
+               placeholder="blur"
+               blurDataURL={image}
             loading={index == 8 ? "eager" : "lazy"}
                priority={ index == 8 ? true : false}
               width={500} 

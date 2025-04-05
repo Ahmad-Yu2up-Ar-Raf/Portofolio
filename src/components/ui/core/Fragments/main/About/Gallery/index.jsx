@@ -80,7 +80,8 @@ const images = [
           return <div key={i} className={styles.imageContainer}>
             <Image 
             loading="lazy"
-            
+             placeholder="blur"
+             blurDataURL={`/Assets/About/${src}`}
               src={`/Assets/About/${src}`}
               alt='image'
               fill
